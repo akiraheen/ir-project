@@ -201,11 +201,14 @@ class CLIPRetrievalSystem:
         """Query the system with an image path"""
         try:
             image = Image.open(image_path).convert("RGB")
-            return self.query_with_image_data(image, top_k, exclude_self)
+            exclude_path = image_path if exclude_self else None
+            return self.query_with_image_data(image, top_k, exclude_path)
         except Exception as e:
             raise ValueError(f"Invalid image path: {str(e)}")
 
-    def query_with_image_data(self, image: Image.Image, top_k=5, exclude_self=False):
+    def query_with_image_data(
+        self, image: Image.Image, top_k=5, exclude_path: Optional[str] = None
+    ):
         """Query the system with a PIL Image object"""
         inputs = self.processor(images=image, return_tensors="pt").to(self.device)  # type: ignore
 
@@ -217,6 +220,11 @@ class CLIPRetrievalSystem:
         results = []
         for idx, score in zip(indices[0], distances[0]):
             original_idx = idx % len(self.metadata)
+            img_name = f"img{self.metadata[original_idx]['id']}.jpg"
+            # print(img_name)
+            if exclude_path and os.path.basename(exclude_path) == img_name:
+                print(f"Skipping {exclude_path} because it's the query image")
+                continue
             results.append(
                 {"score": float(score), "metadata": self.metadata[original_idx]}
             )
@@ -228,15 +236,18 @@ class CLIPRetrievalSystem:
 
 
 if __name__ == "__main__":
-    retriever = CLIPRetrievalSystem()
-
-    # Fixed path typo: Yumm28K → Yummly28K
-    retriever.process_and_save_dataset(
+    retriever = CLIPRetrievalSystem(
         metadata_dir="data/Yummly28K/metadata27638",  # Corrected path
         image_dir="data/Yummly28K/images27638",
-        force_reprocess=False,
     )
 
+    # Uncomment if you want to reprocess the index
+    # retriever.process_and_save_dataset(
+    #     force_reprocess=True,
+    # )
+
     # Test query
-    results = retriever.query_with_image("data/Yummly28K/images27638/img00001.jpg")
+    results = retriever.query_with_image(
+        "data/Yummly28K/images27638/img00001.jpg", exclude_self=True
+    )
     print("Top result:", results[0]["metadata"]["name"])
