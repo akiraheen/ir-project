@@ -1,3 +1,5 @@
 .idea
 .venv
 .DS_Store
+data
+processed_data
