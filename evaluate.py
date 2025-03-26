@@ -186,7 +186,7 @@ def main():
 
     # 1. Evaluate with normal rotation
     normal_transformed = original_image.rotate(45)
-    run_evaluation(evaluator, original_image, normal_transformed, "Normal Rotation")
+    run_evaluation(evaluator, original_image, normal_transformed, "Rotated")
 
     # 2. Evaluate with cropped rotation
     crop_size = min(original_image.size)
@@ -195,7 +195,12 @@ def main():
     cropped_original = crop_image(original_image, diagonal)
     cropped_transformed = crop_image(original_image.rotate(45), diagonal)
 
-    run_evaluation(evaluator, cropped_original, cropped_transformed, "Cropped Rotation")
+    run_evaluation(
+        evaluator,
+        cropped_original,
+        cropped_transformed,
+        "Rotated + Cropped",
+    )
 
 
 if __name__ == "__main__":
