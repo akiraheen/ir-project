@@ -3,3 +3,5 @@
 .DS_Store
 data
 processed_data
+.notes.md
+__pycache__
