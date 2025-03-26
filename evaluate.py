@@ -1,4 +1,5 @@
 import numpy as np
+import json
 from typing import List, Dict
 from PIL import Image
 from retriever import CLIPRetrievalSystem
@@ -223,7 +224,8 @@ def main():
         MotionBlur(kernel_size_range=(3, 5)),  # Camera motion
     ]
 
-    evaluator.evaluate_transformations(original_image, transformations)
+    results = evaluator.evaluate_transformations(original_image, transformations)
+    json.dump(results, open("results.json", "w"))
 
 
 if __name__ == "__main__":
