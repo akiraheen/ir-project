@@ -1,10 +1,16 @@
-import math
 import numpy as np
-from typing import List, Dict, Tuple
+from typing import List, Dict
 from PIL import Image
 from retriever import CLIPRetrievalSystem
 import pandas as pd
 import matplotlib.pyplot as plt
+from transformations import (
+    ImageTransformation,
+    CameraRotation,
+    BrightnessVariation,
+    GaussianNoise,
+    MotionBlur,
+)
 
 
 class RetrievalEvaluator:
@@ -12,6 +18,56 @@ class RetrievalEvaluator:
         self.retriever = retriever
         self.k_values = [5, 10, 20]
         self.max_k = max(self.k_values)
+
+    def evaluate_transformations(
+        self, original_image: Image.Image, transformations: List[ImageTransformation]
+    ) -> Dict[str, Dict]:
+        """
+        Evaluate multiple transformations against the original image
+
+        Args:
+            original_image: The original image to transform
+            transformations: List of transformation objects to apply
+
+        Returns:
+            Dictionary mapping transformation names to their evaluation results
+        """
+        results = {}
+
+        # Create subplot grid
+        n_transforms = len(transformations)
+        plt.figure(figsize=(15, 5 * (n_transforms + 1)))
+
+        # Show original image
+        plt.subplot(n_transforms + 1, 2, 1)
+        plt.imshow(original_image)
+        plt.title("Original Image")
+        plt.axis("off")
+
+        # Evaluate each transformation
+        for idx, transform in enumerate(transformations, 1):
+            # Apply transformation
+            transformed_image = transform(original_image)
+
+            # Show transformed image
+            plt.subplot(n_transforms + 1, 2, idx * 2 + 1)
+            plt.imshow(transformed_image)
+            plt.title(f"Transformed Image ({transform.name})")
+            plt.axis("off")
+
+            # Evaluate transformation
+            eval_results = self.evaluate_transformation(
+                original_image, transformed_image
+            )
+            results[transform.name] = eval_results
+
+        plt.tight_layout()
+        plt.show()
+
+        # Print results for each transformation
+        self._print_comparison_results(results)
+
+        return results
 
     def evaluate_transformation(
         self, original_image: Image.Image, transformed_image: Image.Image
@@ -108,6 +164,39 @@ class RetrievalEvaluator:
         relevant_retrieved = len(set(original_ids) & set(transformed_ids[:k]))
         return relevant_retrieved / len(original_ids) if original_ids else 0.0
 
+    def _print_comparison_results(self, results: Dict[str, Dict]) -> None:
+        """Print comparative results for all transformations"""
+        # Print metrics for each transformation
+        for transform_name, transform_results in results.items():
+            print(f"\nResults for {transform_name}:")
+            print("-" * 50)
+            for k in self.k_values:
+                print(f"\nMetrics at k={k}:")
+                print(f"NDCG: {transform_results[f'ndcg@{k}']:.3f}")
+                print(f"MAP: {transform_results[f'map@{k}']:.3f}")
+                print(f"Recall: {transform_results[f'recall@{k}']:.3f}")
+                print(f"Accuracy: {transform_results[f'accuracy@{k}']:.3f}")
+
+            # Print top results comparison
+            comparison_data = []
+            for i in range(self.k_values[0]):
+                orig_result = transform_results["original_results"][i]
+                trans_result = transform_results["transformed_results"][i]
+
+                comparison_data.append(
+                    {
+                        "Rank": i + 1,
+                        "Original Recipe": orig_result["metadata"]["name"],
+                        "Original Score": f"{orig_result['score']:.3f}",
+                        "Transformed Recipe": trans_result["metadata"]["name"],
+                        "Transformed Score": f"{trans_result['score']:.3f}",
+                    }
+                )
+
+            comparison_df = pd.DataFrame(comparison_data)
+            print(f"\nTop {self.k_values[0]} Results Comparison:")
+            print(comparison_df.to_string(index=False))
+
 
 def crop_image(image: Image.Image, crop_size: int) -> Image.Image:
     """Crop image to specified size from center"""
@@ -119,88 +208,22 @@ def crop_image(image: Image.Image, crop_size: int) -> Image.Image:
     return image.crop((left, top, right, bottom))
 
 
-def run_evaluation(
-    evaluator: RetrievalEvaluator,
-    original_image: Image.Image,
-    transformed_image: Image.Image,
-    title: str,
-) -> None:
-    """Run evaluation and display results for a pair of images"""
-    # Display images side by side
-    plt.figure(figsize=(12, 6))
-
-    plt.subplot(1, 2, 1)
-    plt.imshow(original_image)
-    plt.title(f"Original Image ({title})")
-    plt.axis("off")
-
-    plt.subplot(1, 2, 2)
-    plt.imshow(transformed_image)
-    plt.title(f"Transformed Image ({title})")
-    plt.axis("off")
-
-    plt.tight_layout()
-    plt.show()
-
-    # Run evaluation
-    results = evaluator.evaluate_transformation(
-        original_image=original_image, transformed_image=transformed_image
-    )
-
-    # Print metrics
-    print(f"\nResults for {title}:")
-    print("-" * 50)
-    for k in evaluator.k_values:
-        print(f"\nMetrics at k={k}:")
-        print(f"NDCG: {results[f'ndcg@{k}']:.3f}")
-        print(f"MAP: {results[f'map@{k}']:.3f}")
-        print(f"Recall: {results[f'recall@{k}']:.3f}")
-        print(f"Accuracy: {results[f'accuracy@{k}']:.3f}")
-
-    comparison_data = []
-    for i in range(evaluator.k_values[0]):  # Use smallest k for display
-        orig_result = results["original_results"][i]
-        trans_result = results["transformed_results"][i]
-
-        comparison_data.append(
-            {
-                "Rank": i + 1,
-                "Original Recipe": orig_result["metadata"]["name"],
-                "Original Score": f"{orig_result['score']:.3f}",
-                "Transformed Recipe": trans_result["metadata"]["name"],
-                "Transformed Score": f"{trans_result['score']:.3f}",
-            }
-        )
-
-    comparison_df = pd.DataFrame(comparison_data)
-    print(f"\nTop {evaluator.k_values[0]} Results Comparison:")
-    print(comparison_df.to_string(index=False))
-
-
 def main():
     retriever = CLIPRetrievalSystem()
     evaluator = RetrievalEvaluator(retriever)
+
     original_image = Image.open("data/Yummly28K/images27638/img00001.jpg").convert(
         "RGB"
     )
 
-    # 1. Evaluate with normal rotation
-    normal_transformed = original_image.rotate(45)
-    run_evaluation(evaluator, original_image, normal_transformed, "Rotated")
+    transformations = [
+        CameraRotation(angle_range=(-10, 10)),  # Slight camera tilt
+        BrightnessVariation(factor_range=(0.7, 1.3)),  # Lighting changes
+        GaussianNoise(std_range=(0.01, 0.03)),  # Sensor noise/attacks
+        MotionBlur(kernel_size_range=(3, 5)),  # Camera motion
+    ]
 
-    # 2. Evaluate with cropped rotation
-    crop_size = min(original_image.size)
-    diagonal = int(crop_size / math.sqrt(2))
-
-    cropped_original = crop_image(original_image, diagonal)
-    cropped_transformed = crop_image(original_image.rotate(45), diagonal)
-
-    run_evaluation(
-        evaluator,
-        cropped_original,
-        cropped_transformed,
-        "Rotated + Cropped",
-    )
+    evaluator.evaluate_transformations(original_image, transformations)
 
 
 if __name__ == "__main__":
