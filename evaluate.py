@@ -219,7 +219,7 @@ def main():
 
     transformations = [
         CameraRotation(angle_range=(-10, 10)),  # Slight camera tilt
-        BrightnessVariation(factor_range=(0.7, 1.3)),  # Lighting changes
+        BrightnessVariation(factor_range=(0.2, 0.8)),  # Low-light conditions
         GaussianNoise(std_range=(0.01, 0.03)),  # Sensor noise/attacks
         MotionBlur(kernel_size_range=(3, 5)),  # Camera motion
     ]
