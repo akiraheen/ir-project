@@ -74,20 +74,6 @@ def custom_collate(batch):
     return {'image': images, 'metadata': metadata}
 
 
-import matplotlib.pyplot as plt
-
-
-# def visualize_sample(index):
-#     sample = dataset[index]
-#     image = sample['image'].permute(1, 2, 0).numpy()
-#     metadata = sample['metadata']
-#
-#     plt.imshow(image)
-#     plt.axis("off")
-#     plt.title(f"Metadata: {metadata}")
-#     plt.show()
-
-
 
 if __name__ == '__main__':
 

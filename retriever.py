@@ -1,3 +1,5 @@
+# Updated Code: clipretrievalsystem.py
+
 import os
 import json
 import glob
@@ -6,9 +8,10 @@ import numpy as np
 import torch
 import faiss
 from PIL import Image
+from sklearn.preprocessing import StandardScaler
 from tqdm import tqdm
 from transformers import CLIPModel, CLIPProcessor
-
+from lambdamart import LambdaRank  # Import LambdaRank
 
 class CLIPRetrievalSystem:
     def __init__(self, model_name="openai/clip-vit-base-patch32"):
@@ -22,6 +25,9 @@ class CLIPRetrievalSystem:
 
         # Create directory if it doesn't exist
         os.makedirs(self.index_dir, exist_ok=True)
+
+        # Initialize LambdaRank model for re-ranking
+        self.lambdarank = LambdaRank()
 
     def process_and_save_dataset(self, metadata_dir, image_dir, force_reprocess=False):
         """Process dataset and save features or load existing"""
@@ -72,7 +78,6 @@ class CLIPRetrievalSystem:
 
         except Exception as e:
             raise RuntimeError(f"Failed to save processed data: {str(e)}")
-
 
     def _load_processed_data(self, index_path, metadata_path, config_path):
         """Load previously processed data"""
@@ -170,6 +175,8 @@ class CLIPRetrievalSystem:
         ]
         return ". ".join(components)
 
+    # In clipretrievalsystem.py
+
     def query_with_image(self, image_path, top_k=5, exclude_self=False):
         """Query the system with an image"""
         try:
@@ -205,17 +212,73 @@ class CLIPRetrievalSystem:
 
         return results
 
+    def re_rank_with_lambdamart(self, query_results):
+        """Re-rank the results using LambdaMART"""
+        feature_vectors = []
+        relevance_labels = []
+
+        for idx, result in enumerate(query_results):
+            score = result['score']  # FAISS similarity score
+            relevance = max(1, min(int(score / 10), 10))  # Example: Mapping score to range [1-10]
+
+            # Extracting embeddings for image and text
+            image_embed = result.get('image_embed', np.zeros(512))
+            text_embed = result.get('text_embed', np.zeros(512))
+
+            # Construct feature vector (including score and embeddings)
+            feature_vector = np.concatenate([np.array([score]), image_embed.flatten(), text_embed.flatten()])
+
+            feature_vectors.append(feature_vector)
+            relevance_labels.append(relevance)
+
+
+        feature_vectors = np.array(feature_vectors)
+        relevance_labels = np.array(relevance_labels)
+
+
+        scaler = StandardScaler()
+        feature_vectors = scaler.fit_transform(feature_vectors)
+
+
+        if feature_vectors.ndim == 1:
+            feature_vectors = feature_vectors.reshape(-1, 1)
+
+
+        self.lambdarank.fit(feature_vectors, relevance_labels)
+
+
+        reranked_scores = self.lambdarank.predict(feature_vectors)
+
+        # Add the reranked scores to the results and sort by the new scores
+        for i, result in enumerate(query_results):
+            result['rerank_score'] = reranked_scores[i]
+
+        # Sort results by the new re-ranked scores
+        reranked_results = sorted(query_results, key=lambda x: x['rerank_score'], reverse=True)
+
+        return reranked_results
+
 
 if __name__ == "__main__":
     retriever = CLIPRetrievalSystem()
 
-    # Fixed path typo: Yumm28K → Yummly28K
+
     retriever.process_and_save_dataset(
-        metadata_dir="data/Yummly28K/metadata27638",  # Corrected path
-        image_dir="data/Yummly28K/images27638",
-        force_reprocess=True  # Run first time to generate files
+        metadata_dir="/Users/shivangikachole/Downloads/Yummly28K/metadata27638",
+        image_dir="/Users/shivangikachole/Downloads/Yummly28K/images27638",
+        force_reprocess=False
     )
 
-    # Test query
-    results = retriever.query_with_image("data/Yummly28K/images27638/img00001.jpg")
+    # Query the system with an image (initial query without re-ranking)
+    image_path = "/Users/shivangikachole/Downloads/Yummly28K/images27638/img00005.jpg"
+    results = retriever.query_with_image(image_path)
     print("Top result:", results[0]['metadata']['name'])
+
+    # Re-rank the results using LambdaMART
+    reranked_results = retriever.re_rank_with_lambdamart(results)
+
+    # Print the re-ranked results
+    print("\nTop results after re-ranking:")
+    for idx, result in enumerate(reranked_results):
+        print(f"{idx + 1}. {result['metadata']['name']} (Re-ranked Score: {result['rerank_score']})")
+
