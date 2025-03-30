@@ -8,6 +8,7 @@ import faiss
 from PIL import Image
 from tqdm import tqdm
 from transformers import CLIPModel, CLIPProcessor
+from ranknet import RankNet, train_ranknet, rerank_results
 
 
 class CLIPRetrievalSystem:
@@ -211,11 +212,21 @@ if __name__ == "__main__":
 
     # Fixed path typo: Yumm28K → Yummly28K
     retriever.process_and_save_dataset(
-        metadata_dir="data/Yummly28K/metadata27638",  # Corrected path
-        image_dir="data/Yummly28K/images27638",
-        force_reprocess=True  # Run first time to generate files
+        metadata_dir="/Users/shivangikachole/Downloads/Yummly28K/metadata27638",  # Corrected path
+        image_dir="/Users/shivangikachole/Downloads/Yummly28K/images27638",
+        force_reprocess= False  # Run first time to generate files
     )
 
     # Test query
-    results = retriever.query_with_image("data/Yummly28K/images27638/img00001.jpg")
+    results = retriever.query_with_image("/Users/shivangikachole/Downloads/Yummly28K/images27638/img00001.jpg")
     print("Top result:", results[0]['metadata']['name'])
+
+    embedding_dim = retriever.index.d
+    ranknet = RankNet(embedding_dim)
+    train_ranknet(ranknet, retriever, epochs=5)
+    reranked_results = rerank_results(ranknet, retriever, "/Users/shivangikachole/Downloads/Yummly28K/images27638/img00001.jpg", top_k=5)
+    print("Top result after reranking:", reranked_results[0]['metadata']['name'])
+
+
+
+
