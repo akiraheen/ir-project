@@ -18,11 +18,12 @@ class ImageTransformation:
 class CameraRotation(ImageTransformation):
     """Simulates slight camera rotation/tilt"""
 
-    def __init__(self, angle_range: Tuple[float, float] = (-15, 15)):
-        super().__init__("Camera Rotation")
+    def __init__(self, angle_range: Tuple[float, float] = (-15, 15), seed: int = 42):
+        super().__init__("Camera Rotation", seed)
         self.angle_range = angle_range
 
     def __call__(self, image: Image.Image) -> Image.Image:
+        random.seed(self.seed)
         angle = random.uniform(*self.angle_range)
         return image.rotate(angle, resample=Image.Resampling.BILINEAR, expand=False)
 
@@ -30,11 +31,12 @@ class CameraRotation(ImageTransformation):
 class BrightnessVariation(ImageTransformation):
     """Simulates extreme lighting changes, particularly low-light conditions"""
 
-    def __init__(self, factor_range: Tuple[float, float] = (0.2, 0.8)):
-        super().__init__("Low Light Variation")
+    def __init__(self, factor_range: Tuple[float, float] = (0.2, 0.8), seed: int = 42):
+        super().__init__("Low Light Variation", seed)
         self.factor_range = factor_range
 
     def __call__(self, image: Image.Image) -> Image.Image:
+        random.seed(self.seed)
         # Bias towards darker values using exponential distribution
         factor = random.uniform(*self.factor_range)
 
@@ -54,8 +56,8 @@ class BrightnessVariation(ImageTransformation):
 class GaussianNoise(ImageTransformation):
     """Adds random Gaussian noise to simulate sensor noise or attacks"""
 
-    def __init__(self, std_range: Tuple[float, float] = (0.01, 0.05)):
-        super().__init__("Gaussian Noise")
+    def __init__(self, std_range: Tuple[float, float] = (0.01, 0.05), seed: int = 42):
+        super().__init__("Gaussian Noise", seed)
         self.std_range = std_range
 
     def __call__(self, image: Image.Image) -> Image.Image:
@@ -74,11 +76,12 @@ class GaussianNoise(ImageTransformation):
 class MotionBlur(ImageTransformation):
     """Simulates camera motion blur"""
 
-    def __init__(self, kernel_size_range: Tuple[int, int] = (3, 7)):
-        super().__init__("Motion Blur")
+    def __init__(self, kernel_size_range: Tuple[int, int] = (3, 7), seed: int = 42):
+        super().__init__("Motion Blur", seed)
         self.kernel_size_range = kernel_size_range
 
     def __call__(self, image: Image.Image) -> Image.Image:
+        random.seed(self.seed)
         size = random.randrange(*self.kernel_size_range)
         if size % 2 == 0:
             size += 1  # Ensure odd size

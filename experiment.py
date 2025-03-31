@@ -262,30 +262,40 @@ def main():
 
     args = parser.parse_args()
 
-    random.seed(args.seed)
-
     Path(args.results_dir).mkdir(parents=True, exist_ok=True)
     Path(args.tables_dir).mkdir(parents=True, exist_ok=True)
     Path(args.plots_dir).mkdir(parents=True, exist_ok=True)
 
+    random.seed(args.seed)  # reset the seed for each iteration
     images = random.sample(list(args.data_dir.glob("*.jpg")), args.num_images)
-
-    transformations = [
-        CameraRotation(
-            angle_range=(args.min_camera_rotation, args.max_camera_rotation)
-        ),
-        BrightnessVariation(
-            factor_range=(args.min_brightness_variation, args.max_brightness_variation)
-        ),
-        GaussianNoise(std_range=(args.min_gaussian_noise, args.max_gaussian_noise)),
-        MotionBlur(kernel_size_range=(args.min_motion_blur, args.max_motion_blur)),
-    ]
 
     retriever = CLIPRetrievalSystem()
     evaluator = RetrievalEvaluator(retriever)
 
     rows = []
     for i in tqdm(range(args.iterations), desc="Running experiments"):
+        # change the seed for each iteration to get different, but reproducible, transformations
+        transformations = [
+            CameraRotation(
+                angle_range=(args.min_camera_rotation, args.max_camera_rotation),
+                seed=args.seed + i,
+            ),
+            BrightnessVariation(
+                factor_range=(
+                    args.min_brightness_variation,
+                    args.max_brightness_variation,
+                ),
+                seed=args.seed + i,
+            ),
+            GaussianNoise(
+                std_range=(args.min_gaussian_noise, args.max_gaussian_noise),
+                seed=args.seed + i,
+            ),
+            MotionBlur(
+                kernel_size_range=(args.min_motion_blur, args.max_motion_blur),
+                seed=args.seed + i,
+            ),
+        ]
         results = evaluate_images(
             images=images,
             transformations=transformations,
