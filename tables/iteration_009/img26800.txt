@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 1.000
+
+Metrics at k=10:
+NDCG: 0.936
+MAP: 0.900
+Recall: 0.450
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.991
+MAP: 0.772
+Recall: 0.800
+Accuracy: 0.800
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                        Tomato Chutney           110.131
+    2                 Orange-Chipotle Sauce        107.843                 Orange-Chipotle Sauce           107.281
+    3                 Amber Ale Baked Beans        104.316                       Antipasto Salsa           106.019
+    4 Saffron Risotto with Butternut Squash        104.115 Saffron Risotto with Butternut Squash           105.225
+    5                       Antipasto Salsa        103.605                 Amber Ale Baked Beans           104.971
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.754
+MAP: 0.594
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.918
+MAP: 0.499
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score          Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477             Antipasto Salsa           105.556
+    2                 Orange-Chipotle Sauce        107.843              Tomato Chutney           104.843
+    3                 Amber Ale Baked Beans        104.316 Summer Tomato Chopped Salad           103.230
+    4 Saffron Risotto with Butternut Squash        104.115                 Spicy Salsa           102.692
+    5                       Antipasto Salsa        103.605       Orange-Chipotle Sauce           102.539
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.782
+MAP: 0.645
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.950
+MAP: 0.500
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                   Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                       Tomato Chutney           106.448
+    2                 Orange-Chipotle Sauce        107.843                Orange-Chipotle Sauce           102.555
+    3                 Amber Ale Baked Beans        104.316                 Pear-Cranberry Sauce           100.202
+    4 Saffron Risotto with Butternut Squash        104.115            Cranberry-Apricot Chutney            98.919
+    5                       Antipasto Salsa        103.605 Tomato Chutney with Baked Pita Chips            97.599
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.927
+MAP: 0.866
+Recall: 0.450
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.981
+MAP: 0.746
+Recall: 0.800
+Accuracy: 0.800
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score        Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477            Tomato Chutney           111.430
+    2                 Orange-Chipotle Sauce        107.843           Antipasto Salsa           109.348
+    3                 Amber Ale Baked Beans        104.316     Orange-Chipotle Sauce           108.465
+    4 Saffron Risotto with Butternut Squash        104.115 Cranberry-Apricot Chutney           106.348
+    5                       Antipasto Salsa        103.605               Spicy Salsa           106.295

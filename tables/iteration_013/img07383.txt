@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.992
+MAP: 0.676
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           122.047
+    2           Gingerbread Caramel Corn        112.171 Spicy Caramel Popcorn with Peanuts           108.136
+    3 Spicy Caramel Popcorn with Peanuts        111.113           Gingerbread Caramel Corn           107.384
+    4                Curry Chicken Salad        108.176              Barbeque Potato Salad           106.891
+    5         Curry Salmon with Broccoli        108.158         Curry Salmon with Broccoli           106.645
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.307
+MAP: 0.010
+Recall: 0.100
+Accuracy: 0.100
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                                Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771       Provençal Vegetable Soup (Soupe au Pistou)           119.082
+    2           Gingerbread Caramel Corn        112.171                    Caprese Egg and Pasta Frittata           116.523
+    3 Spicy Caramel Popcorn with Peanuts        111.113 Herbed Hominy Stuffed Chicken Legs Cooked in Mole           116.523
+    4                Curry Chicken Salad        108.176                                 Rich Turkey Gravy           109.184
+    5         Curry Salmon with Broccoli        108.158                           Horseradish Cream Sauce           108.836
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.857
+MAP: 0.758
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.965
+MAP: 0.612
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           115.967
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           115.110
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Spicy Caramel Popcorn with Peanuts           109.376
+    4                Curry Chicken Salad        108.176                    Salted Caramel Popcorn           107.303
+    5         Curry Salmon with Broccoli        108.158 No Bake Peanut Butter Marshmallow Squares           106.380
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.509
+MAP: 0.333
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.583
+MAP: 0.250
+Recall: 0.200
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.791
+MAP: 0.185
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score         Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771         Nutty Caramel Corn           112.714
+    2           Gingerbread Caramel Corn        112.171  Country Chicken Casserole           109.228
+    3 Spicy Caramel Popcorn with Peanuts        111.113 Curry Salmon with Broccoli           106.642
+    4                Curry Chicken Salad        108.176      Morning Glory Muffins           104.676
+    5         Curry Salmon with Broccoli        108.158       Italian Stuffed Eggs           102.647

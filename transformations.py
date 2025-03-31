@@ -7,8 +7,9 @@ import random
 class ImageTransformation:
     """Base class for image transformations"""
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, seed: int = 42):
         self.name = name
+        self.seed = seed
 
     def __call__(self, image: Image.Image) -> Image.Image:
         raise NotImplementedError("Subclasses must implement __call__")

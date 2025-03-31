@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.469
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.469
+MAP: 0.100
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.719
+MAP: 0.070
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                                    Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071                         Roasted Mediterranean Chicken           102.107
+    2         Homemade Chicken Enchiladas         91.167 Mashed Potatoes with Fried Mushroom, Bacon, and Onion           102.015
+    3              Green Sauce Enchiladas         89.728                                      Parmesan Chicken           101.879
+    4                      Turkey Lasagna         88.365                           Southwestern Turkey Fajitas           101.878
+    5          Artichoke and Leek Lasagna         88.364                                  Chicken Chimichangas           101.788
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.832
+MAP: 0.637
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.944
+MAP: 0.368
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            95.274
+    2         Homemade Chicken Enchiladas         91.167         Homemade Chicken Enchiladas            92.799
+    3              Green Sauce Enchiladas         89.728        Gluten Free Eggplant Lasagna            91.925
+    4                      Turkey Lasagna         88.365 Southwestern Quinoa Stuffed Peppers            91.614
+    5          Artichoke and Leek Lasagna         88.364                    Italian Frittata            90.185
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.485
+MAP: 0.300
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.707
+MAP: 0.282
+Recall: 0.250
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.781
+MAP: 0.160
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            93.308
+    2         Homemade Chicken Enchiladas         91.167      Green Chile Chicken Enchiladas            89.384
+    3              Green Sauce Enchiladas         89.728    Southwestern Chicken Pizza Rolls            89.267
+    4                      Turkey Lasagna         88.365          Artichoke and Leek Lasagna            88.787
+    5          Artichoke and Leek Lasagna         88.364            Creamy Turkey Enchiladas            88.348
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.818
+MAP: 0.558
+Recall: 0.300
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.949
+MAP: 0.335
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                                    Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071                   Italian Baked Tilapia with Potatoes            98.091
+    2         Homemade Chicken Enchiladas         91.167                           Homemade Chicken Enchiladas            93.982
+    3              Green Sauce Enchiladas         89.728                         Roasted Mediterranean Chicken            93.203
+    4                      Turkey Lasagna         88.365                                Green Sauce Enchiladas            93.194
+    5          Artichoke and Leek Lasagna         88.364 Mashed Potatoes with Fried Mushroom, Bacon, and Onion            93.080

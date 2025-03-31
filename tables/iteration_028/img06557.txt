@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.553
+MAP: 0.400
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.589
+MAP: 0.237
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.810
+MAP: 0.164
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                                           Original Recipe Original Score                            Transformed Recipe Transformed Score
+    1             Seared Scallops with Meyer Lemon Beurre Blanc        110.310 Seared Scallops with Meyer Lemon Beurre Blanc           107.554
+    2                                                Crab Cakes         96.806                                  Winter Salad           104.191
+    3                          Soy-Balsamic Glazed Sea Scallops         96.795                        Oven Fried Potatoes II           101.266
+    4    Seared Scallops with Port-Poached Figs and Apple Salad         96.608                          Chicken Chimichangas           100.998
+    5 Seared Sea Scallops with Banyuls Vinegar and Chicory Slaw         96.595                               Thai Crab Cakes           100.607
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.671
+MAP: 0.300
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.671
+MAP: 0.150
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.795
+MAP: 0.087
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                                           Original Recipe Original Score                            Transformed Recipe Transformed Score
+    1             Seared Scallops with Meyer Lemon Beurre Blanc        110.310                                  Winter Salad           114.344
+    2                                                Crab Cakes         96.806                          Italian Stuffed Eggs           107.951
+    3                          Soy-Balsamic Glazed Sea Scallops         96.795                       Ribboned Zucchini Salad           107.235
+    4    Seared Scallops with Port-Poached Figs and Apple Salad         96.608 Seared Scallops with Meyer Lemon Beurre Blanc           104.888
+    5 Seared Sea Scallops with Banyuls Vinegar and Chicory Slaw         96.595                                   Green Beans           104.803
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.786
+MAP: 0.643
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.788
+MAP: 0.638
+Recall: 0.400
+Accuracy: 0.800
+
+Metrics at k=20:
+NDCG: 0.904
+MAP: 0.578
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                                           Original Recipe Original Score                               Transformed Recipe Transformed Score
+    1             Seared Scallops with Meyer Lemon Beurre Blanc        110.310    Seared Scallops with Meyer Lemon Beurre Blanc           106.158
+    2                                                Crab Cakes         96.806               Grilled Shrimp with Tamarind Sauce            93.587
+    3                          Soy-Balsamic Glazed Sea Scallops         96.795                                       Crab Cakes            93.380
+    4    Seared Scallops with Port-Poached Figs and Apple Salad         96.608                             Spicy Grilled Shrimp            93.200
+    5 Seared Sea Scallops with Banyuls Vinegar and Chicory Slaw         96.595 Peaches "Foster" with Cane Syrup Pecan Ice Cream            93.151
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.699
+MAP: 0.550
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.801
+MAP: 0.319
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.880
+MAP: 0.173
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank                                           Original Recipe Original Score                               Transformed Recipe Transformed Score
+    1             Seared Scallops with Meyer Lemon Beurre Blanc        110.310    Seared Scallops with Meyer Lemon Beurre Blanc           103.671
+    2                                                Crab Cakes         96.806                                     Winter Salad           101.600
+    3                          Soy-Balsamic Glazed Sea Scallops         96.795                                 Parsley Potatoes           100.875
+    4    Seared Scallops with Port-Poached Figs and Apple Salad         96.608 Peaches "Foster" with Cane Syrup Pecan Ice Cream            97.896
+    5 Seared Sea Scallops with Banyuls Vinegar and Chicory Slaw         96.595       Roasted Potato Wedges with Rosemary Butter            97.765

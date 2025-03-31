@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.747
+MAP: 0.566
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.918
+MAP: 0.382
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                           Transformed Recipe Transformed Score
+    1  Chocolate Madeleines (Madeleine au Chocolat)        116.502                  Quick Chocolate Buttercream           113.319
+    2                Double Chocolate Chunk Cookies        103.791               Double Chocolate Chunk Cookies           111.364
+    3 Double Chocolate Junior Mint and Chip Cookies        103.273 Chocolate Madeleines (Madeleine au Chocolat)           111.147
+    4                              Chocolate Sorbet        102.654                   Chocolate Frosted Cupcakes           110.838
+    5                                   Gingerbread        102.175                            Chocolate Soufflé           109.652
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.712
+MAP: 0.558
+Recall: 0.300
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.934
+MAP: 0.394
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                            Transformed Recipe Transformed Score
+    1  Chocolate Madeleines (Madeleine au Chocolat)        116.502  Chocolate Madeleines (Madeleine au Chocolat)           112.839
+    2                Double Chocolate Chunk Cookies        103.791 Double Chocolate Junior Mint and Chip Cookies           105.838
+    3 Double Chocolate Junior Mint and Chip Cookies        103.273                Double Chocolate Chunk Cookies           105.032
+    4                              Chocolate Sorbet        102.654                   Quick Chocolate Buttercream           104.654
+    5                                   Gingerbread        102.175                             Chocolate Soufflé           103.056
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.693
+MAP: 0.500
+Recall: 0.250
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.925
+MAP: 0.344
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                            Transformed Recipe Transformed Score
+    1  Chocolate Madeleines (Madeleine au Chocolat)        116.502  Chocolate Madeleines (Madeleine au Chocolat)           114.729
+    2                Double Chocolate Chunk Cookies        103.791 Double Chocolate Junior Mint and Chip Cookies           107.261
+    3 Double Chocolate Junior Mint and Chip Cookies        103.273                Double Chocolate Chunk Cookies           105.162
+    4                              Chocolate Sorbet        102.654                              Chocolate Sorbet           103.812
+    5                                   Gingerbread        102.175                       Fresh Cranberry Muffins           103.232
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.836
+MAP: 0.704
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.946
+MAP: 0.581
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                            Transformed Recipe Transformed Score
+    1  Chocolate Madeleines (Madeleine au Chocolat)        116.502  Chocolate Madeleines (Madeleine au Chocolat)           113.937
+    2                Double Chocolate Chunk Cookies        103.791                Double Chocolate Chunk Cookies           105.473
+    3 Double Chocolate Junior Mint and Chip Cookies        103.273 Double Chocolate Junior Mint and Chip Cookies           104.344
+    4                              Chocolate Sorbet        102.654                   Quick Chocolate Buttercream           103.853
+    5                                   Gingerbread        102.175                    Chocolate Frosted Cupcakes           102.444

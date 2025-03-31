@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.931
+MAP: 0.879
+Recall: 0.450
+Accuracy: 0.800
+
+Metrics at k=20:
+NDCG: 0.982
+MAP: 0.605
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934         Herbed Cheese Dip with Crudités           108.301
+    2       California Chicken Sandwich         97.854             California Chicken Sandwich            98.997
+    3   Italian Stuffed Cherry Tomatoes         97.696       Cheese and Olive-Stuffed Tomatoes            98.858
+    4   Grilled Okra and Tomato Skewers         96.527         Italian Stuffed Cherry Tomatoes            98.768
+    5 Cheese and Olive-Stuffed Tomatoes         95.877 Grilled Tomatoes with Basil Vinaigrette            98.613
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.384
+MAP: 0.130
+Recall: 0.100
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.551
+MAP: 0.115
+Recall: 0.150
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.551
+MAP: 0.057
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934                              No-Guilt Caesar Salad           109.912
+    2       California Chicken Sandwich         97.854                                    Antipasto Salsa           109.778
+    3   Italian Stuffed Cherry Tomatoes         97.696                                     Zucchini Fries           108.958
+    4   Grilled Okra and Tomato Skewers         96.527 Heirloom Tomato, Fresh Mozzarella & Basil Crostini           108.111
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                            Homemade Hamburger Buns           107.549
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.485
+MAP: 0.300
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.583
+MAP: 0.257
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.789
+MAP: 0.188
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score              Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934 Herbed Cheese Dip with Crudités           105.211
+    2       California Chicken Sandwich         97.854   Tomaten - Mozzarella - Spieße            97.992
+    3   Italian Stuffed Cherry Tomatoes         97.696                 Antipasto Salsa            95.528
+    4   Grilled Okra and Tomato Skewers         96.527 Grilled Okra and Tomato Skewers            95.106
+    5 Cheese and Olive-Stuffed Tomatoes         95.877        Maple Pecan Baked Apples            95.016
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.748
+MAP: 0.579
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.913
+MAP: 0.379
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934                    Herbed Cheese Dip with Crudités           103.697
+    2       California Chicken Sandwich         97.854 Heirloom Tomato, Fresh Mozzarella & Basil Crostini           102.365
+    3   Italian Stuffed Cherry Tomatoes         97.696               Italian Salad With Basil Vinaigrette            98.946
+    4   Grilled Okra and Tomato Skewers         96.527                    Grilled Okra and Tomato Skewers            98.437
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                  Cheese and Olive-Stuffed Tomatoes            98.370

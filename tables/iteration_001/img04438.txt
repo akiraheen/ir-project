@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.640
+MAP: 0.453
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.859
+MAP: 0.343
+Recall: 0.250
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.859
+MAP: 0.172
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                 Shrimp Pad Thai           102.769
+    2               Thai Noodle Salad         97.596              Thai Chicken Salad           100.977
+    3 One Pot Thai Curry Shrimp Pasta         97.236            Vegetable Fried Rice           100.525
+    4              Southwestern Salad         95.516                    Winter Salad           100.306
+    5              Southwestern Salad         95.516 One Pot Thai Curry Shrimp Pasta           100.288
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.182
+MAP: 0.040
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.182
+MAP: 0.020
+Recall: 0.050
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.432
+MAP: 0.030
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462 Arugula Salad with Strawberries           100.317
+    2               Thai Noodle Salad         97.596 Arugula Salad with Strawberries           100.317
+    3 One Pot Thai Curry Shrimp Pasta         97.236                    Winter Salad            98.352
+    4              Southwestern Salad         95.516                 Creamy Coleslaw            98.235
+    5              Southwestern Salad         95.516                 Shrimp Pad Thai            97.866
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.553
+MAP: 0.400
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.626
+MAP: 0.290
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.821
+MAP: 0.196
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                           Shrimp Pad Thai           101.736
+    2               Thai Noodle Salad         97.596                         Chipotle Coleslaw            94.812
+    3 One Pot Thai Curry Shrimp Pasta         97.236                        Thai Chicken Salad            94.604
+    4              Southwestern Salad         95.516                        Thai Chicken Salad            94.360
+    5              Southwestern Salad         95.516 Mexican Lasagna Recipe (Freezer Cooking!)            94.234
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.485
+MAP: 0.300
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.485
+MAP: 0.193
+Recall: 0.150
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.775
+MAP: 0.180
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                                         Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                                            Shrimp Pad Thai           100.425
+    2               Thai Noodle Salad         97.596                                  Quick and Easy Enchiladas            97.354
+    3 One Pot Thai Curry Shrimp Pasta         97.236 Thai Fried Rice Noodles with Chicken or Tofu (gluten-free)            96.986
+    4              Southwestern Salad         95.516                          Thai Green Papaya Salad (Som Tam)            96.878
+    5              Southwestern Salad         95.516                          Shrimp Fried Noodles - Thai-Style            96.604

@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.860
+MAP: 0.767
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.964
+MAP: 0.478
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                             Transformed Recipe Transformed Score
+    1                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)         98.409                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)            96.483
+    2 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes         91.785                                      Smokey Turkey Almond Mole            94.802
+    3                                        Lamb Curry - Meat Curry         90.645 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes            94.780
+    4     Hari Nayak's Chicken Curry in a Hurry (Bhuna Masala Murgh)         90.400                                       South African Beef Curry            94.129
+    5                                                  Pumpkin Curry         90.071                                     Slow Cooker Butter Chicken            93.169
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.390
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.529
+MAP: 0.133
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.715
+MAP: 0.087
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                             Transformed Recipe Transformed Score
+    1                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)         98.409 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes            89.202
+    2 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes         91.785       The Flame Academy’s Goan Spicy Chicken and Coconut Curry            88.494
+    3                                        Lamb Curry - Meat Curry         90.645                                              Summer Herb Pesto            88.279
+    4     Hari Nayak's Chicken Curry in a Hurry (Bhuna Masala Murgh)         90.400                                              Rich Turkey Gravy            87.442
+    5                                                  Pumpkin Curry         90.071                                    Joe's General Tso's Chicken            86.983
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.927
+MAP: 0.866
+Recall: 0.450
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.983
+MAP: 0.753
+Recall: 0.800
+Accuracy: 0.800
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                             Transformed Recipe Transformed Score
+    1                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)         98.409                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)            97.798
+    2 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes         91.785 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes            95.025
+    3                                        Lamb Curry - Meat Curry         90.645                                                  Pumpkin Curry            93.753
+    4     Hari Nayak's Chicken Curry in a Hurry (Bhuna Masala Murgh)         90.400                      Mouth Watering Coconut Thai Chicken Curry            92.904
+    5                                                  Pumpkin Curry         90.071                                                 Chicken Masala            90.977
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 1.000
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.986
+MAP: 0.708
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                             Transformed Recipe Transformed Score
+    1                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)         98.409                Slow Cooker Lamb Rogan Josh (using Lamb Shanks)            94.980
+    2 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes         91.785 Andhra Style Chicken Curry | Kodi Kura Iguru | Chicken Recipes            92.222
+    3                                        Lamb Curry - Meat Curry         90.645     Hari Nayak's Chicken Curry in a Hurry (Bhuna Masala Murgh)            90.770
+    4     Hari Nayak's Chicken Curry in a Hurry (Bhuna Masala Murgh)         90.400                                                  Pumpkin Curry            90.165
+    5                                                  Pumpkin Curry         90.071                                        Lamb Curry - Meat Curry            90.135

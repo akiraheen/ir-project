@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.718
+MAP: 0.575
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.936
+MAP: 0.473
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934                    Herbed Cheese Dip with Crudités           106.098
+    2       California Chicken Sandwich         97.854 Heirloom Tomato, Fresh Mozzarella & Basil Crostini            97.739
+    3   Italian Stuffed Cherry Tomatoes         97.696                        California Chicken Sandwich            97.353
+    4   Grilled Okra and Tomato Skewers         96.527                    Italian Stuffed Cherry Tomatoes            96.799
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                  Cheese and Olive-Stuffed Tomatoes            96.336
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.845
+MAP: 0.727
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.944
+MAP: 0.448
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934                    Herbed Cheese Dip with Crudités           108.905
+    2       California Chicken Sandwich         97.854                  Cheese and Olive-Stuffed Tomatoes           102.704
+    3   Italian Stuffed Cherry Tomatoes         97.696            Grilled Tomatoes with Basil Vinaigrette           102.148
+    4   Grilled Okra and Tomato Skewers         96.527 Heirloom Tomato, Fresh Mozzarella & Basil Crostini           101.975
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                              No-Guilt Caesar Salad           101.737
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.786
+MAP: 0.643
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.690
+MAP: 0.451
+Recall: 0.300
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.863
+MAP: 0.300
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934         Herbed Cheese Dip with Crudités           105.374
+    2       California Chicken Sandwich         97.854           Tomaten - Mozzarella - Spieße            98.137
+    3   Italian Stuffed Cherry Tomatoes         97.696         Grilled Okra and Tomato Skewers            96.436
+    4   Grilled Okra and Tomato Skewers         96.527 Grilled Tomatoes with Basil Vinaigrette            96.192
+    5 Cheese and Olive-Stuffed Tomatoes         95.877         Italian Stuffed Cherry Tomatoes            95.712
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.786
+MAP: 0.656
+Recall: 0.350
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.954
+MAP: 0.548
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                   Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934                    Herbed Cheese Dip with Crudités           106.798
+    2       California Chicken Sandwich         97.854 Heirloom Tomato, Fresh Mozzarella & Basil Crostini           101.132
+    3   Italian Stuffed Cherry Tomatoes         97.696                  Cheese and Olive-Stuffed Tomatoes            99.992
+    4   Grilled Okra and Tomato Skewers         96.527                    Grilled Okra and Tomato Skewers            99.453
+    5 Cheese and Olive-Stuffed Tomatoes         95.877         Heirloom Tomatoes with Buttermilk Dressing            98.884

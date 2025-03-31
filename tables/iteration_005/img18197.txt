@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.296
+MAP: 0.100
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.296
+MAP: 0.050
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.546
+MAP: 0.045
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score            Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071          Chicken Chimichangas           101.360
+    2         Homemade Chicken Enchiladas         91.167 Roasted Mediterranean Chicken           101.108
+    3              Green Sauce Enchiladas         89.728              Parmesan Chicken           101.072
+    4                      Turkey Lasagna         88.365   Southwestern Turkey Fajitas           101.046
+    5          Artichoke and Leek Lasagna         88.364         Baja-Style Fish Tacos           100.962
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.761
+MAP: 0.560
+Recall: 0.300
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.934
+MAP: 0.355
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            95.304
+    2         Homemade Chicken Enchiladas         91.167         Homemade Chicken Enchiladas            92.764
+    3              Green Sauce Enchiladas         89.728        Gluten Free Eggplant Lasagna            91.845
+    4                      Turkey Lasagna         88.365 Southwestern Quinoa Stuffed Peppers            91.772
+    5          Artichoke and Leek Lasagna         88.364                    Italian Frittata            90.257
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.616
+MAP: 0.420
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.550
+MAP: 0.210
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.791
+MAP: 0.164
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            93.787
+    2         Homemade Chicken Enchiladas         91.167      Green Chile Chicken Enchiladas            90.502
+    3              Green Sauce Enchiladas         89.728    Southwestern Chicken Pizza Rolls            90.117
+    4                      Turkey Lasagna         88.365          Artichoke and Leek Lasagna            89.847
+    5          Artichoke and Leek Lasagna         88.364       Roasted Mediterranean Chicken            89.745
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.684
+MAP: 0.520
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.809
+MAP: 0.382
+Recall: 0.250
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.883
+MAP: 0.210
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                                    Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071                   Italian Baked Tilapia with Potatoes            96.142
+    2         Homemade Chicken Enchiladas         91.167                         Roasted Mediterranean Chicken            95.245
+    3              Green Sauce Enchiladas         89.728 Mashed Potatoes with Fried Mushroom, Bacon, and Onion            95.090
+    4                      Turkey Lasagna         88.365                                       Antipasto Salsa            94.941
+    5          Artichoke and Leek Lasagna         88.364                                      Italian Frittata            94.807

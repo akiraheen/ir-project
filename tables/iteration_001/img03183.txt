@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.786
+MAP: 0.656
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.947
+MAP: 0.493
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072                         Antipasto Salsa           109.820
+    2 Mixed Greens with Shallot Vinaigrette        101.509             Southwestern Turkey Fajitas           109.682
+    3       Arugula Salad with Strawberries         99.647 Chopped Beet Salad with Feta and Pecans           107.780
+    4       Arugula Salad with Strawberries         99.647                   No-Guilt Caesar Salad           107.420
+    5                            Side Salad         99.636   Mixed Greens with Shallot Vinaigrette           107.250
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.447
+MAP: 0.287
+Recall: 0.150
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.577
+MAP: 0.238
+Recall: 0.200
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.659
+MAP: 0.144
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072 Provençal Vegetable Soup (Soupe au Pistou)           120.950
+    2 Mixed Greens with Shallot Vinaigrette        101.509                                Winter Salad           116.580
+    3       Arugula Salad with Strawberries         99.647     Chopped Beet Salad with Feta and Pecans           114.586
+    4       Arugula Salad with Strawberries         99.647                             Antipasto Salsa           112.772
+    5                            Side Salad         99.636                 Southwestern Turkey Fajitas           112.121
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.922
+MAP: 0.852
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.975
+MAP: 0.502
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072                     Yellow Tomato Salsa           101.976
+    2 Mixed Greens with Shallot Vinaigrette        101.509                            Citrus Salad           100.961
+    3       Arugula Salad with Strawberries         99.647             Southwestern Turkey Fajitas            99.713
+    4       Arugula Salad with Strawberries         99.647                      Warm Spinach Salad            99.157
+    5                            Side Salad         99.636 Chopped Beet Salad with Feta and Pecans            98.606
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.931
+MAP: 0.879
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.987
+MAP: 0.906
+Recall: 0.900
+Accuracy: 0.900
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072                   Yellow Tomato Salsa           109.221
+    2 Mixed Greens with Shallot Vinaigrette        101.509                 No-Guilt Caesar Salad           105.835
+    3       Arugula Salad with Strawberries         99.647 Mixed Greens with Shallot Vinaigrette           105.380
+    4       Arugula Salad with Strawberries         99.647           Southwestern Turkey Fajitas           105.352
+    5                            Side Salad         99.636                       Antipasto Salsa           105.289

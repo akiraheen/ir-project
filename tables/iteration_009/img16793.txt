@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.864
+MAP: 0.780
+Recall: 0.350
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.973
+MAP: 0.584
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                              Croutons        120.368                    Winter Salad           119.356
+    2               Ribboned Zucchini Salad        113.511                        Croutons           117.706
+    3 Spinach and Strawberry Daiquiri Salad        112.212         Ribboned Zucchini Salad           117.110
+    4                          Winter Salad        111.879 Arugula Salad with Strawberries           116.346
+    5                     Dijon Vinaigrette        110.468 Arugula Salad with Strawberries           116.346
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.878
+MAP: 0.538
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.955
+MAP: 0.301
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                              Croutons        120.368                    Winter Salad           130.043
+    2               Ribboned Zucchini Salad        113.511 Arugula Salad with Strawberries           122.277
+    3 Spinach and Strawberry Daiquiri Salad        112.212 Arugula Salad with Strawberries           122.277
+    4                          Winter Salad        111.879         Ribboned Zucchini Salad           120.324
+    5                     Dijon Vinaigrette        110.468           No-Guilt Caesar Salad           119.895
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.922
+MAP: 0.852
+Recall: 0.450
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.979
+MAP: 0.604
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1                              Croutons        120.368                                Croutons           109.531
+    2               Ribboned Zucchini Salad        113.511                            Winter Salad           108.479
+    3 Spinach and Strawberry Daiquiri Salad        112.212                 Ribboned Zucchini Salad           107.298
+    4                          Winter Salad        111.879 Watercress Salad with Fennel and Citrus           107.202
+    5                     Dijon Vinaigrette        110.468   Spinach and Strawberry Daiquiri Salad           106.831
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.450
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.996
+MAP: 0.687
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                              Croutons        120.368                              Croutons           119.063
+    2               Ribboned Zucchini Salad        113.511                          Winter Salad           118.411
+    3 Spinach and Strawberry Daiquiri Salad        112.212               Ribboned Zucchini Salad           117.726
+    4                          Winter Salad        111.879 Spinach and Strawberry Daiquiri Salad           114.452
+    5                     Dijon Vinaigrette        110.468 Citrus Salad with Poppy-Seed Dressing           113.913
