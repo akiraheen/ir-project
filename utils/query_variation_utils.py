@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
 from PIL import Image, ImageOps, ImageFilter, ImageEnhance
-import torchvision.transforms as transforms
-import torch
 import random
 
 
@@ -29,7 +27,7 @@ def invert_image(img):
     if isinstance(img, np.ndarray):
         img = Image.fromarray(img)
 
-    inverted_img = ImageOps.invert(img.convert('RGB'))
+    inverted_img = ImageOps.invert(img.convert("RGB"))
     return inverted_img
 
 
@@ -55,7 +53,7 @@ def resize_image(img, scale=None, target_size=None):
     return resized_img
 
 
-def add_noise(img, noise_type='gaussian', severity=0.1):
+def add_noise(img, noise_type="gaussian", severity=0.1):
     """
     Add noise to an image.
     noise_type: 'gaussian', 'salt_pepper', or 'speckle'
@@ -64,14 +62,14 @@ def add_noise(img, noise_type='gaussian', severity=0.1):
     if isinstance(img, Image.Image):
         img = np.array(img)
 
-    if noise_type == 'gaussian':
+    if noise_type == "gaussian":
         row, col, ch = img.shape
         mean = 0
         sigma = severity * 255
         gauss = np.random.normal(mean, sigma, (row, col, ch))
         noisy = np.clip(img + gauss, 0, 255).astype(np.uint8)
 
-    elif noise_type == 'salt_pepper':
+    elif noise_type == "salt_pepper":
         row, col, ch = img.shape
         s_vs_p = 0.5
         amount = severity
@@ -83,14 +81,16 @@ def add_noise(img, noise_type='gaussian', severity=0.1):
         noisy[coords[0], coords[1], :] = 255
 
         # Pepper
-        num_pepper = np.ceil(amount * img.size * (1. - s_vs_p))
+        num_pepper = np.ceil(amount * img.size * (1.0 - s_vs_p))
         coords = [np.random.randint(0, i - 1, int(num_pepper)) for i in img.shape]
         noisy[coords[0], coords[1], :] = 0
 
-    elif noise_type == 'speckle':
+    elif noise_type == "speckle":
         row, col, ch = img.shape
         gauss = np.random.randn(row, col, ch) * severity
         noisy = np.clip(img + img * gauss, 0, 255).astype(np.uint8)
+    else:
+        raise ValueError(f"Invalid noise type: {noise_type}")
 
     return Image.fromarray(noisy)
 
@@ -185,7 +185,7 @@ def apply_multiple_variations(img, variations=None, count=2):
             change_orientation,
             crop_image,
             adjust_brightness,
-            blur_image
+            blur_image,
         ]
 
     # Make a copy of the image
