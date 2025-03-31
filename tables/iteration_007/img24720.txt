@@ -3,30 +3,30 @@ Results for Camera Rotation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.250
-Accuracy: 0.800
+NDCG: 0.553
+MAP: 0.400
+Recall: 0.100
+Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.500
-Accuracy: 0.900
+NDCG: 0.576
+MAP: 0.290
+Recall: 0.200
+Accuracy: 0.300
 
 Metrics at k=20:
-NDCG: 0.997
-MAP: 0.789
-Recall: 0.800
-Accuracy: 0.800
+NDCG: 0.832
+MAP: 0.232
+Recall: 0.400
+Accuracy: 0.400
 
 Top 5 Results Comparison:
- Rank                   Original Recipe Original Score                      Transformed Recipe Transformed Score
-    1   Herbed Cheese Dip with Crudités        108.934         Herbed Cheese Dip with Crudités           108.765
-    2       California Chicken Sandwich         97.854         Italian Stuffed Cherry Tomatoes            97.576
-    3   Italian Stuffed Cherry Tomatoes         97.696             California Chicken Sandwich            97.422
-    4   Grilled Okra and Tomato Skewers         96.527         Grilled Okra and Tomato Skewers            96.804
-    5 Cheese and Olive-Stuffed Tomatoes         95.877 Grilled Tomatoes with Basil Vinaigrette            96.344
+ Rank                   Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1   Herbed Cheese Dip with Crudités        108.934                    Herbed Cheese Dip with Crudités           103.132
+    2       California Chicken Sandwich         97.854 Heirloom Tomato, Fresh Mozzarella & Basil Crostini            96.211
+    3   Italian Stuffed Cherry Tomatoes         97.696                                   Antipasto Kabobs            96.091
+    4   Grilled Okra and Tomato Skewers         96.527                              Tri-Color Pepper Slaw            96.005
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                                    Antipasto Salsa            95.985
 
 Results for Low Light Variation:
 --------------------------------------------------
@@ -38,53 +38,53 @@ Recall: 0.000
 Accuracy: 0.000
 
 Metrics at k=10:
-NDCG: 0.472
-MAP: 0.083
-Recall: 0.150
+NDCG: 0.304
+MAP: 0.039
+Recall: 0.100
 Accuracy: 0.000
 
 Metrics at k=20:
-NDCG: 0.472
-MAP: 0.041
+NDCG: 0.422
+MAP: 0.030
 Recall: 0.150
 Accuracy: 0.150
 
 Top 5 Results Comparison:
  Rank                   Original Recipe Original Score                          Transformed Recipe Transformed Score
-    1   Herbed Cheese Dip with Crudités        108.934                       No-Guilt Caesar Salad           108.946
-    2       California Chicken Sandwich         97.854                             Antipasto Salsa           108.497
-    3   Italian Stuffed Cherry Tomatoes         97.696                              Zucchini Fries           108.127
-    4   Grilled Okra and Tomato Skewers         96.527 Provençal Vegetable Soup (Soupe au Pistou)           108.102
-    5 Cheese and Olive-Stuffed Tomatoes         95.877                                Winter Salad           106.608
+    1   Herbed Cheese Dip with Crudités        108.934 Provençal Vegetable Soup (Soupe au Pistou)           111.892
+    2       California Chicken Sandwich         97.854                             Antipasto Salsa           107.536
+    3   Italian Stuffed Cherry Tomatoes         97.696                       No-Guilt Caesar Salad           106.964
+    4   Grilled Okra and Tomato Skewers         96.527                              Zucchini Fries           106.633
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                                Winter Salad           105.842
 
 Results for Gaussian Noise:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.655
-MAP: 0.483
-Recall: 0.150
-Accuracy: 0.400
+NDCG: 0.485
+MAP: 0.300
+Recall: 0.100
+Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 0.599
-MAP: 0.347
-Recall: 0.250
-Accuracy: 0.500
+NDCG: 0.526
+MAP: 0.243
+Recall: 0.200
+Accuracy: 0.400
 
 Metrics at k=20:
-NDCG: 0.837
-MAP: 0.276
-Recall: 0.450
-Accuracy: 0.450
+NDCG: 0.774
+MAP: 0.201
+Recall: 0.400
+Accuracy: 0.400
 
 Top 5 Results Comparison:
  Rank                   Original Recipe Original Score                      Transformed Recipe Transformed Score
-    1   Herbed Cheese Dip with Crudités        108.934         Herbed Cheese Dip with Crudités           104.697
-    2       California Chicken Sandwich         97.854           Tomaten - Mozzarella - Spieße            99.184
-    3   Italian Stuffed Cherry Tomatoes         97.696 Grilled Tomatoes with Basil Vinaigrette            96.941
-    4   Grilled Okra and Tomato Skewers         96.527         Grilled Okra and Tomato Skewers            96.655
-    5 Cheese and Olive-Stuffed Tomatoes         95.877                         Antipasto Salsa            95.804
+    1   Herbed Cheese Dip with Crudités        108.934         Herbed Cheese Dip with Crudités           104.633
+    2       California Chicken Sandwich         97.854           Tomaten - Mozzarella - Spieße            97.699
+    3   Italian Stuffed Cherry Tomatoes         97.696                         Antipasto Salsa            95.403
+    4   Grilled Okra and Tomato Skewers         96.527 Grilled Tomatoes with Basil Vinaigrette            94.715
+    5 Cheese and Olive-Stuffed Tomatoes         95.877                Maple Pecan Baked Apples            94.483
 
 Results for Motion Blur:
 --------------------------------------------------

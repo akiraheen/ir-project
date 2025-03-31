@@ -3,59 +3,59 @@ Results for Camera Rotation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.250
-Accuracy: 0.600
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.870
-MAP: 0.800
-Recall: 0.400
-Accuracy: 0.500
+NDCG: 0.778
+MAP: 0.636
+Recall: 0.350
+Accuracy: 0.400
 
 Metrics at k=20:
-NDCG: 0.968
-MAP: 0.572
-Recall: 0.650
-Accuracy: 0.650
+NDCG: 0.946
+MAP: 0.413
+Recall: 0.500
+Accuracy: 0.500
 
 Top 5 Results Comparison:
  Rank                                                        Original Recipe Original Score                                                     Transformed Recipe Transformed Score
-    1 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce        104.683 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce           101.319
-    2                                                 Summer Tomato Frittata         98.452 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce            98.895
-    3                                    Lazy Girl Chicken Quinoa Enchiladas         98.175                                    Roasted Bell Pepper-and-Olive Pizza            98.695
-    4 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce         97.579                                    Lazy Girl Chicken Quinoa Enchiladas            97.572
-    5                                        Copycat Taco Bell Mexican Pizza         97.051                                                      Meat Lovers Pizza            97.469
+    1 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce        104.683 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce           100.781
+    2                                                 Summer Tomato Frittata         98.452                                    Roasted Bell Pepper-and-Olive Pizza            98.998
+    3                                    Lazy Girl Chicken Quinoa Enchiladas         98.175 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce            98.985
+    4 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce         97.579                                                      Meat Lovers Pizza            97.977
+    5                                        Copycat Taco Bell Mexican Pizza         97.051                                                Baked Vegetable Lasagna            97.390
 
 Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.869
-MAP: 0.800
-Recall: 0.200
-Accuracy: 0.800
+NDCG: 0.637
+MAP: 0.400
+Recall: 0.100
+Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.686
-MAP: 0.483
-Recall: 0.250
-Accuracy: 0.500
+NDCG: 0.776
+MAP: 0.250
+Recall: 0.150
+Accuracy: 0.300
 
 Metrics at k=20:
-NDCG: 0.919
-MAP: 0.337
-Recall: 0.450
-Accuracy: 0.450
+NDCG: 0.873
+MAP: 0.138
+Recall: 0.200
+Accuracy: 0.200
 
 Top 5 Results Comparison:
  Rank                                                        Original Recipe Original Score                                                     Transformed Recipe Transformed Score
-    1 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce        104.683 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce           100.266
-    2                                                 Summer Tomato Frittata         98.452 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce           100.049
-    3                                    Lazy Girl Chicken Quinoa Enchiladas         98.175                                    Lazy Girl Chicken Quinoa Enchiladas            99.434
-    4 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce         97.579                                        Copycat Taco Bell Mexican Pizza            98.773
-    5                                        Copycat Taco Bell Mexican Pizza         97.051                                           Gluten Free Eggplant Lasagna            97.944
+    1 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce        104.683                                        Copycat Taco Bell Mexican Pizza           101.063
+    2                                                 Summer Tomato Frittata         98.452 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce           100.275
+    3                                    Lazy Girl Chicken Quinoa Enchiladas         98.175                                        Arugula Salad with Strawberries           100.200
+    4 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce         97.579                                        Arugula Salad with Strawberries           100.200
+    5                                        Copycat Taco Bell Mexican Pizza         97.051                                                           Winter Salad            99.626
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -64,27 +64,27 @@ Metrics at k=5:
 NDCG: 1.000
 MAP: 1.000
 Recall: 0.250
-Accuracy: 0.800
+Accuracy: 0.600
 
 Metrics at k=10:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.500
-Accuracy: 0.700
+NDCG: 0.934
+MAP: 0.890
+Recall: 0.450
+Accuracy: 0.600
 
 Metrics at k=20:
-NDCG: 0.998
-MAP: 0.843
-Recall: 0.850
-Accuracy: 0.850
+NDCG: 0.985
+MAP: 0.707
+Recall: 0.750
+Accuracy: 0.750
 
 Top 5 Results Comparison:
  Rank                                                        Original Recipe Original Score                                                     Transformed Recipe Transformed Score
-    1 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce        104.683 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce            99.146
-    2                                                 Summer Tomato Frittata         98.452                                    Lazy Girl Chicken Quinoa Enchiladas            92.280
-    3                                    Lazy Girl Chicken Quinoa Enchiladas         98.175                                                 Summer Tomato Frittata            92.275
-    4 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce         97.579 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce            91.141
-    5                                        Copycat Taco Bell Mexican Pizza         97.051                                                        Pumpkin Lasagna            90.866
+    1 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce        104.683 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce           101.168
+    2                                                 Summer Tomato Frittata         98.452 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce            96.129
+    3                                    Lazy Girl Chicken Quinoa Enchiladas         98.175                                    Lazy Girl Chicken Quinoa Enchiladas            95.832
+    4 Skinny Refried Bean & Chicken Enchiladas with Homemade Enchilada Sauce         97.579                                                                Lasagna            95.149
+    5                                        Copycat Taco Bell Mexican Pizza         97.051                                       Roasted Vegetable Stuffed Shells            95.119
 
 Results for Motion Blur:
 --------------------------------------------------

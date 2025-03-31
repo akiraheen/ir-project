@@ -3,114 +3,114 @@ Results for Camera Rotation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.000
-MAP: 0.000
-Recall: 0.000
-Accuracy: 0.000
+NDCG: 0.214
+MAP: 0.100
+Recall: 0.050
+Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 0.324
-MAP: 0.045
-Recall: 0.100
-Accuracy: 0.000
+NDCG: 0.491
+MAP: 0.171
+Recall: 0.200
+Accuracy: 0.200
 
 Metrics at k=20:
-NDCG: 0.447
-MAP: 0.034
-Recall: 0.150
-Accuracy: 0.150
+NDCG: 0.640
+MAP: 0.120
+Recall: 0.300
+Accuracy: 0.300
 
 Top 5 Results Comparison:
- Rank                     Original Recipe Original Score                                          Transformed Recipe Transformed Score
-    1 Italian Baked Tilapia with Potatoes         98.071                                             Antipasto Salsa           100.820
-    2         Homemade Chicken Enchiladas         91.167                                        Chicken Chimichangas           100.138
-    3              Green Sauce Enchiladas         89.728 Grilled Soft-Shell Crab and Pineapple Salad with Watercress            99.540
-    4                      Turkey Lasagna         88.365                                       Baja-Style Fish Tacos            99.381
-    5          Artichoke and Leek Lasagna         88.364   Blender Sauce Noisette (Hollandaise with Hazelnut Butter)            99.075
+ Rank                     Original Recipe Original Score                                        Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071 Blender Sauce Noisette (Hollandaise with Hazelnut Butter)            97.600
+    2         Homemade Chicken Enchiladas         91.167                       Italian Baked Tilapia with Potatoes            97.520
+    3              Green Sauce Enchiladas         89.728                             Spinach and Cheese Cannelloni            97.155
+    4                      Turkey Lasagna         88.365                                     Baja-Style Fish Tacos            96.877
+    5          Artichoke and Leek Lasagna         88.364     Mashed Potatoes with Fried Mushroom, Bacon, and Onion            96.848
 
 Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.250
-Accuracy: 0.400
+NDCG: 0.469
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.000
 
 Metrics at k=10:
-NDCG: 0.835
-MAP: 0.645
-Recall: 0.350
-Accuracy: 0.500
+NDCG: 0.469
+MAP: 0.100
+Recall: 0.050
+Accuracy: 0.100
 
 Metrics at k=20:
-NDCG: 0.948
-MAP: 0.372
-Recall: 0.450
-Accuracy: 0.450
+NDCG: 0.703
+MAP: 0.066
+Recall: 0.150
+Accuracy: 0.150
 
 Top 5 Results Comparison:
- Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
-    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            95.706
-    2         Homemade Chicken Enchiladas         91.167         Homemade Chicken Enchiladas            92.851
-    3              Green Sauce Enchiladas         89.728        Gluten Free Eggplant Lasagna            92.067
-    4                      Turkey Lasagna         88.365 Southwestern Quinoa Stuffed Peppers            90.760
-    5          Artichoke and Leek Lasagna         88.364                    Italian Frittata            90.379
+ Rank                     Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071            Gluten Free Eggplant Lasagna            97.093
+    2         Homemade Chicken Enchiladas         91.167                            Winter Salad            96.809
+    3              Green Sauce Enchiladas         89.728                           Potato Gratin            96.188
+    4                      Turkey Lasagna         88.365             Southwestern Turkey Fajitas            95.962
+    5          Artichoke and Leek Lasagna         88.364 Pommes Dauphinoise (Potatoes au Gratin)            95.912
 
 Results for Gaussian Noise:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.655
-MAP: 0.483
-Recall: 0.150
+NDCG: 0.637
+MAP: 0.400
+Recall: 0.100
 Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.768
-MAP: 0.299
+NDCG: 0.889
+MAP: 0.290
 Recall: 0.200
 Accuracy: 0.200
 
 Metrics at k=20:
-NDCG: 0.845
-MAP: 0.162
-Recall: 0.250
-Accuracy: 0.250
+NDCG: 0.889
+MAP: 0.145
+Recall: 0.200
+Accuracy: 0.200
 
 Top 5 Results Comparison:
  Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
-    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            93.863
-    2         Homemade Chicken Enchiladas         91.167      Green Chile Chicken Enchiladas            90.541
-    3              Green Sauce Enchiladas         89.728       Roasted Mediterranean Chicken            90.441
-    4                      Turkey Lasagna         88.365          Artichoke and Leek Lasagna            90.324
-    5          Artichoke and Leek Lasagna         88.364    Southwestern Chicken Pizza Rolls            90.138
+    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            93.387
+    2         Homemade Chicken Enchiladas         91.167          Artichoke and Leek Lasagna            90.877
+    3              Green Sauce Enchiladas         89.728       Spinach and Cheese Cannelloni            90.643
+    4                      Turkey Lasagna         88.365      Green Chile Chicken Enchiladas            90.392
+    5          Artichoke and Leek Lasagna         88.364    Southwestern Chicken Pizza Rolls            90.311
 
 Results for Motion Blur:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.869
-MAP: 0.800
-Recall: 0.200
-Accuracy: 0.600
+NDCG: 0.684
+MAP: 0.520
+Recall: 0.150
+Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 0.818
-MAP: 0.558
-Recall: 0.300
+NDCG: 0.809
+MAP: 0.382
+Recall: 0.250
 Accuracy: 0.300
 
 Metrics at k=20:
-NDCG: 0.949
-MAP: 0.335
-Recall: 0.400
-Accuracy: 0.400
+NDCG: 0.883
+MAP: 0.210
+Recall: 0.300
+Accuracy: 0.300
 
 Top 5 Results Comparison:
  Rank                     Original Recipe Original Score                                    Transformed Recipe Transformed Score
-    1 Italian Baked Tilapia with Potatoes         98.071                   Italian Baked Tilapia with Potatoes            98.091
-    2         Homemade Chicken Enchiladas         91.167                           Homemade Chicken Enchiladas            93.982
-    3              Green Sauce Enchiladas         89.728                         Roasted Mediterranean Chicken            93.203
-    4                      Turkey Lasagna         88.365                                Green Sauce Enchiladas            93.194
-    5          Artichoke and Leek Lasagna         88.364 Mashed Potatoes with Fried Mushroom, Bacon, and Onion            93.080
+    1 Italian Baked Tilapia with Potatoes         98.071                   Italian Baked Tilapia with Potatoes            96.142
+    2         Homemade Chicken Enchiladas         91.167                         Roasted Mediterranean Chicken            95.245
+    3              Green Sauce Enchiladas         89.728 Mashed Potatoes with Fried Mushroom, Bacon, and Onion            95.090
+    4                      Turkey Lasagna         88.365                                       Antipasto Salsa            94.941
+    5          Artichoke and Leek Lasagna         88.364                                      Italian Frittata            94.807

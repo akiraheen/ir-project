@@ -3,59 +3,59 @@ Results for Camera Rotation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.869
-MAP: 0.800
-Recall: 0.200
-Accuracy: 0.800
+NDCG: 0.655
+MAP: 0.483
+Recall: 0.150
+Accuracy: 0.600
 
 Metrics at k=10:
-NDCG: 0.778
-MAP: 0.636
-Recall: 0.350
-Accuracy: 0.700
+NDCG: 0.634
+MAP: 0.428
+Recall: 0.300
+Accuracy: 0.600
 
 Metrics at k=20:
-NDCG: 0.945
-MAP: 0.534
-Recall: 0.650
-Accuracy: 0.650
+NDCG: 0.850
+MAP: 0.319
+Recall: 0.500
+Accuracy: 0.500
 
 Top 5 Results Comparison:
  Rank                                                 Original Recipe Original Score                         Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           111.499
-    2                                            Vegetable Fried Rice        101.628                       Vegetable Fried Rice           101.597
-    3                                            Easy Veggie Stir-Fry        100.662                  Savory Vegetable Stir Fry           100.598
-    4                                       Savory Vegetable Stir Fry         99.701                       Easy Veggie Stir-Fry           100.594
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                            Antipasto Salsa            99.945
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           110.304
+    2                                            Vegetable Fried Rice        101.628                            Antipasto Salsa           102.955
+    3                                            Easy Veggie Stir-Fry        100.662                  Savory Vegetable Stir Fry           102.945
+    4                                       Savory Vegetable Stir Fry         99.701                       Easy Veggie Stir-Fry           102.813
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                     Italian Pasta Salad II           102.190
 
 Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.250
-Accuracy: 0.600
+NDCG: 0.345
+MAP: 0.180
+Recall: 0.100
+Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 0.860
-MAP: 0.767
-Recall: 0.400
-Accuracy: 0.700
+NDCG: 0.345
+MAP: 0.090
+Recall: 0.100
+Accuracy: 0.200
 
 Metrics at k=20:
-NDCG: 0.970
-MAP: 0.669
-Recall: 0.750
-Accuracy: 0.750
+NDCG: 0.600
+MAP: 0.085
+Recall: 0.250
+Accuracy: 0.250
 
 Top 5 Results Comparison:
  Rank                                                 Original Recipe Original Score                          Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053  Colorful Veggie Stir Fry with Soba Noodles           107.069
-    2                                            Vegetable Fried Rice        101.628                        Vegetable Fried Rice            96.121
-    3                                            Easy Veggie Stir-Fry        100.662                        Easy Veggie Stir-Fry            95.547
-    4                                       Savory Vegetable Stir Fry         99.701 Grilled Chicken with Shredded Mesclun Salad            94.840
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795 Indian Carrot Noodle Salad with Spiced Lamb            94.130
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053                                Winter Salad            99.162
+    2                                            Vegetable Fried Rice        101.628  Colorful Veggie Stir Fry with Soba Noodles            97.232
+    3                                            Easy Veggie Stir-Fry        100.662                       Green Papaya Pad Thai            95.536
+    4                                       Savory Vegetable Stir Fry         99.701                             Antipasto Salsa            95.390
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795 Grilled Chicken with Shredded Mesclun Salad            92.705
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -67,24 +67,24 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.785
-MAP: 0.653
-Recall: 0.350
-Accuracy: 0.700
+NDCG: 0.857
+MAP: 0.758
+Recall: 0.400
+Accuracy: 0.800
 
 Metrics at k=20:
-NDCG: 0.953
-MAP: 0.505
-Recall: 0.600
-Accuracy: 0.600
+NDCG: 0.970
+MAP: 0.581
+Recall: 0.650
+Accuracy: 0.650
 
 Top 5 Results Comparison:
  Rank                                                 Original Recipe Original Score                         Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           109.627
-    2                                            Vegetable Fried Rice        101.628                       Easy Veggie Stir-Fry           100.128
-    3                                            Easy Veggie Stir-Fry        100.662                  Savory Vegetable Stir Fry            99.724
-    4                                       Savory Vegetable Stir Fry         99.701                       Vegetable Fried Rice            98.933
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                   Asian Vegetable Stir Fry            98.508
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           110.475
+    2                                            Vegetable Fried Rice        101.628                       Easy Veggie Stir-Fry           101.138
+    3                                            Easy Veggie Stir-Fry        100.662                  Savory Vegetable Stir Fry           100.168
+    4                                       Savory Vegetable Stir Fry         99.701                       Vegetable Fried Rice           100.090
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                   Asian Vegetable Stir Fry            98.624
 
 Results for Motion Blur:
 --------------------------------------------------
@@ -96,21 +96,21 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.858
-MAP: 0.762
+NDCG: 0.867
+MAP: 0.789
 Recall: 0.400
 Accuracy: 0.700
 
 Metrics at k=20:
-NDCG: 0.971
-MAP: 0.495
-Recall: 0.550
-Accuracy: 0.550
+NDCG: 0.974
+MAP: 0.723
+Recall: 0.800
+Accuracy: 0.800
 
 Top 5 Results Comparison:
- Rank                                                 Original Recipe Original Score                         Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           109.497
-    2                                            Vegetable Fried Rice        101.628                       Vegetable Fried Rice           100.601
-    3                                            Easy Veggie Stir-Fry        100.662                       Easy Veggie Stir-Fry            99.757
-    4                                       Savory Vegetable Stir Fry         99.701                  Savory Vegetable Stir Fry            99.005
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                   Asian Vegetable Stir Fry            98.415
+ Rank                                                 Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053  Colorful Veggie Stir Fry with Soba Noodles           111.237
+    2                                            Vegetable Fried Rice        101.628                        Vegetable Fried Rice           102.250
+    3                                            Easy Veggie Stir-Fry        100.662                        Easy Veggie Stir-Fry           100.969
+    4                                       Savory Vegetable Stir Fry         99.701                   Savory Vegetable Stir Fry           100.347
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795 Indian Carrot Noodle Salad with Spiced Lamb            98.559

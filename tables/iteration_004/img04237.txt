@@ -5,28 +5,28 @@ Results for Camera Rotation:
 Metrics at k=5:
 NDCG: 0.661
 MAP: 0.543
-Recall: 0.200
-Accuracy: 0.600
+Recall: 0.150
+Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.647
-MAP: 0.518
+NDCG: 0.638
+MAP: 0.496
 Recall: 0.300
-Accuracy: 0.500
+Accuracy: 0.600
 
 Metrics at k=20:
-NDCG: 0.828
-MAP: 0.433
+NDCG: 0.816
+MAP: 0.414
 Recall: 0.550
 Accuracy: 0.550
 
 Top 5 Results Comparison:
  Rank                                           Original Recipe Original Score                                        Transformed Recipe Transformed Score
-    1                Roasted Shallot and Butternut Squash Pasta        109.490                                              Winter Salad           110.412
-    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Belgian Endive and Apple Salad with Cranberry Vinaigrette           109.233
-    3                Turkey, Sweet Potato, and Watercress Salad        101.772         Roasted Squash Salad with Bacon and Pumpkin Seeds           108.716
-    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                Roasted Shallot and Butternut Squash Pasta           108.444
-    5                     Mixed Greens with Shallot Vinaigrette        101.099                           Arugula Salad with Strawberries           107.850
+    1                Roasted Shallot and Butternut Squash Pasta        109.490                                              Winter Salad           107.138
+    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076         Roasted Squash Salad with Bacon and Pumpkin Seeds           106.323
+    3                Turkey, Sweet Potato, and Watercress Salad        101.772 Belgian Endive and Apple Salad with Cranberry Vinaigrette           106.243
+    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                           Arugula Salad with Strawberries           105.424
+    5                     Mixed Greens with Shallot Vinaigrette        101.099                           Arugula Salad with Strawberries           105.424
 
 Results for Low Light Variation:
 --------------------------------------------------
@@ -38,24 +38,24 @@ Recall: 0.150
 Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 0.640
-MAP: 0.500
+NDCG: 0.643
+MAP: 0.508
 Recall: 0.300
 Accuracy: 0.500
 
 Metrics at k=20:
-NDCG: 0.811
-MAP: 0.375
-Recall: 0.500
-Accuracy: 0.500
+NDCG: 0.816
+MAP: 0.411
+Recall: 0.550
+Accuracy: 0.550
 
 Top 5 Results Comparison:
  Rank                                           Original Recipe Original Score                                Transformed Recipe Transformed Score
-    1                Roasted Shallot and Butternut Squash Pasta        109.490                                      Winter Salad           110.450
-    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Roasted Squash Salad with Bacon and Pumpkin Seeds           107.511
-    3                Turkey, Sweet Potato, and Watercress Salad        101.772                   Arugula Salad with Strawberries           106.938
-    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                   Arugula Salad with Strawberries           106.938
-    5                     Mixed Greens with Shallot Vinaigrette        101.099                                Triple Green Salad           105.907
+    1                Roasted Shallot and Butternut Squash Pasta        109.490                                      Winter Salad           110.369
+    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Roasted Squash Salad with Bacon and Pumpkin Seeds           107.186
+    3                Turkey, Sweet Potato, and Watercress Salad        101.772                   Arugula Salad with Strawberries           106.786
+    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                   Arugula Salad with Strawberries           106.786
+    5                     Mixed Greens with Shallot Vinaigrette        101.099                                Triple Green Salad           105.683
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -73,18 +73,18 @@ Recall: 0.450
 Accuracy: 0.900
 
 Metrics at k=20:
-NDCG: 0.990
-MAP: 0.670
+NDCG: 0.989
+MAP: 0.669
 Recall: 0.650
 Accuracy: 0.650
 
 Top 5 Results Comparison:
  Rank                                           Original Recipe Original Score                                        Transformed Recipe Transformed Score
-    1                Roasted Shallot and Butternut Squash Pasta        109.490                Roasted Shallot and Butternut Squash Pasta           105.648
-    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Belgian Endive and Apple Salad with Cranberry Vinaigrette           105.509
-    3                Turkey, Sweet Potato, and Watercress Salad        101.772                           Arugula Salad with Strawberries           102.674
-    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                           Arugula Salad with Strawberries           102.674
-    5                     Mixed Greens with Shallot Vinaigrette        101.099                Chicken and Strawberries Over Mixed Greens           102.057
+    1                Roasted Shallot and Butternut Squash Pasta        109.490                Roasted Shallot and Butternut Squash Pasta           105.827
+    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Belgian Endive and Apple Salad with Cranberry Vinaigrette           105.581
+    3                Turkey, Sweet Potato, and Watercress Salad        101.772                           Arugula Salad with Strawberries           103.275
+    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                           Arugula Salad with Strawberries           103.275
+    5                     Mixed Greens with Shallot Vinaigrette        101.099                Chicken and Strawberries Over Mixed Greens           102.350
 
 Results for Motion Blur:
 --------------------------------------------------

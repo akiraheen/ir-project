@@ -9,55 +9,26 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.927
-MAP: 0.866
-Recall: 0.450
+NDCG: 0.858
+MAP: 0.762
+Recall: 0.400
 Accuracy: 0.800
 
 Metrics at k=20:
-NDCG: 0.977
-MAP: 0.685
-Recall: 0.750
-Accuracy: 0.750
-
-Top 5 Results Comparison:
- Rank             Original Recipe Original Score          Transformed Recipe Transformed Score
-    1              Easy DIY Salsa        115.737 Watermelon and Tomato Salad           115.856
-    2 Watermelon and Tomato Salad        110.939              Easy DIY Salsa           113.747
-    3         Bean and Corn Salsa        109.819                 Spicy Salsa           113.118
-    4                 Spicy Salsa        109.363         Bean and Corn Salsa           111.721
-    5         Cutting Board Salsa        106.756          Avocado Feta Salsa           109.244
-
-Results for Low Light Variation:
---------------------------------------------------
-
-Metrics at k=5:
-NDCG: 0.869
-MAP: 0.800
-Recall: 0.200
-Accuracy: 0.600
-
-Metrics at k=10:
-NDCG: 0.699
-MAP: 0.529
-Recall: 0.300
-Accuracy: 0.600
-
-Metrics at k=20:
-NDCG: 0.927
-MAP: 0.466
+NDCG: 0.968
+MAP: 0.533
 Recall: 0.600
 Accuracy: 0.600
 
 Top 5 Results Comparison:
- Rank             Original Recipe Original Score              Transformed Recipe Transformed Score
-    1              Easy DIY Salsa        115.737     Watermelon and Tomato Salad           114.759
-    2 Watermelon and Tomato Salad        110.939                     Spicy Salsa           114.219
-    3         Bean and Corn Salsa        109.819                  Easy DIY Salsa           112.333
-    4                 Spicy Salsa        109.363     Summer Tomato Chopped Salad           110.947
-    5         Cutting Board Salsa        106.756 Arugula Salad with Strawberries           110.708
+ Rank             Original Recipe Original Score          Transformed Recipe Transformed Score
+    1              Easy DIY Salsa        115.737 Watermelon and Tomato Salad           116.228
+    2 Watermelon and Tomato Salad        110.939                 Spicy Salsa           113.883
+    3         Bean and Corn Salsa        109.819         Bean and Corn Salsa           111.379
+    4                 Spicy Salsa        109.363              Easy DIY Salsa           111.326
+    5         Cutting Board Salsa        106.756          Avocado Feta Salsa           110.750
 
-Results for Gaussian Noise:
+Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
@@ -67,24 +38,53 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.855
-MAP: 0.753
-Recall: 0.400
-Accuracy: 0.600
+NDCG: 0.779
+MAP: 0.637
+Recall: 0.350
+Accuracy: 0.700
 
 Metrics at k=20:
-NDCG: 0.964
-MAP: 0.569
+NDCG: 0.951
+MAP: 0.546
 Recall: 0.650
 Accuracy: 0.650
 
 Top 5 Results Comparison:
  Rank             Original Recipe Original Score          Transformed Recipe Transformed Score
-    1              Easy DIY Salsa        115.737              Easy DIY Salsa           108.554
-    2 Watermelon and Tomato Salad        110.939 Watermelon and Tomato Salad           107.730
-    3         Bean and Corn Salsa        109.819                 Spicy Salsa           105.952
-    4                 Spicy Salsa        109.363         Bean and Corn Salsa           105.470
-    5         Cutting Board Salsa        106.756 Summer Tomato Chopped Salad           104.804
+    1              Easy DIY Salsa        115.737 Watermelon and Tomato Salad           116.622
+    2 Watermelon and Tomato Salad        110.939                 Spicy Salsa           115.616
+    3         Bean and Corn Salsa        109.819              Easy DIY Salsa           114.849
+    4                 Spicy Salsa        109.363 Summer Tomato Chopped Salad           112.229
+    5         Cutting Board Salsa        106.756         Bean and Corn Salsa           111.353
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.785
+MAP: 0.657
+Recall: 0.350
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.952
+MAP: 0.632
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank             Original Recipe Original Score          Transformed Recipe Transformed Score
+    1              Easy DIY Salsa        115.737              Easy DIY Salsa           108.547
+    2 Watermelon and Tomato Salad        110.939 Watermelon and Tomato Salad           106.546
+    3         Bean and Corn Salsa        109.819         Bean and Corn Salsa           105.361
+    4                 Spicy Salsa        109.363                 Spicy Salsa           104.904
+    5         Cutting Board Salsa        106.756               Pico de Gallo           103.274
 
 Results for Motion Blur:
 --------------------------------------------------

@@ -3,30 +3,30 @@ Results for Camera Rotation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.830
-MAP: 0.710
-Recall: 0.200
-Accuracy: 0.400
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.200
 
 Metrics at k=10:
-NDCG: 0.757
-MAP: 0.602
+NDCG: 0.747
+MAP: 0.566
 Recall: 0.350
-Accuracy: 0.400
+Accuracy: 0.500
 
 Metrics at k=20:
-NDCG: 0.934
-MAP: 0.533
+NDCG: 0.912
+MAP: 0.484
 Recall: 0.600
 Accuracy: 0.600
 
 Top 5 Results Comparison:
- Rank                                         Original Recipe Original Score                                 Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142     Chicken and Goat Cheese Pizza With Fresh Herbs           112.776
-    2                                    Veggie Grilled Pizza        104.775                                       Winter Salad           107.734
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                        Southwestern Turkey Fajitas           106.770
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089 Heirloom Tomato, Fresh Mozzarella & Basil Crostini           106.764
-    5                                 Homemade Hamburger Buns        102.977                            Homemade Hamburger Buns           106.532
+ Rank                                         Original Recipe Original Score                                   Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142       Chicken and Goat Cheese Pizza With Fresh Herbs           111.336
+    2                                    Veggie Grilled Pizza        104.775 Chorizo, Red Pepper, and Potato Galette with Arugula           107.029
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                                         Winter Salad           105.965
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                  Chicken Quesadillas           105.965
+    5                                 Homemade Hamburger Buns        102.977                          Southwestern Turkey Fajitas           105.782
 
 Results for Low Light Variation:
 --------------------------------------------------
@@ -38,79 +38,79 @@ Recall: 0.050
 Accuracy: 0.000
 
 Metrics at k=10:
-NDCG: 0.214
-MAP: 0.050
-Recall: 0.050
-Accuracy: 0.000
+NDCG: 0.312
+MAP: 0.070
+Recall: 0.100
+Accuracy: 0.100
 
 Metrics at k=20:
-NDCG: 0.556
-MAP: 0.070
+NDCG: 0.571
+MAP: 0.076
 Recall: 0.200
 Accuracy: 0.200
 
 Top 5 Results Comparison:
- Rank                                         Original Recipe Original Score                                Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142       Provençal Vegetable Soup (Soupe au Pistou)           117.697
-    2                                    Veggie Grilled Pizza        104.775                                      Winter Salad           109.822
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                               Chicken Quesadillas           109.010
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                    Caprese Egg and Pasta Frittata           106.993
-    5                                 Homemade Hamburger Buns        102.977 Herbed Hominy Stuffed Chicken Legs Cooked in Mole           106.993
+ Rank                                         Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Provençal Vegetable Soup (Soupe au Pistou)           117.650
+    2                                    Veggie Grilled Pizza        104.775                                Winter Salad           109.154
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                         Chicken Quesadillas           108.293
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                 Green Beans           106.421
+    5                                 Homemade Hamburger Buns        102.977                      Applesauce Quesadillas           106.252
 
 Results for Gaussian Noise:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.869
-MAP: 0.800
-Recall: 0.200
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
 Accuracy: 0.600
 
 Metrics at k=10:
-NDCG: 0.915
-MAP: 0.835
+NDCG: 0.934
+MAP: 0.890
 Recall: 0.450
-Accuracy: 0.500
+Accuracy: 0.600
 
 Metrics at k=20:
-NDCG: 0.964
-MAP: 0.704
-Recall: 0.750
-Accuracy: 0.750
+NDCG: 0.982
+MAP: 0.696
+Recall: 0.700
+Accuracy: 0.700
 
 Top 5 Results Comparison:
  Rank                                         Original Recipe Original Score                                      Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142          Chicken and Goat Cheese Pizza With Fresh Herbs           111.537
-    2                                    Veggie Grilled Pizza        104.775                                    Veggie Grilled Pizza           104.469
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514    Chorizo, Red Pepper, and Potato Galette with Arugula           103.773
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089 Watercress Salad with Cotija Cheese and Fried Tortillas           103.547
-    5                                 Homemade Hamburger Buns        102.977                                     Chicken Quesadillas           103.443
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142          Chicken and Goat Cheese Pizza With Fresh Herbs           111.458
+    2                                    Veggie Grilled Pizza        104.775                                            Winter Salad           105.007
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514    Chorizo, Red Pepper, and Potato Galette with Arugula           103.857
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                    Veggie Grilled Pizza           103.770
+    5                                 Homemade Hamburger Buns        102.977 Watercress Salad with Cotija Cheese and Fried Tortillas           103.763
 
 Results for Motion Blur:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.830
-MAP: 0.710
-Recall: 0.200
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
 Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.747
-MAP: 0.575
-Recall: 0.350
-Accuracy: 0.500
+NDCG: 0.931
+MAP: 0.879
+Recall: 0.450
+Accuracy: 0.700
 
 Metrics at k=20:
-NDCG: 0.919
-MAP: 0.466
-Recall: 0.550
-Accuracy: 0.550
+NDCG: 0.974
+MAP: 0.723
+Recall: 0.750
+Accuracy: 0.750
 
 Top 5 Results Comparison:
- Rank                                         Original Recipe Original Score                             Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142                                   Winter Salad           110.231
-    2                                    Veggie Grilled Pizza        104.775 Chicken and Goat Cheese Pizza With Fresh Herbs           109.890
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                            Chicken Quesadillas           106.500
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089     Potato, Italian Sausage, and Arugula Salad           105.846
-    5                                 Homemade Hamburger Buns        102.977                        Homemade Hamburger Buns           105.697
+ Rank                                         Original Recipe Original Score                                  Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142      Chicken and Goat Cheese Pizza With Fresh Herbs           113.485
+    2                                    Veggie Grilled Pizza        104.775                                        Winter Salad           110.072
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514          Potato, Italian Sausage, and Arugula Salad           106.152
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089          Chilled Pea Soup with Egg Salad Sandwiches           105.536
+    5                                 Homemade Hamburger Buns        102.977 Mozzarella, Pesto, Arugula, and Parmesan Bruschetta           105.422

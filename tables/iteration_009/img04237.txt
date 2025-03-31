@@ -5,57 +5,57 @@ Results for Camera Rotation:
 Metrics at k=5:
 NDCG: 0.661
 MAP: 0.543
-Recall: 0.200
-Accuracy: 0.600
+Recall: 0.150
+Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.780
-MAP: 0.707
-Recall: 0.400
-Accuracy: 0.600
+NDCG: 0.716
+MAP: 0.617
+Recall: 0.350
+Accuracy: 0.500
 
 Metrics at k=20:
-NDCG: 0.847
-MAP: 0.472
-Recall: 0.550
-Accuracy: 0.550
+NDCG: 0.838
+MAP: 0.482
+Recall: 0.600
+Accuracy: 0.600
 
 Top 5 Results Comparison:
  Rank                                           Original Recipe Original Score                                        Transformed Recipe Transformed Score
-    1                Roasted Shallot and Butternut Squash Pasta        109.490                                              Winter Salad           109.961
-    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Belgian Endive and Apple Salad with Cranberry Vinaigrette           109.262
-    3                Turkey, Sweet Potato, and Watercress Salad        101.772         Roasted Squash Salad with Bacon and Pumpkin Seeds           108.350
-    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                Roasted Shallot and Butternut Squash Pasta           108.131
-    5                     Mixed Greens with Shallot Vinaigrette        101.099                           Arugula Salad with Strawberries           107.468
+    1                Roasted Shallot and Butternut Squash Pasta        109.490                                              Winter Salad           109.416
+    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Belgian Endive and Apple Salad with Cranberry Vinaigrette           108.063
+    3                Turkey, Sweet Potato, and Watercress Salad        101.772         Roasted Squash Salad with Bacon and Pumpkin Seeds           107.505
+    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                           Arugula Salad with Strawberries           107.457
+    5                     Mixed Greens with Shallot Vinaigrette        101.099                           Arugula Salad with Strawberries           107.457
 
 Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.530
-MAP: 0.383
-Recall: 0.100
-Accuracy: 0.200
+NDCG: 0.316
+MAP: 0.167
+Recall: 0.050
+Accuracy: 0.000
 
 Metrics at k=10:
-NDCG: 0.565
-MAP: 0.405
-Recall: 0.250
-Accuracy: 0.400
+NDCG: 0.486
+MAP: 0.246
+Recall: 0.200
+Accuracy: 0.200
 
 Metrics at k=20:
-NDCG: 0.796
-MAP: 0.357
-Recall: 0.500
-Accuracy: 0.500
+NDCG: 0.672
+MAP: 0.188
+Recall: 0.350
+Accuracy: 0.350
 
 Top 5 Results Comparison:
- Rank                                           Original Recipe Original Score                                Transformed Recipe Transformed Score
-    1                Roasted Shallot and Butternut Squash Pasta        109.490                                      Winter Salad           111.948
-    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076 Roasted Squash Salad with Bacon and Pumpkin Seeds           108.501
-    3                Turkey, Sweet Potato, and Watercress Salad        101.772                   Arugula Salad with Strawberries           108.205
-    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                   Arugula Salad with Strawberries           108.205
-    5                     Mixed Greens with Shallot Vinaigrette        101.099                       Southwestern Turkey Fajitas           106.780
+ Rank                                           Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                Roasted Shallot and Butternut Squash Pasta        109.490                    Winter Salad           116.491
+    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076                 Antipasto Salsa           109.965
+    3                Turkey, Sweet Potato, and Watercress Salad        101.772 Arugula Salad with Strawberries           109.926
+    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350 Arugula Salad with Strawberries           109.926
+    5                     Mixed Greens with Shallot Vinaigrette        101.099     Southwestern Turkey Fajitas           109.111
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -73,18 +73,18 @@ Recall: 0.450
 Accuracy: 0.900
 
 Metrics at k=20:
-NDCG: 0.988
-MAP: 0.713
-Recall: 0.700
-Accuracy: 0.700
+NDCG: 0.995
+MAP: 0.685
+Recall: 0.650
+Accuracy: 0.650
 
 Top 5 Results Comparison:
  Rank                                           Original Recipe Original Score                                        Transformed Recipe Transformed Score
-    1                Roasted Shallot and Butternut Squash Pasta        109.490 Belgian Endive and Apple Salad with Cranberry Vinaigrette           105.644
-    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076                Roasted Shallot and Butternut Squash Pasta           105.615
-    3                Turkey, Sweet Potato, and Watercress Salad        101.772                           Arugula Salad with Strawberries           102.899
-    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                           Arugula Salad with Strawberries           102.899
-    5                     Mixed Greens with Shallot Vinaigrette        101.099                Turkey, Sweet Potato, and Watercress Salad           102.479
+    1                Roasted Shallot and Butternut Squash Pasta        109.490 Belgian Endive and Apple Salad with Cranberry Vinaigrette           104.889
+    2 Belgian Endive and Apple Salad with Cranberry Vinaigrette        107.076                Roasted Shallot and Butternut Squash Pasta           104.636
+    3                Turkey, Sweet Potato, and Watercress Salad        101.772                           Arugula Salad with Strawberries           101.770
+    4         Roasted Squash Salad with Bacon and Pumpkin Seeds        101.350                           Arugula Salad with Strawberries           101.770
+    5                     Mixed Greens with Shallot Vinaigrette        101.099                Turkey, Sweet Potato, and Watercress Salad           101.066
 
 Results for Motion Blur:
 --------------------------------------------------

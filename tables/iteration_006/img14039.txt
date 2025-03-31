@@ -15,47 +15,47 @@ Recall: 0.350
 Accuracy: 0.600
 
 Metrics at k=20:
-NDCG: 0.937
-MAP: 0.440
-Recall: 0.550
-Accuracy: 0.550
+NDCG: 0.941
+MAP: 0.530
+Recall: 0.650
+Accuracy: 0.650
 
 Top 5 Results Comparison:
  Rank                                                 Original Recipe Original Score                         Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           111.156
-    2                                            Vegetable Fried Rice        101.628                       Vegetable Fried Rice           101.468
-    3                                            Easy Veggie Stir-Fry        100.662                  Savory Vegetable Stir Fry           100.637
-    4                                       Savory Vegetable Stir Fry         99.701                       Easy Veggie Stir-Fry           100.594
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                            Antipasto Salsa           100.316
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           110.642
+    2                                            Vegetable Fried Rice        101.628                       Vegetable Fried Rice           100.596
+    3                                            Easy Veggie Stir-Fry        100.662                       Easy Veggie Stir-Fry           100.444
+    4                                       Savory Vegetable Stir Fry         99.701                  Savory Vegetable Stir Fry            99.697
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                     Italian Pasta Salad II            98.389
 
 Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.616
-MAP: 0.420
+NDCG: 0.640
+MAP: 0.453
 Recall: 0.150
 Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.585
-MAP: 0.339
+NDCG: 0.563
+MAP: 0.356
 Recall: 0.250
 Accuracy: 0.500
 
 Metrics at k=20:
-NDCG: 0.830
-MAP: 0.280
-Recall: 0.450
-Accuracy: 0.450
+NDCG: 0.844
+MAP: 0.316
+Recall: 0.500
+Accuracy: 0.500
 
 Top 5 Results Comparison:
  Rank                                                 Original Recipe Original Score                          Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053  Colorful Veggie Stir Fry with Soba Noodles           103.188
-    2                                            Vegetable Fried Rice        101.628                                Winter Salad            95.791
-    3                                            Easy Veggie Stir-Fry        100.662                             Antipasto Salsa            94.299
-    4                                       Savory Vegetable Stir Fry         99.701 Grilled Chicken with Shredded Mesclun Salad            94.168
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                        Vegetable Fried Rice            93.718
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053  Colorful Veggie Stir Fry with Soba Noodles           103.100
+    2                                            Vegetable Fried Rice        101.628                                Winter Salad            95.597
+    3                                            Easy Veggie Stir-Fry        100.662 Grilled Chicken with Shredded Mesclun Salad            93.927
+    4                                       Savory Vegetable Stir Fry         99.701                             Antipasto Salsa            93.826
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                        Vegetable Fried Rice            93.590
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -67,24 +67,24 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.860
-MAP: 0.767
-Recall: 0.400
-Accuracy: 0.800
+NDCG: 0.936
+MAP: 0.900
+Recall: 0.450
+Accuracy: 0.900
 
 Metrics at k=20:
-NDCG: 0.964
-MAP: 0.565
-Recall: 0.650
-Accuracy: 0.650
+NDCG: 0.978
+MAP: 0.640
+Recall: 0.700
+Accuracy: 0.700
 
 Top 5 Results Comparison:
  Rank                                                 Original Recipe Original Score                         Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           110.070
-    2                                            Vegetable Fried Rice        101.628                       Easy Veggie Stir-Fry           100.206
-    3                                            Easy Veggie Stir-Fry        100.662                       Vegetable Fried Rice           100.020
-    4                                       Savory Vegetable Stir Fry         99.701                  Savory Vegetable Stir Fry            99.510
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                   Asian Vegetable Stir Fry            98.458
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           111.221
+    2                                            Vegetable Fried Rice        101.628                       Easy Veggie Stir-Fry           102.244
+    3                                            Easy Veggie Stir-Fry        100.662                  Savory Vegetable Stir Fry           101.005
+    4                                       Savory Vegetable Stir Fry         99.701                       Vegetable Fried Rice           100.999
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                               Easy Lo Mein            98.774
 
 Results for Motion Blur:
 --------------------------------------------------
@@ -96,21 +96,21 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.867
-MAP: 0.789
+NDCG: 0.858
+MAP: 0.762
 Recall: 0.400
 Accuracy: 0.700
 
 Metrics at k=20:
-NDCG: 0.974
-MAP: 0.723
-Recall: 0.800
-Accuracy: 0.800
+NDCG: 0.971
+MAP: 0.495
+Recall: 0.550
+Accuracy: 0.550
 
 Top 5 Results Comparison:
- Rank                                                 Original Recipe Original Score                          Transformed Recipe Transformed Score
-    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053  Colorful Veggie Stir Fry with Soba Noodles           111.237
-    2                                            Vegetable Fried Rice        101.628                        Vegetable Fried Rice           102.250
-    3                                            Easy Veggie Stir-Fry        100.662                        Easy Veggie Stir-Fry           100.969
-    4                                       Savory Vegetable Stir Fry         99.701                   Savory Vegetable Stir Fry           100.347
-    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795 Indian Carrot Noodle Salad with Spiced Lamb            98.559
+ Rank                                                 Original Recipe Original Score                         Transformed Recipe Transformed Score
+    1                      Colorful Veggie Stir Fry with Soba Noodles        112.053 Colorful Veggie Stir Fry with Soba Noodles           109.497
+    2                                            Vegetable Fried Rice        101.628                       Vegetable Fried Rice           100.601
+    3                                            Easy Veggie Stir-Fry        100.662                       Easy Veggie Stir-Fry            99.757
+    4                                       Savory Vegetable Stir Fry         99.701                  Savory Vegetable Stir Fry            99.005
+    5 Easy 25 Minute Spicy Thai Pumpkin Noodles (with chicken option)         97.795                   Asian Vegetable Stir Fry            98.415

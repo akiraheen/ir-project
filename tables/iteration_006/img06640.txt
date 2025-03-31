@@ -9,24 +9,24 @@ Recall: 0.250
 Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.922
-MAP: 0.852
-Recall: 0.450
+NDCG: 0.870
+MAP: 0.800
+Recall: 0.400
 Accuracy: 0.600
 
 Metrics at k=20:
-NDCG: 0.962
-MAP: 0.649
+NDCG: 0.981
+MAP: 0.694
 Recall: 0.700
 Accuracy: 0.700
 
 Top 5 Results Comparison:
- Rank                                         Original Recipe Original Score                                   Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142       Chicken and Goat Cheese Pizza With Fresh Herbs           112.252
-    2                                    Veggie Grilled Pizza        104.775                                         Winter Salad           106.711
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                              Homemade Hamburger Buns           105.772
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                  Best Turkey Burgers           105.772
-    5                                 Homemade Hamburger Buns        102.977 Chorizo, Red Pepper, and Potato Galette with Arugula           105.652
+ Rank                                         Original Recipe Original Score                             Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Chicken and Goat Cheese Pizza With Fresh Herbs           113.350
+    2                                    Veggie Grilled Pizza        104.775                                   Winter Salad           109.491
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514     Potato, Italian Sausage, and Arugula Salad           106.839
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                        Homemade Hamburger Buns           106.228
+    5                                 Homemade Hamburger Buns        102.977                            Best Turkey Burgers           106.228
 
 Results for Low Light Variation:
 --------------------------------------------------
@@ -51,11 +51,11 @@ Accuracy: 0.200
 
 Top 5 Results Comparison:
  Rank                                         Original Recipe Original Score                          Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Provençal Vegetable Soup (Soupe au Pistou)           115.728
-    2                                    Veggie Grilled Pizza        104.775                                Winter Salad           112.065
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                         Chicken Quesadillas           109.392
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                 Green Beans           108.681
-    5                                 Homemade Hamburger Buns        102.977     Chopped Beet Salad with Feta and Pecans           108.082
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Provençal Vegetable Soup (Soupe au Pistou)           115.939
+    2                                    Veggie Grilled Pizza        104.775                                Winter Salad           112.127
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                         Chicken Quesadillas           109.475
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                 Green Beans           108.835
+    5                                 Homemade Hamburger Buns        102.977     Chopped Beet Salad with Feta and Pecans           107.975
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -64,7 +64,7 @@ Metrics at k=5:
 NDCG: 1.000
 MAP: 1.000
 Recall: 0.250
-Accuracy: 0.800
+Accuracy: 0.600
 
 Metrics at k=10:
 NDCG: 1.000
@@ -73,44 +73,44 @@ Recall: 0.500
 Accuracy: 0.800
 
 Metrics at k=20:
-NDCG: 0.995
-MAP: 0.782
-Recall: 0.750
-Accuracy: 0.750
+NDCG: 0.993
+MAP: 0.823
+Recall: 0.800
+Accuracy: 0.800
 
 Top 5 Results Comparison:
- Rank                                         Original Recipe Original Score                                      Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142          Chicken and Goat Cheese Pizza With Fresh Herbs           113.480
-    2                                    Veggie Grilled Pizza        104.775                                    Veggie Grilled Pizza           105.665
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514 Watercress Salad with Cotija Cheese and Fried Tortillas           104.968
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                 Homemade Hamburger Buns           104.967
-    5                                 Homemade Hamburger Buns        102.977                                     Best Turkey Burgers           104.967
+ Rank                                         Original Recipe Original Score                             Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Chicken and Goat Cheese Pizza With Fresh Herbs           112.979
+    2                                    Veggie Grilled Pizza        104.775                           Veggie Grilled Pizza           106.177
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                                   Winter Salad           104.836
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                        Homemade Hamburger Buns           104.831
+    5                                 Homemade Hamburger Buns        102.977                            Best Turkey Burgers           104.831
 
 Results for Motion Blur:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 1.000
-MAP: 1.000
-Recall: 0.250
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
 Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.931
-MAP: 0.879
-Recall: 0.450
-Accuracy: 0.700
+NDCG: 0.747
+MAP: 0.575
+Recall: 0.350
+Accuracy: 0.500
 
 Metrics at k=20:
-NDCG: 0.974
-MAP: 0.723
-Recall: 0.750
-Accuracy: 0.750
+NDCG: 0.919
+MAP: 0.466
+Recall: 0.550
+Accuracy: 0.550
 
 Top 5 Results Comparison:
- Rank                                         Original Recipe Original Score                                  Transformed Recipe Transformed Score
-    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142      Chicken and Goat Cheese Pizza With Fresh Herbs           113.485
-    2                                    Veggie Grilled Pizza        104.775                                        Winter Salad           110.072
-    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514          Potato, Italian Sausage, and Arugula Salad           106.152
-    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089          Chilled Pea Soup with Egg Salad Sandwiches           105.536
-    5                                 Homemade Hamburger Buns        102.977 Mozzarella, Pesto, Arugula, and Parmesan Bruschetta           105.422
+ Rank                                         Original Recipe Original Score                             Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142                                   Winter Salad           110.231
+    2                                    Veggie Grilled Pizza        104.775 Chicken and Goat Cheese Pizza With Fresh Herbs           109.890
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                            Chicken Quesadillas           106.500
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089     Potato, Italian Sausage, and Arugula Salad           105.846
+    5                                 Homemade Hamburger Buns        102.977                        Homemade Hamburger Buns           105.697

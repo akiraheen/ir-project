@@ -9,53 +9,53 @@ Recall: 0.250
 Accuracy: 0.800
 
 Metrics at k=10:
-NDCG: 0.867
-MAP: 0.789
-Recall: 0.400
-Accuracy: 0.600
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.700
 
 Metrics at k=20:
-NDCG: 0.972
-MAP: 0.671
-Recall: 0.750
-Accuracy: 0.750
+NDCG: 0.985
+MAP: 0.752
+Recall: 0.800
+Accuracy: 0.800
 
 Top 5 Results Comparison:
  Rank                                    Original Recipe Original Score                                 Transformed Recipe Transformed Score
-    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           108.252
-    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130 Rib-Eye Steaks with Pistachio Butter and Asparagus           105.143
-    3           Grilled Beef Tenderloin with Fresh Herbs        104.375                           Balsamic Steak au Poivre           103.901
-    4                           Balsamic Steak au Poivre        103.393           Grilled Beef Tenderloin with Fresh Herbs           103.412
-    5                               High-Low Strip Steak        103.061                       Grilled Tri-Tip & Vegetables           103.394
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           109.698
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130 Rib-Eye Steaks with Pistachio Butter and Asparagus           106.586
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375                           Balsamic Steak au Poivre           105.183
+    4                           Balsamic Steak au Poivre        103.393           Grilled Beef Tenderloin with Fresh Herbs           104.733
+    5                               High-Low Strip Steak        103.061                       Grilled Tri-Tip & Vegetables           103.805
 
 Results for Low Light Variation:
 --------------------------------------------------
 
 Metrics at k=5:
-NDCG: 0.661
-MAP: 0.543
-Recall: 0.200
+NDCG: 0.530
+MAP: 0.383
+Recall: 0.150
 Accuracy: 0.400
 
 Metrics at k=10:
-NDCG: 0.647
-MAP: 0.518
-Recall: 0.350
-Accuracy: 0.300
+NDCG: 0.525
+MAP: 0.321
+Recall: 0.250
+Accuracy: 0.200
 
 Metrics at k=20:
-NDCG: 0.820
-MAP: 0.419
-Recall: 0.600
-Accuracy: 0.600
+NDCG: 0.766
+MAP: 0.265
+Recall: 0.450
+Accuracy: 0.450
 
 Top 5 Results Comparison:
  Rank                                    Original Recipe Original Score                                 Transformed Recipe Transformed Score
-    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464                                       Winter Salad           105.973
-    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           105.123
-    3           Grilled Beef Tenderloin with Fresh Herbs        104.375 Rib-Eye Steaks with Pistachio Butter and Asparagus           103.743
-    4                           Balsamic Steak au Poivre        103.393                              Marinated Flank Steak           103.169
-    5                               High-Low Strip Steak        103.061   Grilled Rib-Eye Steaks with Roasted-Pepper Salsa           102.023
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464                                       Winter Salad           107.437
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           102.688
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375                              Marinated Flank Steak           101.968
+    4                           Balsamic Steak au Poivre        103.393 Rib-Eye Steaks with Pistachio Butter and Asparagus           101.755
+    5                               High-Low Strip Steak        103.061                                 Tangy Garlic Steak           101.107
 
 Results for Gaussian Noise:
 --------------------------------------------------
@@ -70,21 +70,21 @@ Metrics at k=10:
 NDCG: 1.000
 MAP: 1.000
 Recall: 0.500
-Accuracy: 0.800
+Accuracy: 0.700
 
 Metrics at k=20:
-NDCG: 0.994
-MAP: 0.878
-Recall: 0.900
-Accuracy: 0.900
+NDCG: 0.997
+MAP: 0.839
+Recall: 0.850
+Accuracy: 0.850
 
 Top 5 Results Comparison:
  Rank                                    Original Recipe Original Score                                 Transformed Recipe Transformed Score
-    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           107.361
-    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130 Rib-Eye Steaks with Pistachio Butter and Asparagus           102.493
-    3           Grilled Beef Tenderloin with Fresh Herbs        104.375           Grilled Beef Tenderloin with Fresh Herbs           101.583
-    4                           Balsamic Steak au Poivre        103.393                           Balsamic Steak au Poivre            99.956
-    5                               High-Low Strip Steak        103.061                              Marinated Flank Steak            99.527
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           109.123
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130 Rib-Eye Steaks with Pistachio Butter and Asparagus           105.081
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375           Grilled Beef Tenderloin with Fresh Herbs           104.137
+    4                           Balsamic Steak au Poivre        103.393                           Balsamic Steak au Poivre           102.131
+    5                               High-Low Strip Steak        103.061                              Marinated Flank Steak           101.135
 
 Results for Motion Blur:
 --------------------------------------------------
