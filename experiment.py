@@ -202,20 +202,20 @@ def main():
     parser.add_argument(
         "--min-camera-rotation",
         type=float,
-        default=-10,
-        help="Minimum camera rotation angle. Default is -10.",
+        default=-30,
+        help="Minimum camera rotation angle. Default is -30.",
     )
     parser.add_argument(
         "--max-camera-rotation",
         type=float,
-        default=10,
-        help="Maximum camera rotation angle. Default is 10.",
+        default=30,
+        help="Maximum camera rotation angle. Default is 30.",
     )
     parser.add_argument(
         "--min-brightness-variation",
         type=float,
-        default=0.2,
-        help="Minimum brightness variation factor. Default is 0.2.",
+        default=0.4,
+        help="Minimum brightness variation factor. Default is 0.4.",
     )
     parser.add_argument(
         "--max-brightness-variation",
