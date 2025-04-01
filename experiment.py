@@ -336,6 +336,19 @@ def main():
     )
     results_df.to_csv(results_file)
 
+    summary_file = args.results_dir / "summary.csv"
+    summary_file.parent.mkdir(parents=True, exist_ok=True)
+    summary_df = (
+        results_df.copy()
+        .drop(
+            columns=["iteration", "filename", "original_results", "transformed_results"]
+        )
+        .groupby(["transformation"])
+        .mean()
+        .round(2)
+    )
+    summary_df.to_csv(summary_file)
+
     visualize_results(results_df, plots_dir=args.plots_dir)
 
 
