@@ -15,6 +15,9 @@ from sentence_transformers import SentenceTransformer
 import optuna
 import lightgbm as lightgbm
 import optuna.integration.lightgbm as optuna_lgb
+import time
+
+start_time = time.time()
 
 from collections import OrderedDict
 from sklearn.model_selection import ParameterGrid
@@ -281,11 +284,11 @@ def create_dataframe(metadata_path):
             bert_score = bert_sim(ingredients, relevant_ingredients)
 
             recipe_data.append({
-                "qid": qid,
+                "qid": int(qid),
                 "ingredients": ingredients,
                 "name": name,
 
-                "relevant_docId": r["qid"],
+                "relevant_docId": int(r["qid"]),
                 "relevant_name": r["name"],
                 "relevant_ingredients": relevant_ingredients,
                 "jaccard_score": jaccard_score,
@@ -330,20 +333,20 @@ def bert_sim(text1, text2):
     return cs
 
 def lambdaMart(dataframe):
-    train = dataframe[dataframe['qid'] < 16]
-    test = dataframe[dataframe['qid'] >= 16]
+    train = dataframe[dataframe['qid'] < 800]
+    test = dataframe[dataframe['qid'] >= 800]
 
     print(f"No of unique queries in train : {train['qid'].nunique()}")
     print(f"No of unique queries in test : {test['qid'].nunique()}")
 
     qids_train = train.groupby("qid")["qid"].count().to_numpy()
     X_train = train.drop(["qid", "label", "relevant_docId", "ingredients", "name",
-                          "relevant_name", "relevant_ingredients"], axis=1)
+                          "relevant_name", "relevant_ingredients", "jaccard_score"], axis=1)
     y_train = train["label"]
 
     qids_test = test.groupby("qid")["qid"].count().to_numpy()
     X_test = test.drop(["qid", "label", "relevant_docId", "ingredients", "name",
-                          "relevant_name", "relevant_ingredients"], axis=1)
+                          "relevant_name", "relevant_ingredients", "jaccard_score"], axis=1)
     y_test = test["label"]
 
     ranker = lightgbm.LGBMRanker(
@@ -355,15 +358,28 @@ def lambdaMart(dataframe):
         num_leaves=10,
         learning_rate=0.05,
         max_depth=-1,
-        label_gain=[i for i in range(max(y_train.max(), y_test.max()) + 1)])
+        label_gain=[i for i in range(max(y_train.max(), y_test.max()) + 1)],
+        min_gain_to_split=0.0)
+
+    evals_result = {}
 
     ranker.fit(
         X=X_train,
         y=y_train,
         group=qids_train,
-        eval_set=[(X_train, y_train), (X_test, y_test)],
-        eval_group=[qids_train, qids_test],
-        eval_at=[4, 8])
+        eval_set=[ (X_test, y_test)],
+        eval_group=[qids_test],
+        eval_at=[3,5],
+        eval_metric="ndcg",
+        callbacks=[lightgbm.record_evaluation(evals_result)])
+
+    print("\nEvaluation Results:")
+    for eval_set, scores in evals_result.items():
+        print(f"\nMetrics for {eval_set}:")
+        for metric, values in scores.items():
+            print(f"{metric}: {values[-1]:.4f} (last iteration)")
+
+    lightgbm.plot_importance(ranker, figsize=(12, 8))
 
 
 if __name__ == "__main__":
@@ -371,22 +387,26 @@ if __name__ == "__main__":
 
     # Fixed path typo: Yumm28K → Yummly28K
     retriever.process_and_save_dataset(
-        metadata_dir="/Users/shivangikachole/Downloads/Yummly28K/metadata27638/metadata20",  # Change to full dataset
-        image_dir="/Users/shivangikachole/Downloads/Yummly28K/images27638/images20",
-        force_reprocess=True  # Run first time to generate files
+        metadata_dir="../Yummly28K/metadata200",  # Change to full dataset
+        image_dir="../Yummly28K/images200",
+        force_reprocess=False  # Run first time to generate files
     )
 
     # Test query
-    results = retriever.query_with_image("/Users/shivangikachole/Downloads/Yummly28K/images27638/images20/img00001.jpg")
+    results = retriever.query_with_image("../Yummly28K/images200/img00001.jpg")
     print("Top result:", results[0]['metadata']['name'])
 
     df = create_dataframe("processed_data/metadata.json")
 
-    df["label"] = pd.qcut(df["jaccard_score"], q= 6, labels=[0, 1, 2, 3], duplicates="drop")
+
+
+    df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3, 4], duplicates="drop")
     df["label"] = df["label"].astype(int)  # Convert to integer
 
     df.to_csv("out.csv", index=False)
 
     lambdaMart(df)
-    #df.to_json("out.json", indent=5)
 
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed Time: {elapsed_time} seconds")
