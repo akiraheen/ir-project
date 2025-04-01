@@ -12,6 +12,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from utils.ingredient_filter import extract_ingredients
 from sentence_transformers import SentenceTransformer
+import optuna
+import lightgbm as lightgbm
+import optuna.integration.lightgbm as optuna_lgb
+
+from collections import OrderedDict
+from sklearn.model_selection import ParameterGrid
 from rank_bm25 import BM25Okapi
 from nltk.tokenize import word_tokenize
 
@@ -323,28 +329,64 @@ def bert_sim(text1, text2):
     cs = cosine_similarity([emb1], [emb2])[0, 0]
     return cs
 
+def lambdaMart(dataframe):
+    train = dataframe[dataframe['qid'] < 16]
+    test = dataframe[dataframe['qid'] >= 16]
+
+    print(f"No of unique queries in train : {train['qid'].nunique()}")
+    print(f"No of unique queries in test : {test['qid'].nunique()}")
+
+    qids_train = train.groupby("qid")["qid"].count().to_numpy()
+    X_train = train.drop(["qid", "label", "relevant_docId", "ingredients", "name",
+                          "relevant_name", "relevant_ingredients"], axis=1)
+    y_train = train["label"]
+
+    qids_test = test.groupby("qid")["qid"].count().to_numpy()
+    X_test = test.drop(["qid", "label", "relevant_docId", "ingredients", "name",
+                          "relevant_name", "relevant_ingredients"], axis=1)
+    y_test = test["label"]
+
+    ranker = lightgbm.LGBMRanker(
+        objective="lambdarank",
+        boosting_type="gbdt",
+        n_estimators=5,
+        importance_type="gain",
+        metric="ndcg",
+        num_leaves=10,
+        learning_rate=0.05,
+        max_depth=-1,
+        label_gain=[i for i in range(max(y_train.max(), y_test.max()) + 1)])
+
+    ranker.fit(
+        X=X_train,
+        y=y_train,
+        group=qids_train,
+        eval_set=[(X_train, y_train), (X_test, y_test)],
+        eval_group=[qids_train, qids_test],
+        eval_at=[4, 8])
+
+
 if __name__ == "__main__":
     retriever = CLIPRetrievalSystem()
 
     # Fixed path typo: Yumm28K → Yummly28K
     retriever.process_and_save_dataset(
-        metadata_dir="../Yummly28K/metadata20",  # Change to full dataset
-        image_dir="../Yummly28K/images20",
-        force_reprocess=False  # Run first time to generate files
+        metadata_dir="/Users/shivangikachole/Downloads/Yummly28K/metadata27638/metadata20",  # Change to full dataset
+        image_dir="/Users/shivangikachole/Downloads/Yummly28K/images27638/images20",
+        force_reprocess=True  # Run first time to generate files
     )
 
     # Test query
-    results = retriever.query_with_image("../Yummly28K/images27638/img00001.jpg")
+    results = retriever.query_with_image("/Users/shivangikachole/Downloads/Yummly28K/images27638/images20/img00001.jpg")
     print("Top result:", results[0]['metadata']['name'])
 
     df = create_dataframe("processed_data/metadata.json")
 
-    df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3], duplicates="drop")
+    df["label"] = pd.qcut(df["jaccard_score"], q= 6, labels=[0, 1, 2, 3], duplicates="drop")
     df["label"] = df["label"].astype(int)  # Convert to integer
 
     df.to_csv("out.csv", index=False)
-    df.to_json("out.json", indent=5)
 
-    # Example usage
-    text1 = "I love pizza and pasta"
-    text2 = "Pizza and pasta are my favorite foods"
+    lambdaMart(df)
+    #df.to_json("out.json", indent=5)
+
