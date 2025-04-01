@@ -9,7 +9,9 @@ from PIL import Image
 from tqdm import tqdm
 from transformers import CLIPModel, CLIPProcessor
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
 from utils.ingredient_filter import extract_ingredients
+from sentence_transformers import SentenceTransformer
 from rank_bm25 import BM25Okapi
 from nltk.tokenize import word_tokenize
 
@@ -269,8 +271,8 @@ def create_dataframe(metadata_path):
         for r in recipe.get("relevant_recipes", []):
             relevant_ingredients = " ".join(r.get("ingredients", []))
             jaccard_score = jaccard_similarity(ingredients, relevant_ingredients)
-            ##bm25
-            ##other weighting techniques
+            tfidf_score = tfidf_sim(ingredients, relevant_ingredients)
+            bert_score = bert_sim(ingredients, relevant_ingredients)
 
             recipe_data.append({
                 "qid": qid,
@@ -280,7 +282,9 @@ def create_dataframe(metadata_path):
                 "relevant_docId": r["qid"],
                 "relevant_name": r["name"],
                 "relevant_ingredients": relevant_ingredients,
-                "jaccard_similarity": jaccard_score
+                "jaccard_score": jaccard_score,
+                "tfidf_score": tfidf_score,
+                "bert_score": bert_score,
             })
 
     return pd.DataFrame(recipe_data)
@@ -295,6 +299,29 @@ def jaccard_similarity(text1, text2):
     union = len(set1 | set2)
 
     return intersection / union if union != 0 else 0
+
+
+
+def tfidf_sim(text1, text2):
+    vectorizer = TfidfVectorizer()
+
+    # Fit and transform both texts as whole documents
+    tfidf_matrix = vectorizer.fit_transform([text1, text2])
+
+    # Compute cosine similarity
+    cs = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])[0, 0]
+    return cs
+
+def bert_sim(text1, text2):
+
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+
+    emb1 = model.encode(text1)
+    emb2 = model.encode(text2)
+
+    # Compute cosine similarity
+    cs = cosine_similarity([emb1], [emb2])[0, 0]
+    return cs
 
 if __name__ == "__main__":
     retriever = CLIPRetrievalSystem()
@@ -312,8 +339,12 @@ if __name__ == "__main__":
 
     df = create_dataframe("processed_data/metadata.json")
 
-    df["label"] = pd.qcut(df["jaccard_similarity"], q=5, labels=[0, 1, 2, 3], duplicates="drop")
+    df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3], duplicates="drop")
     df["label"] = df["label"].astype(int)  # Convert to integer
 
     df.to_csv("out.csv", index=False)
     df.to_json("out.json", indent=5)
+
+    # Example usage
+    text1 = "I love pizza and pasta"
+    text2 = "Pizza and pasta are my favorite foods"
