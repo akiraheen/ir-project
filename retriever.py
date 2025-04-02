@@ -39,6 +39,13 @@ class CLIPRetrievalSystem:
         if process_dataset:
             self.process_and_save_dataset(force_reprocess=False)
 
+    def get_metadata(self, image_id: str):
+        """Get metadata for an image by ID"""
+        for recipe in self.metadata:
+            if recipe["id"] == image_id:
+                return recipe
+        return None
+
     def process_and_save_dataset(
         self,
         metadata_dir: Optional[str] = None,
