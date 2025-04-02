@@ -15,6 +15,16 @@ class ImageTransformation:
         raise NotImplementedError("Subclasses must implement __call__")
 
 
+class Identity(ImageTransformation):
+    """Identity transformation"""
+
+    def __init__(self, seed: int = 42):
+        super().__init__("Identity", seed)
+
+    def __call__(self, image: Image.Image) -> Image.Image:
+        return image
+
+
 class CameraRotation(ImageTransformation):
     """Simulates slight camera rotation/tilt"""
 
