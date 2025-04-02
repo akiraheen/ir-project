@@ -12,17 +12,15 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 from utils.ingredient_filter import extract_ingredients
 from sentence_transformers import SentenceTransformer
-import optuna
+# import optuna
 import lightgbm as lightgbm
-import optuna.integration.lightgbm as optuna_lgb
+# import optuna.integration.lightgbm as optuna_lgb
 import time
-
-start_time = time.time()
-
-from collections import OrderedDict
-from sklearn.model_selection import ParameterGrid
+from sklearn.model_selection import train_test_split
+# from collections import OrderedDict
+# from sklearn.model_selection import ParameterGrid
 from rank_bm25 import BM25Okapi
-from nltk.tokenize import word_tokenize
+# from nltk.tokenize import word_tokenize
 
 class CLIPRetrievalSystem:
     def __init__(self, model_name="openai/clip-vit-base-patch32"):
@@ -244,20 +242,20 @@ class CLIPRetrievalSystem:
                 retrieved_embed = self.index.reconstruct(int(idx)).reshape(1, -1)
 
                 # Compute cosine similarity
-                cosine_sim = cosine_similarity(query_embed, retrieved_embed)[0][0]
+                # cosine_sim = cosine_similarity(query_embed, retrieved_embed)[0][0]
 
                 # Assign relevance labels (0-3 scale)
-                label = pd.cut(
-                    [cosine_sim], bins=[-1, 0.5, 0.7, 0.9, 1], labels=[0, 1, 2, 3], include_lowest=True
-                ).astype(int)[0]  # Extract the single value from the series
+                # label = pd.cut(
+                #     [cosine_sim], bins=[-1, 0.5, 0.7, 0.9, 1], labels=[0, 1, 2, 3], include_lowest=True
+                # ).astype(int)[0]  # Extract the single value from the series
 
                 # Store FAISS score, cosine similarity, and relevance label
                 relevant_recipes.append({
                     "qid": self.metadata[idx]['qid'],
                     "name": self.metadata[idx]['name'],
                     "faiss_score": float(faiss_score),
-                    "cosine_sim": float(cosine_sim),
-                    "label": int(label),
+                    #"cosine_sim": float(cosine_sim),
+                    # "label": int(label),
                     "ingredients": extract_ingredients(list(self.metadata[idx]['ingredientLines']))
                 })
 
@@ -281,7 +279,7 @@ def create_dataframe(metadata_path):
             relevant_ingredients = " ".join(r.get("ingredients", []))
             jaccard_score = jaccard_similarity(ingredients, relevant_ingredients)
             tfidf_score = tfidf_sim(ingredients, relevant_ingredients)
-            bert_score = bert_sim(ingredients, relevant_ingredients)
+            # bert_score = bert_sim(ingredients, relevant_ingredients)
 
             recipe_data.append({
                 "qid": int(qid),
@@ -293,7 +291,7 @@ def create_dataframe(metadata_path):
                 "relevant_ingredients": relevant_ingredients,
                 "jaccard_score": jaccard_score,
                 "tfidf_score": tfidf_score,
-                "bert_score": bert_score,
+                # "bert_score": bert_score,
             })
 
     return pd.DataFrame(recipe_data)
@@ -308,8 +306,6 @@ def jaccard_similarity(text1, text2):
     union = len(set1 | set2)
 
     return intersection / union if union != 0 else 0
-
-
 
 def tfidf_sim(text1, text2):
     vectorizer = TfidfVectorizer()
@@ -332,9 +328,44 @@ def bert_sim(text1, text2):
     cs = cosine_similarity([emb1], [emb2])[0, 0]
     return cs
 
+def bm25_group(df):
+
+    documents = {}
+
+    for index, row in df.iterrows():
+        if row['qid'] not in documents:
+            documents[row['qid']] = [row["relevant_ingredients"]]
+        else:
+            documents[row['qid']].append(row["relevant_ingredients"])
+
+    return documents
+
+def bm25_rerank(df):
+    documents = bm25_group(df)
+    for recipe_id in documents:
+        tokenized_docs = [doc.lower().split() for doc in documents[recipe_id]]
+        bm25 = BM25Okapi(tokenized_docs)
+
+        query = df.loc[df['qid'] == recipe_id, 'ingredients'].values[0]
+
+        tokenized_query = query.lower().split()
+
+        scores = bm25.get_scores(tokenized_query)
+
+        # df["bm25_score"] = scores
+        df.loc[df['qid'] == recipe_id, 'bm25_score'] = scores
+
+    return df
+
+
 def lambdaMart(dataframe):
-    train = dataframe[dataframe['qid'] < 800]
-    test = dataframe[dataframe['qid'] >= 800]
+    unique_qids = dataframe["qid"].unique()
+
+    qid_train, qid_test = train_test_split(unique_qids, test_size=0.2, random_state=42)
+
+    # split based on qid
+    train = dataframe[dataframe["qid"].isin(qid_train)]
+    test = dataframe[dataframe["qid"].isin(qid_test)]
 
     print(f"No of unique queries in train : {train['qid'].nunique()}")
     print(f"No of unique queries in test : {test['qid'].nunique()}")
@@ -346,7 +377,7 @@ def lambdaMart(dataframe):
 
     qids_test = test.groupby("qid")["qid"].count().to_numpy()
     X_test = test.drop(["qid", "label", "relevant_docId", "ingredients", "name",
-                          "relevant_name", "relevant_ingredients", "jaccard_score"], axis=1)
+                        "relevant_name", "relevant_ingredients", "jaccard_score"], axis=1)
     y_test = test["label"]
 
     ranker = lightgbm.LGBMRanker(
@@ -383,27 +414,28 @@ def lambdaMart(dataframe):
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     retriever = CLIPRetrievalSystem()
 
     # Fixed path typo: Yumm28K → Yummly28K
     retriever.process_and_save_dataset(
-        metadata_dir="../Yummly28K/metadata200",  # Change to full dataset
-        image_dir="../Yummly28K/images200",
+        metadata_dir="../Yummly28K/metadata27638",  # Change to full dataset
+        image_dir="../Yummly28K/images27638",
         force_reprocess=False  # Run first time to generate files
     )
 
     # Test query
-    results = retriever.query_with_image("../Yummly28K/images200/img00001.jpg")
+    results = retriever.query_with_image("../Yummly28K/images27638/img00001.jpg")
     print("Top result:", results[0]['metadata']['name'])
 
     df = create_dataframe("processed_data/metadata.json")
 
-
-
     df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3, 4], duplicates="drop")
     df["label"] = df["label"].astype(int)  # Convert to integer
 
-    df.to_csv("out.csv", index=False)
+    df = bm25_rerank(df)
+
+    df.to_csv("df-output.csv", index=False)
 
     lambdaMart(df)
 
