@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.845
+MAP: 0.727
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.958
+MAP: 0.604
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1          Salmon with Herbed Mustard Sauce        109.067      Salmon with Herbed Mustard Sauce           105.433
+    2      Roasted Salmon with Fresh Vegetables        100.781  Roasted Salmon with Fresh Vegetables           102.251
+    3 Smoked Trout Salad with Apples and Pecans         99.552    Green Bean–Tomato Salad with Herbs           101.600
+    4                   Green Beans with Savory         99.391 Grilled Salmon with Maple Syrup Glaze            99.666
+    5        Green Bean–Tomato Salad with Herbs         99.264          Broiled Salmon and Asparagus            98.750
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.553
+MAP: 0.400
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.712
+MAP: 0.350
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.847
+MAP: 0.216
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                            Transformed Recipe Transformed Score
+    1          Salmon with Herbed Mustard Sauce        109.067              Salmon with Herbed Mustard Sauce           101.800
+    2      Roasted Salmon with Fresh Vegetables        100.781            Green Bean–Tomato Salad with Herbs            98.842
+    3 Smoked Trout Salad with Apples and Pecans         99.552       Green Beans with Shallots and Hazelnuts            98.293
+    4                   Green Beans with Savory         99.391                                  Winter Salad            97.431
+    5        Green Bean–Tomato Salad with Herbs         99.264 Baby Spinach Salad With Creamy Dijon Dressing            97.379
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.777
+MAP: 0.600
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.963
+MAP: 0.393
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                   Transformed Recipe Transformed Score
+    1          Salmon with Herbed Mustard Sauce        109.067     Salmon with Herbed Mustard Sauce            96.725
+    2      Roasted Salmon with Fresh Vegetables        100.781   Green Bean–Tomato Salad with Herbs            93.256
+    3 Smoked Trout Salad with Apples and Pecans         99.552                   Herbed Green Beans            92.899
+    4                   Green Beans with Savory         99.391              Green Beans with Savory            92.208
+    5        Green Bean–Tomato Salad with Herbs         99.264 Roasted Salmon with Fresh Vegetables            91.897
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.858
+MAP: 0.762
+Recall: 0.400
+Accuracy: 0.800
+
+Metrics at k=20:
+NDCG: 0.963
+MAP: 0.478
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                   Transformed Recipe Transformed Score
+    1          Salmon with Herbed Mustard Sauce        109.067     Salmon with Herbed Mustard Sauce           106.411
+    2      Roasted Salmon with Fresh Vegetables        100.781   Green Bean–Tomato Salad with Herbs           102.375
+    3 Smoked Trout Salad with Apples and Pecans         99.552 Roasted Salmon with Fresh Vegetables           101.703
+    4                   Green Beans with Savory         99.391      Grilled Okra and Tomato Skewers           100.703
+    5        Green Bean–Tomato Salad with Herbs         99.264              Green Beans with Savory           100.693

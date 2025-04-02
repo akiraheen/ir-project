@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.836
+MAP: 0.704
+Recall: 0.350
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.944
+MAP: 0.535
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                                         Original Recipe Original Score                             Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Chicken and Goat Cheese Pizza With Fresh Herbs           113.297
+    2                                    Veggie Grilled Pizza        104.775                                   Winter Salad           112.468
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                        Homemade Hamburger Buns           108.788
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                            Best Turkey Burgers           108.788
+    5                                 Homemade Hamburger Buns        102.977                    Southwestern Turkey Fajitas           108.271
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.214
+MAP: 0.100
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.532
+MAP: 0.156
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.627
+MAP: 0.101
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                                         Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142 Provençal Vegetable Soup (Soupe au Pistou)           118.329
+    2                                    Veggie Grilled Pizza        104.775                                Winter Salad           111.871
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                         Chicken Quesadillas           109.468
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089                                 Green Beans           108.951
+    5                                 Homemade Hamburger Buns        102.977     Chopped Beet Salad with Feta and Pecans           107.202
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.800
+
+Metrics at k=20:
+NDCG: 0.992
+MAP: 0.771
+Recall: 0.800
+Accuracy: 0.800
+
+Top 5 Results Comparison:
+ Rank                                         Original Recipe Original Score                                      Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142          Chicken and Goat Cheese Pizza With Fresh Herbs           112.622
+    2                                    Veggie Grilled Pizza        104.775                                    Veggie Grilled Pizza           105.279
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514 Watercress Salad with Cotija Cheese and Fried Tortillas           104.707
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089     Mozzarella, Pesto, Arugula, and Parmesan Bruschetta           104.430
+    5                                 Homemade Hamburger Buns        102.977      Heirloom Tomato, Fresh Mozzarella & Basil Crostini           104.300
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.747
+MAP: 0.575
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.919
+MAP: 0.466
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                                         Original Recipe Original Score                             Transformed Recipe Transformed Score
+    1          Chicken and Goat Cheese Pizza With Fresh Herbs        113.142                                   Winter Salad           110.231
+    2                                    Veggie Grilled Pizza        104.775 Chicken and Goat Cheese Pizza With Fresh Herbs           109.890
+    3              Chilled Pea Soup with Egg Salad Sandwiches        103.514                            Chicken Quesadillas           106.500
+    4 Watercress Salad with Cotija Cheese and Fried Tortillas        103.089     Potato, Italian Sausage, and Arugula Salad           105.846
+    5                                 Homemade Hamburger Buns        102.977                        Homemade Hamburger Buns           105.697

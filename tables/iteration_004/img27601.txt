@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.509
+MAP: 0.333
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.703
+MAP: 0.389
+Recall: 0.300
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.827
+MAP: 0.242
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank                         Original Recipe Original Score                       Transformed Recipe Transformed Score
+    1                  Tandoori-Style Chicken        101.155     Roasted Salmon with Fresh Vegetables           105.791
+    2    Roasted Salmon with Fresh Vegetables         96.294                         Parmesan Chicken           105.273
+    3                    Herb-Grilled Chicken         95.571                     Herb-Grilled Chicken           103.545
+    4 Grilled Fish with Cucumber-Tomato Salsa         95.292 Grilled Halibut with Three-Pepper Relish           103.417
+    5                Roast Chicken Cacciatore         94.970  Grilled Salmon Sandwich with Dill Sauce           102.669
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Top 5 Results Comparison:
+ Rank                         Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                  Tandoori-Style Chicken        101.155                    Winter Salad           110.589
+    2    Roasted Salmon with Fresh Vegetables         96.294     Southwestern Turkey Fajitas           105.852
+    3                    Herb-Grilled Chicken         95.571 Arugula Salad with Strawberries           105.662
+    4 Grilled Fish with Cucumber-Tomato Salsa         95.292 Arugula Salad with Strawberries           105.662
+    5                Roast Chicken Cacciatore         94.970                Parmesan Chicken           103.590
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.469
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.611
+MAP: 0.122
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.737
+MAP: 0.074
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                         Original Recipe Original Score                                                                       Transformed Recipe Transformed Score
+    1                  Tandoori-Style Chicken        101.155                                                                   Tandoori-Style Chicken            92.341
+    2    Roasted Salmon with Fresh Vegetables         96.294                                                 Thai Chicken with Sour-Sweet-Salty Sauce            91.887
+    3                    Herb-Grilled Chicken         95.571                                                         Classic Roast Chicken with Gravy            91.419
+    4 Grilled Fish with Cucumber-Tomato Salsa         95.292 Quinoa, Black Bean & Green Chili Enchiladas with Roasted Red Pepper Enchilada Sauce {gf}            89.782
+    5                Roast Chicken Cacciatore         94.970                                                                   Herb-Roasted Game Hens            89.730
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.586
+MAP: 0.333
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.725
+MAP: 0.217
+Recall: 0.150
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.822
+MAP: 0.122
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                         Original Recipe Original Score                       Transformed Recipe Transformed Score
+    1                  Tandoori-Style Chicken        101.155     Roasted Salmon with Fresh Vegetables           100.071
+    2    Roasted Salmon with Fresh Vegetables         96.294                  Peppered Halibut Steaks            99.094
+    3                    Herb-Grilled Chicken         95.571                   Tandoori-Style Chicken            98.658
+    4 Grilled Fish with Cucumber-Tomato Salsa         95.292                         Parmesan Chicken            98.070
+    5                Roast Chicken Cacciatore         94.970 Grilled Halibut with Three-Pepper Relish            98.029

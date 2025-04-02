@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.743
+MAP: 0.523
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.909
+MAP: 0.327
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                Transformed Recipe Transformed Score
+    1              Chipotle-Pumpkin Black Bean Soup        101.978  Chipotle-Pumpkin Black Bean Soup           102.312
+    2                      Easy Chicken Fajita Soup         96.394 Slow Cooker Chicken Tortilla Soup           101.821
+    3             Slow Cooker Chicken Tortilla Soup         95.923          Easy Chicken Fajita Soup           101.403
+    4                         Pasta Fagioli Soup II         94.710                 Summer Herb Pesto           100.757
+    5 Pasta e Fagioli (Italian Pasta and Bean Soup)         94.655             Pasta Fagioli Soup II            99.475
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.384
+MAP: 0.130
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.551
+MAP: 0.115
+Recall: 0.150
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.551
+MAP: 0.057
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                                            Transformed Recipe Transformed Score
+    1              Chipotle-Pumpkin Black Bean Soup        101.978                                               Idaho Fry Sauce           101.465
+    2                      Easy Chicken Fajita Soup         96.394                                               Antipasto Salsa           100.645
+    3             Slow Cooker Chicken Tortilla Soup         95.923                                                  Winter Salad           100.628
+    4                         Pasta Fagioli Soup II         94.710                                      Easy Chicken Fajita Soup           100.462
+    5 Pasta e Fagioli (Italian Pasta and Bean Soup)         94.655 Tomato and Celery-Infused Beef Consommé with Tiny Choux Puffs            99.923
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.800
+
+Metrics at k=20:
+NDCG: 0.994
+MAP: 0.537
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                Transformed Recipe Transformed Score
+    1              Chipotle-Pumpkin Black Bean Soup        101.978  Chipotle-Pumpkin Black Bean Soup           101.522
+    2                      Easy Chicken Fajita Soup         96.394          Easy Chicken Fajita Soup            98.024
+    3             Slow Cooker Chicken Tortilla Soup         95.923 Slow Cooker Chicken Tortilla Soup            97.823
+    4                         Pasta Fagioli Soup II         94.710                Split Pea Soup Atu            96.862
+    5 Pasta e Fagioli (Italian Pasta and Bean Soup)         94.655             Pasta Fagioli Soup II            96.708
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.792
+MAP: 0.673
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.950
+MAP: 0.497
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                               Original Recipe Original Score                                            Transformed Recipe Transformed Score
+    1              Chipotle-Pumpkin Black Bean Soup        101.978                              Chipotle-Pumpkin Black Bean Soup            94.080
+    2                      Easy Chicken Fajita Soup         96.394                                      Easy Chicken Fajita Soup            90.886
+    3             Slow Cooker Chicken Tortilla Soup         95.923 Tomato and Celery-Infused Beef Consommé with Tiny Choux Puffs            90.208
+    4                         Pasta Fagioli Soup II         94.710                   Chipotle Tortilla Soup with Turkey and Lime            90.046
+    5 Pasta e Fagioli (Italian Pasta and Bean Soup)         94.655                 Pasta e Fagioli (Italian Pasta and Bean Soup)            90.027

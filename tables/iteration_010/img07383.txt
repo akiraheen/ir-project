@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.849
+MAP: 0.737
+Recall: 0.400
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.942
+MAP: 0.564
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           119.871
+    2           Gingerbread Caramel Corn        112.171 Spicy Caramel Popcorn with Peanuts           106.108
+    3 Spicy Caramel Popcorn with Peanuts        111.113              Barbeque Potato Salad           105.785
+    4                Curry Chicken Salad        108.176           Gingerbread Caramel Corn           104.987
+    5         Curry Salmon with Broccoli        108.158          Country Chicken Casserole           104.774
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.821
+MAP: 0.682
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.930
+MAP: 0.483
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           116.999
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           107.468
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Vanilla and Cinnamon-Sugar Popcorn           105.856
+    4                Curry Chicken Salad        108.176 No Bake Peanut Butter Marshmallow Squares           105.254
+    5         Curry Salmon with Broccoli        108.158                 Wholesome Morning Granola           104.986
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.848
+MAP: 0.733
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.955
+MAP: 0.637
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           117.600
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           115.438
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Spicy Caramel Popcorn with Peanuts           109.594
+    4                Curry Chicken Salad        108.176                    Salted Caramel Popcorn           107.923
+    5         Curry Salmon with Broccoli        108.158 No Bake Peanut Butter Marshmallow Squares           107.197
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.509
+MAP: 0.333
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.583
+MAP: 0.250
+Recall: 0.200
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.791
+MAP: 0.185
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score         Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771         Nutty Caramel Corn           112.714
+    2           Gingerbread Caramel Corn        112.171  Country Chicken Casserole           109.228
+    3 Spicy Caramel Popcorn with Peanuts        111.113 Curry Salmon with Broccoli           106.642
+    4                Curry Chicken Salad        108.176      Morning Glory Muffins           104.676
+    5         Curry Salmon with Broccoli        108.158       Italian Stuffed Eggs           102.647

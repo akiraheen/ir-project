@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.803
+MAP: 0.530
+Recall: 0.300
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.936
+MAP: 0.322
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank                                          Original Recipe Original Score                                       Transformed Recipe Transformed Score
+    1 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)        104.624                                Country Chicken Casserole           104.391
+    2                                Country Chicken Casserole         98.094 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)           101.995
+    3                                Sloppy Joe Mac and Cheese         95.917                                          Amish Casserole           101.233
+    4                                     Leek and Potato Stew         95.171                                        Pud's Potato Soup           101.050
+    5                                          Amish Casserole         94.831                                     Leek and Potato Stew           100.512
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.710
+MAP: 0.420
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.833
+MAP: 0.260
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.833
+MAP: 0.130
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                                          Original Recipe Original Score                                       Transformed Recipe Transformed Score
+    1 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)        104.624                                Country Chicken Casserole            92.272
+    2                                Country Chicken Casserole         98.094                                           Peanut Noodles            91.885
+    3                                Sloppy Joe Mac and Cheese         95.917                        Dorm Room Cheesy Tuna and Noodles            90.610
+    4                                     Leek and Potato Stew         95.171 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)            90.464
+    5                                          Amish Casserole         94.831                                 Senegalese Lemon Chicken            90.361
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.961
+MAP: 0.530
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.961
+MAP: 0.265
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                                          Original Recipe Original Score                                       Transformed Recipe Transformed Score
+    1 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)        104.624 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)           101.528
+    2                                Country Chicken Casserole         98.094                                Country Chicken Casserole           100.301
+    3                                Sloppy Joe Mac and Cheese         95.917                                Sloppy Joe Mac and Cheese            98.183
+    4                                     Leek and Potato Stew         95.171                                           Peanut Noodles            97.319
+    5                                          Amish Casserole         94.831                                 Senegalese Lemon Chicken            97.220
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.857
+MAP: 0.758
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.966
+MAP: 0.484
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                                          Original Recipe Original Score                                       Transformed Recipe Transformed Score
+    1 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)        104.624 Indian Rice With Potatoes and Peas (Aloo Matar Ka Pulao)            96.645
+    2                                Country Chicken Casserole         98.094                                Country Chicken Casserole            95.413
+    3                                Sloppy Joe Mac and Cheese         95.917                               Easy Apple-Carrot Coleslaw            90.702
+    4                                     Leek and Potato Stew         95.171                                        Okra and Tomatoes            89.837
+    5                                          Amish Casserole         94.831                                Sloppy Joe Mac and Cheese            89.465

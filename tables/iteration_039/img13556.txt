@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.852
+MAP: 0.743
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.959
+MAP: 0.515
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                                        Original Recipe Original Score                                       Transformed Recipe Transformed Score
+    1 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)        100.936   Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)            97.921
+    2                                  Chinese Pig Ear Salad         96.130 Mustard-Spiced Cabbage and Cannellini Beans with Sausage            96.442
+    3                                     Chicken Stroganoff         93.246                                    Chinese Pig Ear Salad            96.393
+    4             Bucatini with Eggplant and Roasted Peppers         93.172                Butterflied Shrimp and Vegetable Stir-Fry            95.744
+    5                                      Thai Cabbage Slaw         93.030                                      Asian Chicken Salad            95.722
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.151
+MAP: 0.040
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.394
+MAP: 0.079
+Recall: 0.150
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.486
+MAP: 0.050
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                                        Original Recipe Original Score                                     Transformed Recipe Transformed Score
+    1 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)        100.936                            Chicken Enchilada Casserole            96.696
+    2                                  Chinese Pig Ear Salad         96.130                                           Winter Salad            95.321
+    3                                     Chicken Stroganoff         93.246                            Southwestern Turkey Fajitas            93.901
+    4             Bucatini with Eggplant and Roasted Peppers         93.172                                     Fish Coconut Curry            93.656
+    5                                      Thai Cabbage Slaw         93.030 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)            93.650
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.701
+MAP: 0.531
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.923
+MAP: 0.420
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                                        Original Recipe Original Score                                     Transformed Recipe Transformed Score
+    1 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)        100.936 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)            94.994
+    2                                  Chinese Pig Ear Salad         96.130                                  Chinese Pig Ear Salad            92.523
+    3                                     Chicken Stroganoff         93.246                                    Vegetarian Pad Thai            90.516
+    4             Bucatini with Eggplant and Roasted Peppers         93.172                                    Asian Chicken Salad            89.866
+    5                                      Thai Cabbage Slaw         93.030                        One Pot Thai Curry Shrimp Pasta            89.768
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.684
+MAP: 0.520
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.729
+MAP: 0.543
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.895
+MAP: 0.469
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                                        Original Recipe Original Score                                     Transformed Recipe Transformed Score
+    1 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)        100.936 Shrimp / Prawn Pad Thai (Spice I Am Restaurant Recipe)           102.430
+    2                                  Chinese Pig Ear Salad         96.130                                  Chinese Pig Ear Salad            99.732
+    3                                     Chicken Stroganoff         93.246                            Southwestern Turkey Fajitas            99.016
+    4             Bucatini with Eggplant and Roasted Peppers         93.172                            Chicken Enchilada Casserole            98.899
+    5                                      Thai Cabbage Slaw         93.030                                        Creamy Coleslaw            98.818

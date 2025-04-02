@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.655
+MAP: 0.483
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.776
+MAP: 0.613
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.891
+MAP: 0.378
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                              Croutons        120.368                                Winter Salad           119.874
+    2               Ribboned Zucchini Salad        113.511                             Antipasto Salsa           118.542
+    3 Spinach and Strawberry Daiquiri Salad        112.212       Spinach and Strawberry Daiquiri Salad           117.936
+    4                          Winter Salad        111.879 Romaine Salad with Avocado-Lime Vinaigrette           117.291
+    5                     Dijon Vinaigrette        110.468                       No-Guilt Caesar Salad           116.537
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.818
+MAP: 0.558
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.949
+MAP: 0.335
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                                Transformed Recipe Transformed Score
+    1                              Croutons        120.368                                      Winter Salad           129.327
+    2               Ribboned Zucchini Salad        113.511                   Arugula Salad with Strawberries           121.153
+    3 Spinach and Strawberry Daiquiri Salad        112.212                   Arugula Salad with Strawberries           121.153
+    4                          Winter Salad        111.879                           Ribboned Zucchini Salad           120.680
+    5                     Dijon Vinaigrette        110.468 Roasted Squash Salad with Bacon and Pumpkin Seeds           118.963
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.934
+MAP: 0.890
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.984
+MAP: 0.704
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                              Transformed Recipe Transformed Score
+    1                              Croutons        120.368                                        Croutons           109.768
+    2               Ribboned Zucchini Salad        113.511                                    Winter Salad           106.230
+    3 Spinach and Strawberry Daiquiri Salad        112.212                         Ribboned Zucchini Salad           105.567
+    4                          Winter Salad        111.879 Hearts of Palm Salad with Beets and Blue Cheese           105.069
+    5                     Dijon Vinaigrette        110.468           Spinach and Strawberry Daiquiri Salad           104.980
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.450
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.983
+MAP: 0.606
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                              Croutons        120.368                          Winter Salad           119.624
+    2               Ribboned Zucchini Salad        113.511               Ribboned Zucchini Salad           117.151
+    3 Spinach and Strawberry Daiquiri Salad        112.212                              Croutons           115.030
+    4                          Winter Salad        111.879 Spinach and Strawberry Daiquiri Salad           114.070
+    5                     Dijon Vinaigrette        110.468       Arugula Salad with Strawberries           114.024

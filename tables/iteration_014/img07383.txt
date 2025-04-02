@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.836
+MAP: 0.704
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.951
+MAP: 0.423
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score             Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771             Nutty Caramel Corn           115.413
+    2           Gingerbread Caramel Corn        112.171      Wholesome Morning Granola           107.631
+    3 Spicy Caramel Popcorn with Peanuts        111.113                Antipasto Salsa           107.226
+    4                Curry Chicken Salad        108.176     Momma's Cornbread Dressing           107.072
+    5         Curry Salmon with Broccoli        108.158 Baked Parmesan-Crusted Chicken           106.095
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.640
+MAP: 0.453
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.629
+MAP: 0.422
+Recall: 0.300
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.861
+MAP: 0.340
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                          Nutty Caramel Corn           112.147
+    2           Gingerbread Caramel Corn        112.171 Provençal Vegetable Soup (Soupe au Pistou)           105.258
+    3 Spicy Caramel Popcorn with Peanuts        111.113                    Gingerbread Caramel Corn           105.156
+    4                Curry Chicken Salad        108.176          Vanilla and Cinnamon-Sugar Popcorn           104.434
+    5         Curry Salmon with Broccoli        108.158                   Wholesome Morning Granola           104.304
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.857
+MAP: 0.758
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.967
+MAP: 0.663
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           116.033
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           112.230
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Spicy Caramel Popcorn with Peanuts           108.179
+    4                Curry Chicken Salad        108.176 No Bake Peanut Butter Marshmallow Squares           106.944
+    5         Curry Salmon with Broccoli        108.158                    Salted Caramel Popcorn           106.852
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.786
+MAP: 0.643
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.725
+MAP: 0.561
+Recall: 0.350
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.895
+MAP: 0.450
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           120.807
+    2           Gingerbread Caramel Corn        112.171          Country Chicken Casserole           109.088
+    3 Spicy Caramel Popcorn with Peanuts        111.113         Curry Salmon with Broccoli           108.255
+    4                Curry Chicken Salad        108.176           Gingerbread Caramel Corn           108.049
+    5         Curry Salmon with Broccoli        108.158 Spicy Caramel Popcorn with Peanuts           106.940

@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.542
+MAP: 0.357
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.882
+MAP: 0.370
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                             Transformed Recipe Transformed Score
+    1 Chicken Fried Rice Noodles with Black Bean Sauce (Chow Ho Fun)         95.227                                           Vegetable Fried Rice            89.400
+    2                                   CHICKEN AND CHINESE BROCCOLI         87.355 Chicken Fried Rice Noodles with Black Bean Sauce (Chow Ho Fun)            88.316
+    3                                           Vegetable Fried Rice         87.081                  Chinese Takeaway-style chicken with mushrooms            86.603
+    4                  Chinese Takeaway-style chicken with mushrooms         86.986                                      Thai Cashews with Chicken            85.641
+    5                   Thai Chicken Zoodles with Spicy Peanut Sauce         86.698                                      Thai Cashews with Chicken            85.641
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.293
+MAP: 0.008
+Recall: 0.100
+Accuracy: 0.100
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1 Chicken Fried Rice Noodles with Black Bean Sauce (Chow Ho Fun)         95.227                          Winter Salad            90.644
+    2                                   CHICKEN AND CHINESE BROCCOLI         87.355       Arugula Salad with Strawberries            89.402
+    3                                           Vegetable Fried Rice         87.081       Arugula Salad with Strawberries            89.402
+    4                  Chinese Takeaway-style chicken with mushrooms         86.986 Citrus Salad with Poppy-Seed Dressing            89.102
+    5                   Thai Chicken Zoodles with Spicy Peanut Sauce         86.698       Thai Basil Chicken with Cashews            88.392
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.716
+MAP: 0.569
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.939
+MAP: 0.401
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                             Transformed Recipe Transformed Score
+    1 Chicken Fried Rice Noodles with Black Bean Sauce (Chow Ho Fun)         95.227 Chicken Fried Rice Noodles with Black Bean Sauce (Chow Ho Fun)            94.134
+    2                                   CHICKEN AND CHINESE BROCCOLI         87.355                                           Vegetable Fried Rice            91.805
+    3                                           Vegetable Fried Rice         87.081                                              Shrimp Fried Rice            90.667
+    4                  Chinese Takeaway-style chicken with mushrooms         86.986                                       Chinese Mushroom Chicken            90.380
+    5                   Thai Chicken Zoodles with Spicy Peanut Sauce         86.698                                                Thai Crab Rolls            89.527
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.684
+MAP: 0.520
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.702
+MAP: 0.304
+Recall: 0.200
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.848
+MAP: 0.185
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                                                Original Recipe Original Score                                         Transformed Recipe Transformed Score
+    1 Chicken Fried Rice Noodles with Black Bean Sauce (Chow Ho Fun)         95.227                               CHICKEN AND CHINESE BROCCOLI            91.447
+    2                                   CHICKEN AND CHINESE BROCCOLI         87.355              Chinese Takeaway-style chicken with mushrooms            89.905
+    3                                           Vegetable Fried Rice         87.081                            Thai Basil Chicken with Cashews            88.343
+    4                  Chinese Takeaway-style chicken with mushrooms         86.986 Thai Fried Rice Noodles with Chicken or Tofu (gluten-free)            87.689
+    5                   Thai Chicken Zoodles with Spicy Peanut Sauce         86.698                                               Raw Pad Thai            87.451

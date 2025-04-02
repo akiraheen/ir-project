@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.785
+MAP: 0.657
+Recall: 0.350
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.950
+MAP: 0.459
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           118.330
+    2           Gingerbread Caramel Corn        112.171              Barbeque Potato Salad           107.871
+    3 Spicy Caramel Popcorn with Peanuts        111.113 Spicy Caramel Popcorn with Peanuts           105.497
+    4                Curry Chicken Salad        108.176         Momma's Cornbread Dressing           105.210
+    5         Curry Salmon with Broccoli        108.158          Country Chicken Casserole           105.012
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.817
+MAP: 0.671
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.936
+MAP: 0.415
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           114.093
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           105.664
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Vanilla and Cinnamon-Sugar Popcorn           104.610
+    4                Curry Chicken Salad        108.176                 Wholesome Morning Granola           104.291
+    5         Curry Salmon with Broccoli        108.158 No Bake Peanut Butter Marshmallow Squares           103.261
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.863
+MAP: 0.776
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.967
+MAP: 0.659
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           117.169
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           114.421
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Spicy Caramel Popcorn with Peanuts           108.812
+    4                Curry Chicken Salad        108.176                    Salted Caramel Popcorn           106.445
+    5         Curry Salmon with Broccoli        108.158 No Bake Peanut Butter Marshmallow Squares           106.341
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.786
+MAP: 0.643
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.725
+MAP: 0.561
+Recall: 0.350
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.895
+MAP: 0.450
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           120.807
+    2           Gingerbread Caramel Corn        112.171          Country Chicken Casserole           109.088
+    3 Spicy Caramel Popcorn with Peanuts        111.113         Curry Salmon with Broccoli           108.255
+    4                Curry Chicken Salad        108.176           Gingerbread Caramel Corn           108.049
+    5         Curry Salmon with Broccoli        108.158 Spicy Caramel Popcorn with Peanuts           106.940

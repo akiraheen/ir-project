@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.900
+
+Metrics at k=20:
+NDCG: 0.998
+MAP: 0.892
+Recall: 0.900
+Accuracy: 0.900
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                        Tomato Chutney           112.117
+    2                 Orange-Chipotle Sauce        107.843                 Orange-Chipotle Sauce           107.656
+    3                 Amber Ale Baked Beans        104.316  Tomato Chutney with Baked Pita Chips           104.222
+    4 Saffron Risotto with Butternut Squash        104.115 Saffron Risotto with Butternut Squash           104.164
+    5                       Antipasto Salsa        103.605                       Antipasto Salsa           103.680
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.699
+MAP: 0.550
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.726
+MAP: 0.531
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.891
+MAP: 0.460
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                 Antipasto Salsa           104.280
+    2                 Orange-Chipotle Sauce        107.843                  Tomato Chutney           103.250
+    3                 Amber Ale Baked Beans        104.316     Summer Tomato Chopped Salad           101.896
+    4 Saffron Risotto with Butternut Squash        104.115       Cranberry-Apricot Chutney           101.316
+    5                       Antipasto Salsa        103.605 Arugula Salad with Strawberries           101.248
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.849
+MAP: 0.737
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.956
+MAP: 0.556
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score        Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477            Tomato Chutney           106.439
+    2                 Orange-Chipotle Sauce        107.843     Orange-Chipotle Sauce           102.346
+    3                 Amber Ale Baked Beans        104.316      Pear-Cranberry Sauce            99.682
+    4 Saffron Risotto with Butternut Squash        104.115 Cranberry-Apricot Chutney            98.272
+    5                       Antipasto Salsa        103.605    Candied Sweet Potatoes            97.820
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.997
+MAP: 0.740
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score        Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477            Tomato Chutney           111.631
+    2                 Orange-Chipotle Sauce        107.843     Orange-Chipotle Sauce           108.074
+    3                 Amber Ale Baked Beans        104.316           Antipasto Salsa           106.213
+    4 Saffron Risotto with Butternut Squash        104.115               Spicy Salsa           104.841
+    5                       Antipasto Salsa        103.605 Cranberry-Apricot Chutney           104.628

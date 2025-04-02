@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.509
+MAP: 0.333
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.630
+MAP: 0.217
+Recall: 0.150
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.792
+MAP: 0.134
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score        Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462           Shrimp Pad Thai           102.792
+    2               Thai Noodle Salad         97.596        Thai Chicken Salad           101.174
+    3 One Pot Thai Curry Shrimp Pasta         97.236      Vegetable Fried Rice           100.931
+    4              Southwestern Salad         95.516              Winter Salad           100.309
+    5              Southwestern Salad         95.516 Carrot and Cucumber Salad            99.722
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.469
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.605
+MAP: 0.120
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.728
+MAP: 0.072
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                 Shrimp Pad Thai            97.730
+    2               Thai Noodle Salad         97.596       Carrot and Cucumber Salad            96.836
+    3 One Pot Thai Curry Shrimp Pasta         97.236 Arugula Salad with Strawberries            96.730
+    4              Southwestern Salad         95.516 Arugula Salad with Strawberries            96.730
+    5              Southwestern Salad         95.516                 Creamy Coleslaw            96.453
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.832
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.832
+MAP: 0.300
+Recall: 0.150
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.921
+MAP: 0.160
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                                            Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                                               Shrimp Pad Thai           100.191
+    2               Thai Noodle Salad         97.596                                             Chipotle Coleslaw            94.288
+    3 One Pot Thai Curry Shrimp Pasta         97.236                                          Vegetable Fried Rice            92.878
+    4              Southwestern Salad         95.516                                            Thai Chicken Salad            92.815
+    5              Southwestern Salad         95.516 Asian Edamame Salad with Avocado, Toasted Almonds, & Cilantro            92.705
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.304
+MAP: 0.039
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.415
+MAP: 0.028
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                                         Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462 Thai Fried Rice Noodles with Chicken or Tofu (gluten-free)            97.759
+    2               Thai Noodle Salad         97.596                                  Quick and Easy Enchiladas            96.311
+    3 One Pot Thai Curry Shrimp Pasta         97.236                                  Country Chicken Casserole            95.344
+    4              Southwestern Salad         95.516                          Shrimp Fried Noodles - Thai-Style            94.851
+    5              Southwestern Salad         95.516                                      Chinese Cabbage Salad            94.001

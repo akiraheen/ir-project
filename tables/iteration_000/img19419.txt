@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.855
+MAP: 0.753
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.968
+MAP: 0.444
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank         Original Recipe Original Score            Transformed Recipe Transformed Score
+    1   Antipasto Pasta Salad        109.544               Antipasto Salsa           107.505
+    2     Italian Pasta Salad        102.776         Antipasto Pasta Salad           107.432
+    3    Easy Pasta Primavera        102.608        Italian Pasta Salad II           103.602
+    4         Antipasto Salsa        102.385 Lightened Italian Pasta Salad           103.216
+    5 Sweet Pepper Pasta Toss        101.971       Sweet Pepper Pasta Toss           103.174
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.345
+MAP: 0.180
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.507
+MAP: 0.184
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.652
+MAP: 0.125
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank         Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1   Antipasto Pasta Salad        109.544 Provençal Vegetable Soup (Soupe au Pistou)           121.438
+    2     Italian Pasta Salad        102.776                             Antipasto Salsa           121.053
+    3    Easy Pasta Primavera        102.608                                Winter Salad           120.275
+    4         Antipasto Salsa        102.385                 Southwestern Turkey Fajitas           116.677
+    5 Sweet Pepper Pasta Toss        101.971             Arugula Salad with Strawberries           115.342
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.864
+MAP: 0.780
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.970
+MAP: 0.667
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank         Original Recipe Original Score            Transformed Recipe Transformed Score
+    1   Antipasto Pasta Salad        109.544         Antipasto Pasta Salad           107.373
+    2     Italian Pasta Salad        102.776 Lightened Italian Pasta Salad           103.181
+    3    Easy Pasta Primavera        102.608               Antipasto Salsa           101.837
+    4         Antipasto Salsa        102.385     Mediterranean Pasta Salad           101.350
+    5 Sweet Pepper Pasta Toss        101.971          Easy Pasta Primavera           101.264
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.915
+MAP: 0.835
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.963
+MAP: 0.525
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank         Original Recipe Original Score            Transformed Recipe Transformed Score
+    1   Antipasto Pasta Salad        109.544         Antipasto Pasta Salad           104.257
+    2     Italian Pasta Salad        102.776               Antipasto Salsa           102.962
+    3    Easy Pasta Primavera        102.608 Lightened Italian Pasta Salad            98.889
+    4         Antipasto Salsa        102.385       Sweet Pepper Pasta Toss            98.535
+    5 Sweet Pepper Pasta Toss        101.971   Southwestern Turkey Fajitas            98.303

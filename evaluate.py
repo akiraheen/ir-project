@@ -1,16 +1,14 @@
+from pathlib import Path
 import numpy as np
-import json
+
 from typing import List, Dict
 from PIL import Image
+
 from retriever import CLIPRetrievalSystem
 import pandas as pd
 import matplotlib.pyplot as plt
 from transformations import (
     ImageTransformation,
-    CameraRotation,
-    BrightnessVariation,
-    GaussianNoise,
-    MotionBlur,
 )
 
 
@@ -21,7 +19,10 @@ class RetrievalEvaluator:
         self.max_k = max(self.k_values)
 
     def evaluate_transformations(
-        self, original_image: Image.Image, transformations: List[ImageTransformation]
+        self,
+        original_image: Image.Image,
+        transformations: List[ImageTransformation],
+        show_images: bool = True,
     ) -> Dict[str, Dict]:
         """
         Evaluate multiple transformations against the original image
@@ -35,26 +36,29 @@ class RetrievalEvaluator:
         """
         results = {}
 
-        # Create subplot grid
         n_transforms = len(transformations)
-        plt.figure(figsize=(15, 5 * (n_transforms + 1)))
 
-        # Show original image
-        plt.subplot(n_transforms + 1, 2, 1)
-        plt.imshow(original_image)
-        plt.title("Original Image")
-        plt.axis("off")
+        if show_images:
+            # Create subplot grid
+            plt.figure(figsize=(15, 5 * (n_transforms + 1)))
+
+            # Show original image
+            plt.subplot(n_transforms + 1, 2, 1)
+            plt.imshow(original_image)
+            plt.title("Original Image")
+            plt.axis("off")
 
         # Evaluate each transformation
         for idx, transform in enumerate(transformations, 1):
             # Apply transformation
             transformed_image = transform(original_image)
 
-            # Show transformed image
-            plt.subplot(n_transforms + 1, 2, idx * 2 + 1)
-            plt.imshow(transformed_image)
-            plt.title(f"Transformed Image ({transform.name})")
-            plt.axis("off")
+            if show_images:
+                # Show transformed image
+                plt.subplot(n_transforms + 1, 2, idx * 2 + 1)
+                plt.imshow(transformed_image)
+                plt.title(f"Transformed Image ({transform.name})")
+                plt.axis("off")
 
             # Evaluate transformation
             eval_results = self.evaluate_transformation(
@@ -62,11 +66,11 @@ class RetrievalEvaluator:
             )
             results[transform.name] = eval_results
 
-        plt.tight_layout()
-        plt.show()
+        if show_images:
+            plt.tight_layout()
+            plt.show()
 
         # Print results for each transformation
-        self._print_comparison_results(results)
 
         return results
 
@@ -165,38 +169,41 @@ class RetrievalEvaluator:
         relevant_retrieved = len(set(original_ids) & set(transformed_ids[:k]))
         return relevant_retrieved / len(original_ids) if original_ids else 0.0
 
-    def _print_comparison_results(self, results: Dict[str, Dict]) -> None:
-        """Print comparative results for all transformations"""
-        # Print metrics for each transformation
-        for transform_name, transform_results in results.items():
-            print(f"\nResults for {transform_name}:")
-            print("-" * 50)
-            for k in self.k_values:
-                print(f"\nMetrics at k={k}:")
-                print(f"NDCG: {transform_results[f'ndcg@{k}']:.3f}")
-                print(f"MAP: {transform_results[f'map@{k}']:.3f}")
-                print(f"Recall: {transform_results[f'recall@{k}']:.3f}")
-                print(f"Accuracy: {transform_results[f'accuracy@{k}']:.3f}")
+    def write_comparison_results(
+        self, results: Dict[str, Dict], file_path: Path
+    ) -> None:
+        """Write comparative results for all transformations to a file"""
+        with open(file_path, "w") as f:
+            # Write metrics for each transformation
+            for transform_name, transform_results in results.items():
+                f.write(f"\nResults for {transform_name}:\n")
+                f.write("-" * 50 + "\n")
+                for k in self.k_values:
+                    f.write(f"\nMetrics at k={k}:\n")
+                    f.write(f"NDCG: {transform_results[f'ndcg@{k}']:.3f}\n")
+                    f.write(f"MAP: {transform_results[f'map@{k}']:.3f}\n")
+                    f.write(f"Recall: {transform_results[f'recall@{k}']:.3f}\n")
+                    f.write(f"Accuracy: {transform_results[f'accuracy@{k}']:.3f}\n")
 
-            # Print top results comparison
-            comparison_data = []
-            for i in range(self.k_values[0]):
-                orig_result = transform_results["original_results"][i]
-                trans_result = transform_results["transformed_results"][i]
+                # Write top results comparison
+                comparison_data = []
+                for i in range(self.k_values[0]):
+                    orig_result = transform_results["original_results"][i]
+                    trans_result = transform_results["transformed_results"][i]
 
-                comparison_data.append(
-                    {
-                        "Rank": i + 1,
-                        "Original Recipe": orig_result["metadata"]["name"],
-                        "Original Score": f"{orig_result['score']:.3f}",
-                        "Transformed Recipe": trans_result["metadata"]["name"],
-                        "Transformed Score": f"{trans_result['score']:.3f}",
-                    }
-                )
+                    comparison_data.append(
+                        {
+                            "Rank": i + 1,
+                            "Original Recipe": orig_result["metadata"]["name"],
+                            "Original Score": f"{orig_result['score']:.3f}",
+                            "Transformed Recipe": trans_result["metadata"]["name"],
+                            "Transformed Score": f"{trans_result['score']:.3f}",
+                        }
+                    )
 
-            comparison_df = pd.DataFrame(comparison_data)
-            print(f"\nTop {self.k_values[0]} Results Comparison:")
-            print(comparison_df.to_string(index=False))
+                comparison_df = pd.DataFrame(comparison_data)
+                f.write(f"\nTop {self.k_values[0]} Results Comparison:\n")
+                f.write(comparison_df.to_string(index=False) + "\n")
 
 
 def crop_image(image: Image.Image, crop_size: int) -> Image.Image:
@@ -207,26 +214,3 @@ def crop_image(image: Image.Image, crop_size: int) -> Image.Image:
     right = left + crop_size
     bottom = top + crop_size
     return image.crop((left, top, right, bottom))
-
-
-def main():
-    retriever = CLIPRetrievalSystem()
-    evaluator = RetrievalEvaluator(retriever)
-
-    original_image = Image.open("data/Yummly28K/images27638/img00001.jpg").convert(
-        "RGB"
-    )
-
-    transformations = [
-        CameraRotation(angle_range=(-10, 10)),  # Slight camera tilt
-        BrightnessVariation(factor_range=(0.2, 0.8)),  # Low-light conditions
-        GaussianNoise(std_range=(0.01, 0.03)),  # Sensor noise/attacks
-        MotionBlur(kernel_size_range=(3, 5)),  # Camera motion
-    ]
-
-    results = evaluator.evaluate_transformations(original_image, transformations)
-    json.dump(results, open("results.json", "w"))
-
-
-if __name__ == "__main__":
-    main()

@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.851
+MAP: 0.745
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.958
+MAP: 0.430
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072                   No-Guilt Caesar Salad           106.422
+    2 Mixed Greens with Shallot Vinaigrette        101.509                         Antipasto Salsa           105.521
+    3       Arugula Salad with Strawberries         99.647             Southwestern Turkey Fajitas           105.276
+    4       Arugula Salad with Strawberries         99.647 Chopped Beet Salad with Feta and Pecans           105.234
+    5                            Side Salad         99.636                        Tri-Pepper Salad           105.093
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.515
+MAP: 0.353
+Recall: 0.150
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.616
+MAP: 0.451
+Recall: 0.300
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.791
+MAP: 0.332
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072                                Winter Salad           117.821
+    2 Mixed Greens with Shallot Vinaigrette        101.509     Chopped Beet Salad with Feta and Pecans           115.077
+    3       Arugula Salad with Strawberries         99.647                             Antipasto Salsa           114.670
+    4       Arugula Salad with Strawberries         99.647 Provençal Vegetable Soup (Soupe au Pistou)           113.235
+    5                            Side Salad         99.636                 Southwestern Turkey Fajitas           113.225
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.863
+MAP: 0.776
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.975
+MAP: 0.500
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072             Yellow Tomato Salsa           105.110
+    2 Mixed Greens with Shallot Vinaigrette        101.509                    Citrus Salad           103.340
+    3       Arugula Salad with Strawberries         99.647     Southwestern Turkey Fajitas           102.642
+    4       Arugula Salad with Strawberries         99.647              Warm Spinach Salad           102.023
+    5                            Side Salad         99.636 Arugula Salad with Strawberries           101.330
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.905
+MAP: 0.815
+Recall: 0.400
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.954
+MAP: 0.600
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score          Transformed Recipe Transformed Score
+    1                   Yellow Tomato Salsa        108.072       No-Guilt Caesar Salad           109.458
+    2 Mixed Greens with Shallot Vinaigrette        101.509             Antipasto Salsa           108.791
+    3       Arugula Salad with Strawberries         99.647 Southwestern Turkey Fajitas           108.288
+    4       Arugula Salad with Strawberries         99.647                Winter Salad           107.902
+    5                            Side Salad         99.636         Yellow Tomato Salsa           107.777

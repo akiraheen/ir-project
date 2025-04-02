@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.836
+MAP: 0.704
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.942
+MAP: 0.571
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank               Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1 Saffron Potatoes with Almonds        109.283         Saffron Potatoes with Almonds           108.513
+    2                 Herb Stuffing        103.335                         Herb Stuffing           103.378
+    3       Glazed Butternut Squash        102.441 Saffron Risotto with Butternut Squash           103.141
+    4  Roasted Carrots and Parsnips         99.353               Glazed Butternut Squash           102.011
+    5    Banana-Coconut Apple Crisp         99.311                         Okra Fritters           100.939
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.319
+MAP: 0.130
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.437
+MAP: 0.098
+Recall: 0.100
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.530
+MAP: 0.061
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank               Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1 Saffron Potatoes with Almonds        109.283 Chopped Beet Salad with Feta and Pecans           106.958
+    2                 Herb Stuffing        103.335                            Winter Salad           106.003
+    3       Glazed Butternut Squash        102.441                         Antipasto Salsa           104.998
+    4  Roasted Carrots and Parsnips         99.353         Arugula Salad with Strawberries           103.983
+    5    Banana-Coconut Apple Crisp         99.311         Arugula Salad with Strawberries           103.983
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.602
+MAP: 0.400
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.885
+MAP: 0.342
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank               Original Recipe Original Score                   Transformed Recipe Transformed Score
+    1 Saffron Potatoes with Almonds        109.283        Saffron Potatoes with Almonds           105.473
+    2                 Herb Stuffing        103.335                        Herb Stuffing           102.073
+    3       Glazed Butternut Squash        102.441           Banana-Coconut Apple Crisp           100.828
+    4  Roasted Carrots and Parsnips         99.353 Honey Mustard-Whipped Sweet Potatoes           100.333
+    5    Banana-Coconut Apple Crisp         99.311               Easy French Onion Soup            99.523
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.836
+MAP: 0.704
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.950
+MAP: 0.592
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank               Original Recipe Original Score                           Transformed Recipe Transformed Score
+    1 Saffron Potatoes with Almonds        109.283                Saffron Potatoes with Almonds           109.123
+    2                 Herb Stuffing        103.335                                Herb Stuffing           106.103
+    3       Glazed Butternut Squash        102.441 Roasted Potatoes with Citrus-Spiked Tapenade           103.293
+    4  Roasted Carrots and Parsnips         99.353        Tia and David's Deep Fried Tortellini           103.255
+    5    Banana-Coconut Apple Crisp         99.311                                Okra Fritters           102.567

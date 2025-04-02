@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.931
+MAP: 0.879
+Recall: 0.400
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.976
+MAP: 0.728
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                                   Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                   Caribbean Grilled Scallop Salad        113.249 Caribbean Grilled Scallop Salad           114.804
+    2 Autumn Apple, Pear, and Cheddar Salad with Pecans        106.875     Southwestern Turkey Fajitas           114.251
+    3               Grilled Chicken Salad With Cherries        106.678 Arugula Salad with Strawberries           114.125
+    4                   Arugula Salad with Strawberries        106.583 Arugula Salad with Strawberries           114.125
+    5                   Arugula Salad with Strawberries        106.583                 Antipasto Salsa           113.307
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.447
+MAP: 0.287
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.666
+MAP: 0.260
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.666
+MAP: 0.130
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                                   Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                   Caribbean Grilled Scallop Salad        113.249                                Winter Salad           127.150
+    2 Autumn Apple, Pear, and Cheddar Salad with Pecans        106.875 Provençal Vegetable Soup (Soupe au Pistou)           122.186
+    3               Grilled Chicken Salad With Cherries        106.678                             Antipasto Salsa           120.079
+    4                   Arugula Salad with Strawberries        106.583                 Southwestern Turkey Fajitas           119.070
+    5                   Arugula Salad with Strawberries        106.583             Arugula Salad with Strawberries           117.428
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.934
+MAP: 0.890
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.978
+MAP: 0.686
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank                                   Original Recipe Original Score                                Transformed Recipe Transformed Score
+    1                   Caribbean Grilled Scallop Salad        113.249                       Southwestern Turkey Fajitas           106.067
+    2 Autumn Apple, Pear, and Cheddar Salad with Pecans        106.875                   Caribbean Grilled Scallop Salad           105.749
+    3               Grilled Chicken Salad With Cherries        106.678                   Arugula Salad with Strawberries           105.149
+    4                   Arugula Salad with Strawberries        106.583                   Arugula Salad with Strawberries           105.149
+    5                   Arugula Salad with Strawberries        106.583 Autumn Apple, Pear, and Cheddar Salad with Pecans           104.136
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.450
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.995
+MAP: 0.783
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                                   Original Recipe Original Score                         Transformed Recipe Transformed Score
+    1                   Caribbean Grilled Scallop Salad        113.249            Arugula Salad with Strawberries           113.478
+    2 Autumn Apple, Pear, and Cheddar Salad with Pecans        106.875            Arugula Salad with Strawberries           113.478
+    3               Grilled Chicken Salad With Cherries        106.678            Caribbean Grilled Scallop Salad           113.154
+    4                   Arugula Salad with Strawberries        106.583                Southwestern Turkey Fajitas           111.453
+    5                   Arugula Salad with Strawberries        106.583 Chicken and Strawberries Over Mixed Greens           110.602

@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.470
+MAP: 0.280
+Recall: 0.100
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.605
+MAP: 0.310
+Recall: 0.250
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.782
+MAP: 0.211
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1 Banana-Raspberry Cake with Lemon Frosting        122.310 Banana-Raspberry Cake with Lemon Frosting           113.121
+    2                              Baked Alaska        109.575      Boardwalk Quality Maple Walnut Fudge           109.894
+    3                              Nanaimo Bars        109.152                        Chicken a la Creme           108.821
+    4      Peppermint-Marshmallow Ice Cream Pie        108.216                   Horseradish Cream Sauce           108.086
+    5                              Lemonade Pie        108.123                              Nanaimo Bars           107.604
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.301
+MAP: 0.147
+Recall: 0.100
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.301
+MAP: 0.073
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.561
+MAP: 0.078
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1 Banana-Raspberry Cake with Lemon Frosting        122.310 Provençal Vegetable Soup (Soupe au Pistou)           117.347
+    2                              Baked Alaska        109.575                     Horseradish Cream Sauce           113.417
+    3                              Nanaimo Bars        109.152                  Blueberry-Chipotle Chutney           110.338
+    4      Peppermint-Marshmallow Ice Cream Pie        108.216                                Winter Salad           110.000
+    5                              Lemonade Pie        108.123                       Banana Split Brownies           109.481
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.845
+MAP: 0.727
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.955
+MAP: 0.426
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1 Banana-Raspberry Cake with Lemon Frosting        122.310 Banana-Raspberry Cake with Lemon Frosting           110.460
+    2                              Baked Alaska        109.575                     Banana Split Brownies           103.484
+    3                              Nanaimo Bars        109.152                              Lemonade Pie           101.878
+    4      Peppermint-Marshmallow Ice Cream Pie        108.216                              Baked Alaska           101.039
+    5                              Lemonade Pie        108.123       Elvis Presley's Favorite Pound Cake           100.630
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.867
+MAP: 0.789
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.968
+MAP: 0.661
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                           Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1 Banana-Raspberry Cake with Lemon Frosting        122.310 Banana-Raspberry Cake with Lemon Frosting           118.841
+    2                              Baked Alaska        109.575                              Baked Alaska           108.222
+    3                              Nanaimo Bars        109.152                              Lemonade Pie           107.854
+    4      Peppermint-Marshmallow Ice Cream Pie        108.216                 Coconut Triple-Layer Cake           106.915
+    5                              Lemonade Pie        108.123                     Banana Split Brownies           106.483
