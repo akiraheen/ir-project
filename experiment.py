@@ -1,4 +1,5 @@
 import argparse
+import json
 from pathlib import Path
 import random
 import pandas as pd
@@ -11,6 +12,7 @@ from transformations import (
     BrightnessVariation,
     CameraRotation,
     GaussianNoise,
+    Identity,
     ImageTransformation,
     MotionBlur,
 )
@@ -18,6 +20,7 @@ import matplotlib.pyplot as plt
 
 RESULTS_DIR = Path("results")
 DATA_DIR = Path("data/Yummly28K/images27638")
+METADATA_DIR = Path("data/Yummly28K/metadata27638")
 TABLES_DIR = Path("tables")
 PLOTS_DIR = Path("plots")
 
@@ -27,12 +30,24 @@ def evaluate_images(
     transformations: List[ImageTransformation],
     show_images: bool,
     evaluator: RetrievalEvaluator,
+    metadata_dir: Path = METADATA_DIR,
 ):
     results = {}
     for image_path in tqdm(images, desc="Evaluating images"):
         image_name = image_path.name
+        # skip the `img` part of the filename
+        image_nr = image_path.stem[3:]
+        metadata_path = Path(METADATA_DIR) / f"meta{image_nr}.json"
+        metadata = json.loads(metadata_path.read_text())
+        image_id = metadata["id"]
+
         image = Image.open(image_path).convert("RGB")
-        result = evaluator.evaluate_transformations(image, transformations, show_images)
+        result = evaluator.evaluate_transformations(
+            original_image=image,
+            original_id=image_id,
+            transformations=transformations,
+            show_images=show_images,
+        )
         results[image_name] = result
 
     return results
@@ -47,109 +62,33 @@ def visualize_results(df: pd.DataFrame, plots_dir: Path = PLOTS_DIR):
 
     print(f"Generating and saving plots to {plots_dir}...")
 
-    # Create figures for all metric types
-    metric_prefixes = ["ndcg@", "map@", "recall@", "accuracy@"]
-
-    # Visualize each metric type with boxplots
-    for metric_prefix in metric_prefixes:
-        # Extract all columns for this metric (e.g., ndcg@1, ndcg@5, etc.)
-        metric_columns = [col for col in df.columns if col.startswith(metric_prefix)]
-
-        if not metric_columns:
-            continue
-
-        # Create a new dataframe for plotting
-        plot_data = []
-        for col in metric_columns:
-            temp_df = df[["transformation", col]].copy()
-            temp_df["metric"] = col
-            temp_df["value"] = temp_df[col]
-            plot_data.append(temp_df[["transformation", "metric", "value"]])
-
-        plot_df = pd.concat(plot_data)
-
-        # Create and save box plot
-        plt.figure(figsize=(12, 6))
-        _ = plot_df.boxplot(column="value", by="transformation", grid=False)
-        plt.title(f"{metric_prefix.upper().rstrip('@')} Metrics by Transformation")
-        plt.suptitle("")  # Remove default suptitle
-        plt.xlabel("Transformation")
-        plt.ylabel(f"{metric_prefix.upper().rstrip('@')} Value")
-        plt.tight_layout()
-
-        # Save figure directly
-        plot_path = plots_dir / f"boxplot_{metric_prefix.rstrip('@')}.png"
-        plt.savefig(plot_path, dpi=300, bbox_inches="tight")
-        plt.close()
-        print(f"Saved {plot_path}")
-
-    # Create comparison plots across transformations
-    k_values = [
-        int(col.split("@")[1])
-        for col in df.columns
-        if col.startswith(metric_prefixes[0])
-    ]
-
-    for k in k_values:
-        # Create metrics at k bar charts
-        metrics_at_k = [
-            f"{prefix}{k}" for prefix in metric_prefixes if f"{prefix}{k}" in df.columns
-        ]
-
-        # Group by transformation and calculate mean for each metric
-        grouped_df = df.groupby("transformation")[metrics_at_k].mean()
-
-        # Transpose DataFrame so metrics are on the x-axis
-        grouped_df = grouped_df.transpose()
-
-        # Create and save bar chart
-        plt.figure(figsize=(14, 8))
-        grouped_df.plot(kind="bar", figsize=(14, 8), ax=plt.gca())
-        plt.title(f"Comparison of Metrics @{k} Across Transformations")
-        plt.xlabel("Metric")
-        plt.ylabel("Metric Value")
-        plt.legend(title="Transformations")
-        plt.grid(axis="y", linestyle="--", alpha=0.7)
-        plt.tight_layout()
-
-        # Save figure directly
-        plot_path = plots_dir / f"barplot_k{k}.png"
-        plt.savefig(plot_path, dpi=300, bbox_inches="tight")
-        plt.close()
-        print(f"Saved {plot_path}")
-
-    # Create and save heatmap of all metrics
-    plt.figure(figsize=(16, 10))
-    all_metrics = [
-        col
-        for col in df.columns
-        if any(col.startswith(prefix) for prefix in metric_prefixes)
-    ]
-    heatmap_data = df.groupby("transformation")[all_metrics].mean()
-
-    # Plot heatmap
-    plt.imshow(heatmap_data, cmap="viridis", aspect="auto")
-    plt.colorbar(label="Metric Value")
-    plt.xticks(range(len(all_metrics)), all_metrics, rotation=45, ha="right")
-    plt.yticks(range(len(heatmap_data.index)), heatmap_data.index)  # type: ignore
-    plt.title("Heatmap of All Metrics Across Transformations")
-
-    # Add text annotations in the heatmap cells
-    for i in range(len(heatmap_data.index)):
-        for j in range(len(all_metrics)):
-            plt.text(
-                j,
-                i,
-                f"{heatmap_data.iloc[i, j]:.2f}",
-                ha="center",
-                va="center",
-                color="white" if heatmap_data.iloc[i, j] < 0.5 else "black",  # type: ignore
-            )
-
+    # Create boxplot for MRR
+    plt.figure(figsize=(12, 6))
+    _ = df.boxplot(column="mrr", by="transformation", grid=False)
+    plt.title("MRR by Transformation")
+    plt.suptitle("")  # Remove default suptitle
+    plt.xlabel("Transformation")
+    plt.ylabel("MRR Value")
     plt.tight_layout()
 
-    # Save heatmap directly
-    plot_path = plots_dir / "heatmap.png"
+    # Save figure directly
+    plot_path = plots_dir / "boxplot_mrr.png"
+    plt.savefig(plot_path, dpi=300, bbox_inches="tight")
+    plt.close()
+    print(f"Saved {plot_path}")
+
+    # Create bar chart for average MRR by transformation
+    plt.figure(figsize=(14, 8))
+    grouped_df = df.groupby("transformation")["mrr"].mean()
+    grouped_df.plot(kind="bar", figsize=(14, 8))
+    plt.title("Average MRR by Transformation")
+    plt.xlabel("Transformation")
+    plt.ylabel("Mean MRR")
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
+    plt.tight_layout()
+
+    # Save figure directly
+    plot_path = plots_dir / "barplot_mrr.png"
     plt.savefig(plot_path, dpi=300, bbox_inches="tight")
     plt.close()
     print(f"Saved {plot_path}")
@@ -276,6 +215,7 @@ def main():
     for i in tqdm(range(args.iterations), desc="Running experiments"):
         # change the seed for each iteration to get different, but reproducible, transformations
         transformations = [
+            Identity(seed=args.seed + i),  # baseline query with no transformations
             CameraRotation(
                 angle_range=(args.min_camera_rotation, args.max_camera_rotation),
                 seed=args.seed + i,
@@ -296,6 +236,7 @@ def main():
                 seed=args.seed + i,
             ),
         ]
+
         results = evaluate_images(
             images=images,
             transformations=transformations,
@@ -305,16 +246,6 @@ def main():
 
         if args.no_save:
             continue
-
-        for image_name, result in results.items():
-            file_path = (
-                Path(args.tables_dir)
-                / f"iteration_{i:03d}"
-                / f"{Path(image_name).stem}.txt"
-            )
-            file_path.parent.mkdir(parents=True, exist_ok=True)
-
-            evaluator.write_comparison_results(result, file_path)
 
         rows.extend(
             [
@@ -331,22 +262,37 @@ def main():
 
     results_file = args.results_dir / "metrics.csv"
     results_file.parent.mkdir(parents=True, exist_ok=True)
-    results_df = pd.DataFrame(rows).set_index(
-        ["iteration", "transformation", "filename"]
-    )
+    results_df = pd.DataFrame(rows)
     results_df.to_csv(results_file)
+    print(results_df.columns)
 
     summary_file = args.results_dir / "summary.csv"
     summary_file.parent.mkdir(parents=True, exist_ok=True)
-    summary_df = (
+
+    # Calculate mean and std for each transformation
+    mean_df = (
         results_df.copy()
-        .drop(
-            columns=["iteration", "filename", "original_results", "transformed_results"]
-        )
+        .drop(columns=["iteration", "filename", "transformed_results"])
         .groupby(["transformation"])
         .mean()
         .round(2)
     )
+
+    std_df = (
+        results_df.copy()
+        .drop(columns=["iteration", "filename", "transformed_results"])
+        .groupby(["transformation"])
+        .std()
+        .round(2)
+    )
+
+    # Rename mrr to mean_mrr in the mean dataframe
+    mean_df = mean_df.rename(columns={"mrr": "mean_mrr"})
+    std_df = std_df.rename(columns={"mrr": "std_mrr"})
+
+    # Combine mean and std dataframes
+    summary_df = pd.concat([mean_df, std_df], axis=1)
+
     summary_df.to_csv(summary_file)
 
     visualize_results(results_df, plots_dir=args.plots_dir)
