@@ -260,11 +260,7 @@ def main():
             ]
         )
 
-    results_file = args.results_dir / "metrics.csv"
-    results_file.parent.mkdir(parents=True, exist_ok=True)
     results_df = pd.DataFrame(rows)
-    results_df.to_csv(results_file)
-    print(results_df.columns)
 
     summary_file = args.results_dir / "summary.csv"
     summary_file.parent.mkdir(parents=True, exist_ok=True)

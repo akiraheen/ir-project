@@ -12,7 +12,7 @@ from transformations import (
 class RetrievalEvaluator:
     def __init__(self, retriever: CLIPRetrievalSystem):
         self.retriever = retriever
-        self.max_k = 20
+        self.max_k = 1000
 
     def evaluate_transformations(
         self,
@@ -95,10 +95,7 @@ class RetrievalEvaluator:
 
         metrics.update({"mrr": self._calculate_mrr(original_id, transformed_ids)})
 
-        return {
-            **metrics,
-            "transformed_results": transformed_results,
-        }
+        return metrics
 
     def _calculate_mrr(self, original_id, transformed_ids: List):
         """
