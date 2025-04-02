@@ -268,7 +268,7 @@ def main():
     # Calculate mean and std for each transformation
     mean_df = (
         results_df.copy()
-        .drop(columns=["iteration", "filename", "transformed_results"])
+        .drop(columns=["iteration", "filename"])
         .groupby(["transformation"])
         .mean()
         .round(2)
@@ -276,7 +276,7 @@ def main():
 
     std_df = (
         results_df.copy()
-        .drop(columns=["iteration", "filename", "transformed_results"])
+        .drop(columns=["iteration", "filename"])
         .groupby(["transformation"])
         .std()
         .round(2)

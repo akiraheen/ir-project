@@ -10,6 +10,8 @@ from transformations import (
 
 
 class RetrievalEvaluator:
+    DATASET_SIZE = 27_638
+
     def __init__(self, retriever: CLIPRetrievalSystem):
         self.retriever = retriever
         self.max_k = 1000
