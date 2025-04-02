@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.450
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.993
+MAP: 0.678
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                                   Transformed Recipe Transformed Score
+    1                              Croutons        120.368                                             Croutons           116.426
+    2               Ribboned Zucchini Salad        113.511                                         Winter Salad           114.533
+    3 Spinach and Strawberry Daiquiri Salad        112.212                              Ribboned Zucchini Salad           114.416
+    4                          Winter Salad        111.879                                    Dijon Vinaigrette           112.337
+    5                     Dijon Vinaigrette        110.468 Shaved Brussels Sprouts Salad with Dijon Vinaigrette           112.337
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.931
+MAP: 0.879
+Recall: 0.400
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.978
+MAP: 0.504
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                              Croutons        120.368                    Winter Salad           120.233
+    2               Ribboned Zucchini Salad        113.511                        Croutons           117.223
+    3 Spinach and Strawberry Daiquiri Salad        112.212         Ribboned Zucchini Salad           117.064
+    4                          Winter Salad        111.879 Arugula Salad with Strawberries           115.191
+    5                     Dijon Vinaigrette        110.468 Arugula Salad with Strawberries           115.191
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.905
+MAP: 0.815
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.962
+MAP: 0.532
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1                              Croutons        120.368                            Winter Salad           112.136
+    2               Ribboned Zucchini Salad        113.511                 Ribboned Zucchini Salad           109.451
+    3 Spinach and Strawberry Daiquiri Salad        112.212 Watercress Salad with Fennel and Citrus           108.954
+    4                          Winter Salad        111.879            Honey Balsamic-Arugula Salad           108.860
+    5                     Dijon Vinaigrette        110.468                                Croutons           108.714
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.450
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.996
+MAP: 0.687
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                              Croutons        120.368                              Croutons           119.063
+    2               Ribboned Zucchini Salad        113.511                          Winter Salad           118.411
+    3 Spinach and Strawberry Daiquiri Salad        112.212               Ribboned Zucchini Salad           117.726
+    4                          Winter Salad        111.879 Spinach and Strawberry Daiquiri Salad           114.452
+    5                     Dijon Vinaigrette        110.468 Citrus Salad with Poppy-Seed Dressing           113.913

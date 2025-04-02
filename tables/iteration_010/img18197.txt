@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.296
+MAP: 0.100
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.296
+MAP: 0.050
+Recall: 0.050
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.534
+MAP: 0.042
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score            Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071   Southwestern Turkey Fajitas           103.410
+    2         Homemade Chicken Enchiladas         91.167 Roasted Mediterranean Chicken           103.345
+    3              Green Sauce Enchiladas         89.728               Antipasto Salsa           103.219
+    4                      Turkey Lasagna         88.365              Parmesan Chicken           102.925
+    5          Artichoke and Leek Lasagna         88.364         Baja-Style Fish Tacos           102.892
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.787
+MAP: 0.456
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.924
+MAP: 0.271
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071     Italian Baked Tilapia with Potatoes            94.792
+    2         Homemade Chicken Enchiladas         91.167            Gluten Free Eggplant Lasagna            93.051
+    3              Green Sauce Enchiladas         89.728             Homemade Chicken Enchiladas            92.896
+    4                      Turkey Lasagna         88.365     Southwestern Quinoa Stuffed Peppers            92.281
+    5          Artichoke and Leek Lasagna         88.364 Pommes Dauphinoise (Potatoes au Gratin)            91.327
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.684
+MAP: 0.520
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.711
+MAP: 0.317
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.875
+MAP: 0.204
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                  Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071 Italian Baked Tilapia with Potatoes            94.815
+    2         Homemade Chicken Enchiladas         91.167          Artichoke and Leek Lasagna            91.275
+    3              Green Sauce Enchiladas         89.728      Green Chile Chicken Enchiladas            91.187
+    4                      Turkey Lasagna         88.365    Southwestern Chicken Pizza Rolls            90.940
+    5          Artichoke and Leek Lasagna         88.364                  Olive-Potato Pizza            90.852
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.818
+MAP: 0.558
+Recall: 0.300
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.949
+MAP: 0.335
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank                     Original Recipe Original Score                                    Transformed Recipe Transformed Score
+    1 Italian Baked Tilapia with Potatoes         98.071                   Italian Baked Tilapia with Potatoes            98.091
+    2         Homemade Chicken Enchiladas         91.167                           Homemade Chicken Enchiladas            93.982
+    3              Green Sauce Enchiladas         89.728                         Roasted Mediterranean Chicken            93.203
+    4                      Turkey Lasagna         88.365                                Green Sauce Enchiladas            93.194
+    5          Artichoke and Leek Lasagna         88.364 Mashed Potatoes with Fried Mushroom, Bacon, and Onion            93.080

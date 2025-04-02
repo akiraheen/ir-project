@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.687
+MAP: 0.513
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.914
+MAP: 0.379
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                                  Original Recipe Original Score                               Transformed Recipe Transformed Score
+    1 Rich Chocolate Soufflé Cakes with Crème Anglaise        120.784 Rich Chocolate Soufflé Cakes with Crème Anglaise           115.156
+    2                   Individual Chocolate Soufflés        109.123                                Chocolate Soufflé           113.431
+    3                                Chocolate Soufflé        107.156                      Quick Chocolate Buttercream           113.042
+    4   Devil's Food Cupcakes with Marshmallow Filling        106.865                                     Nanaimo Bars           112.648
+    5   Devil's Food Cupcakes with Marshmallow Filling        106.865                           Dark Chocolate Soufflé           111.968
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.775
+MAP: 0.628
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.939
+MAP: 0.441
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank                                  Original Recipe Original Score                               Transformed Recipe Transformed Score
+    1 Rich Chocolate Soufflé Cakes with Crème Anglaise        120.784 Rich Chocolate Soufflé Cakes with Crème Anglaise           119.656
+    2                   Individual Chocolate Soufflés        109.123                   Individual Chocolate Soufflés           112.134
+    3                                Chocolate Soufflé        107.156                                Chocolate Soufflé           111.469
+    4   Devil's Food Cupcakes with Marshmallow Filling        106.865                                     Nanaimo Bars           110.329
+    5   Devil's Food Cupcakes with Marshmallow Filling        106.865                               Chocolate Soufflé           109.814
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.746
+MAP: 0.500
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.939
+MAP: 0.322
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank                                  Original Recipe Original Score                               Transformed Recipe Transformed Score
+    1 Rich Chocolate Soufflé Cakes with Crème Anglaise        120.784 Rich Chocolate Soufflé Cakes with Crème Anglaise           114.150
+    2                   Individual Chocolate Soufflés        109.123                                Chocolate Soufflé           109.798
+    3                                Chocolate Soufflé        107.156             Milk Chocolate-Cream Cheese Frosting           106.267
+    4   Devil's Food Cupcakes with Marshmallow Filling        106.865                                     Nanaimo Bars           106.043
+    5   Devil's Food Cupcakes with Marshmallow Filling        106.865                   Individual Chocolate Soufflés           105.175
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.825
+MAP: 0.620
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.944
+MAP: 0.369
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                                  Original Recipe Original Score                               Transformed Recipe Transformed Score
+    1 Rich Chocolate Soufflé Cakes with Crème Anglaise        120.784 Rich Chocolate Soufflé Cakes with Crème Anglaise           117.096
+    2                   Individual Chocolate Soufflés        109.123                                Chocolate Soufflé           112.990
+    3                                Chocolate Soufflé        107.156                           Dark Chocolate Soufflé           110.242
+    4   Devil's Food Cupcakes with Marshmallow Filling        106.865                                     Nanaimo Bars           110.001
+    5   Devil's Food Cupcakes with Marshmallow Filling        106.865                     Peanut Butter Banana Bonbons           108.969

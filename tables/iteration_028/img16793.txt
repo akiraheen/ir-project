@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.851
+MAP: 0.745
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.958
+MAP: 0.560
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                              Croutons        120.368                          Winter Salad           118.790
+    2               Ribboned Zucchini Salad        113.511                              Croutons           116.598
+    3 Spinach and Strawberry Daiquiri Salad        112.212               Ribboned Zucchini Salad           116.039
+    4                          Winter Salad        111.879 Spinach and Strawberry Daiquiri Salad           115.903
+    5                     Dijon Vinaigrette        110.468                       Antipasto Salsa           115.599
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.864
+MAP: 0.780
+Recall: 0.350
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.978
+MAP: 0.460
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                              Croutons        120.368                    Winter Salad           121.630
+    2               Ribboned Zucchini Salad        113.511                        Croutons           117.289
+    3 Spinach and Strawberry Daiquiri Salad        112.212         Ribboned Zucchini Salad           117.161
+    4                          Winter Salad        111.879 Arugula Salad with Strawberries           116.142
+    5                     Dijon Vinaigrette        110.468 Arugula Salad with Strawberries           116.142
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.915
+MAP: 0.835
+Recall: 0.450
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.970
+MAP: 0.588
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                      Transformed Recipe Transformed Score
+    1                              Croutons        120.368                            Winter Salad           109.620
+    2               Ribboned Zucchini Salad        113.511                                Croutons           108.781
+    3 Spinach and Strawberry Daiquiri Salad        112.212 Watercress Salad with Fennel and Citrus           108.168
+    4                          Winter Salad        111.879                 Ribboned Zucchini Salad           107.773
+    5                     Dijon Vinaigrette        110.468            Honey Balsamic-Arugula Salad           107.773
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.450
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.996
+MAP: 0.687
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                              Croutons        120.368                              Croutons           119.063
+    2               Ribboned Zucchini Salad        113.511                          Winter Salad           118.411
+    3 Spinach and Strawberry Daiquiri Salad        112.212               Ribboned Zucchini Salad           117.726
+    4                          Winter Salad        111.879 Spinach and Strawberry Daiquiri Salad           114.452
+    5                     Dijon Vinaigrette        110.468 Citrus Salad with Poppy-Seed Dressing           113.913

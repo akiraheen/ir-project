@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.767
+MAP: 0.608
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.930
+MAP: 0.508
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302         Beef and Bean Chimichangas           114.077
+    2      Baja-Style Fish Tacos        105.445              Baja-Style Fish Tacos           108.998
+    3 Cheesy Mexi-Rice Casserole        103.088 Bab's South of the Border Taco Dip           106.734
+    4                Vegan Chili        102.965                    Baja Fish Tacos           106.565
+    5       Chicken Chimichangas        102.418                    Antipasto Salsa           106.517
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.485
+MAP: 0.300
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.511
+MAP: 0.223
+Recall: 0.200
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.764
+MAP: 0.197
+Recall: 0.400
+Accuracy: 0.400
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score                                                    Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302                                            Beef and Bean Chimichangas           101.986
+    2      Baja-Style Fish Tacos        105.445                                                          Winter Salad           101.365
+    3 Cheesy Mexi-Rice Casserole        103.088                                                       Antipasto Salsa            97.647
+    4                Vegan Chili        102.965                                                       Baja Fish Tacos            96.744
+    5       Chicken Chimichangas        102.418 Mexican Street Corn Sweet Potatoes with Creamy Chipotle-Avocado Sauce            96.578
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.646
+MAP: 0.406
+Recall: 0.250
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.879
+MAP: 0.298
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score                Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302        Beef and Bean Chimichangas           106.375
+    2      Baja-Style Fish Tacos        105.445             Baja-Style Fish Tacos           100.167
+    3 Cheesy Mexi-Rice Casserole        103.088                   Baja Fish Tacos            99.898
+    4                Vegan Chili        102.965 Thai Green Papaya Salad (Som Tam)            99.636
+    5       Chicken Chimichangas        102.418                 Tacos Carne Asada            99.247
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.146
+MAP: 0.050
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.369
+MAP: 0.092
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.532
+MAP: 0.072
+Recall: 0.250
+Accuracy: 0.250
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score                                       Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302                                      Pork Steak Burritos           102.726
+    2      Baja-Style Fish Tacos        105.445 The Flame Academy’s Goan Spicy Chicken and Coconut Curry           102.259
+    3 Cheesy Mexi-Rice Casserole        103.088                                Quick and Easy Enchiladas           102.062
+    4                Vegan Chili        102.965                               Beef and Bean Chimichangas           102.053
+    5       Chicken Chimichangas        102.418                              Mama's Balsamic Vinaigrette           101.906

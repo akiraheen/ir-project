@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.553
+MAP: 0.400
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.623
+MAP: 0.287
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.838
+MAP: 0.211
+Recall: 0.350
+Accuracy: 0.350
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                 Shrimp Pad Thai           104.489
+    2               Thai Noodle Salad         97.596               Chipotle Coleslaw           102.892
+    3 One Pot Thai Curry Shrimp Pasta         97.236 Arugula Salad with Strawberries           102.179
+    4              Southwestern Salad         95.516 Arugula Salad with Strawberries           102.179
+    5              Southwestern Salad         95.516                      Spicy Slaw           101.304
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.182
+MAP: 0.040
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.182
+MAP: 0.020
+Recall: 0.050
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.426
+MAP: 0.028
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462 Arugula Salad with Strawberries           102.477
+    2               Thai Noodle Salad         97.596 Arugula Salad with Strawberries           102.477
+    3 One Pot Thai Curry Shrimp Pasta         97.236                    Winter Salad           101.483
+    4              Southwestern Salad         95.516                 Creamy Coleslaw            99.335
+    5              Southwestern Salad         95.516                 Shrimp Pad Thai            98.974
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.737
+MAP: 0.453
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.737
+MAP: 0.227
+Recall: 0.150
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.825
+MAP: 0.123
+Recall: 0.200
+Accuracy: 0.200
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score   Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462      Shrimp Pad Thai           101.940
+    2               Thai Noodle Salad         97.596   Thai Chicken Salad            95.064
+    3 One Pot Thai Curry Shrimp Pasta         97.236    Chipotle Coleslaw            94.975
+    4              Southwestern Salad         95.516   Thai Chicken Salad            94.233
+    5              Southwestern Salad         95.516 Vegetable Fried Rice            94.072
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.304
+MAP: 0.039
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.415
+MAP: 0.028
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                                         Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462 Thai Fried Rice Noodles with Chicken or Tofu (gluten-free)            97.759
+    2               Thai Noodle Salad         97.596                                  Quick and Easy Enchiladas            96.311
+    3 One Pot Thai Curry Shrimp Pasta         97.236                                  Country Chicken Casserole            95.344
+    4              Southwestern Salad         95.516                          Shrimp Fried Noodles - Thai-Style            94.851
+    5              Southwestern Salad         95.516                                      Chinese Cabbage Salad            94.001

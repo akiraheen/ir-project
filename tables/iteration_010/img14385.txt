@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.888
+MAP: 0.696
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.946
+MAP: 0.376
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                                                         Original Recipe Original Score                                                   Transformed Recipe Transformed Score
+    1                                                         Chicken Piccata        101.624                                                      Chicken Piccata            99.353
+    2 Spaghettini auf Zitronenbutter mit gebratenen Garnelen und Avocadosalat         88.970                                                     Parmesan Chicken            95.858
+    3                                                        Parmesan Chicken         88.677 Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)            93.770
+    4    Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)         88.605                                                         Winter Salad            93.622
+    5                                                 Italian Chicken Marsala         87.889                                                        Shrimp Diablo            93.125
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.788
+MAP: 0.554
+Recall: 0.350
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.901
+MAP: 0.326
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                                                         Original Recipe Original Score                                                   Transformed Recipe Transformed Score
+    1                                                         Chicken Piccata        101.624                                                      Chicken Piccata            93.583
+    2 Spaghettini auf Zitronenbutter mit gebratenen Garnelen und Avocadosalat         88.970                                                     Parmesan Chicken            92.559
+    3                                                        Parmesan Chicken         88.677                                                         Winter Salad            92.390
+    4    Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)         88.605 Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)            89.086
+    5                                                 Italian Chicken Marsala         87.889                                                        Shrimp Diablo            88.232
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.686
+MAP: 0.483
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.910
+MAP: 0.327
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                                                         Original Recipe Original Score                                                   Transformed Recipe Transformed Score
+    1                                                         Chicken Piccata        101.624                                                      Chicken Piccata            96.107
+    2 Spaghettini auf Zitronenbutter mit gebratenen Garnelen und Avocadosalat         88.970                                                     Parmesan Chicken            92.396
+    3                                                        Parmesan Chicken         88.677                                                        Shrimp Diablo            91.176
+    4    Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)         88.605 Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)            90.960
+    5                                                 Italian Chicken Marsala         87.889                                                         Winter Salad            90.659
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.756
+MAP: 0.591
+Recall: 0.350
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.922
+MAP: 0.501
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                                                         Original Recipe Original Score                                                      Transformed Recipe Transformed Score
+    1                                                         Chicken Piccata        101.624                                                         Chicken Piccata            98.278
+    2 Spaghettini auf Zitronenbutter mit gebratenen Garnelen und Avocadosalat         88.970 Spaghettini auf Zitronenbutter mit gebratenen Garnelen und Avocadosalat            89.512
+    3                                                        Parmesan Chicken         88.677                                                         Chicken Piccata            85.893
+    4    Spaghetti with Clams in Their Shells (Spaghetti alle Vongole Veraci)         88.605      Mexican Lasagna with Black Beans, Quinoa and Sweet Potatoes (Yams)            85.767
+    5                                                 Italian Chicken Marsala         87.889                                             Easy Cheesy Skillet Chicken            85.753

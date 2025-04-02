@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.985
+MAP: 0.752
+Recall: 0.800
+Accuracy: 0.800
+
+Top 5 Results Comparison:
+ Rank                                    Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           109.698
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130 Rib-Eye Steaks with Pistachio Butter and Asparagus           106.586
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375                           Balsamic Steak au Poivre           105.183
+    4                           Balsamic Steak au Poivre        103.393           Grilled Beef Tenderloin with Fresh Herbs           104.733
+    5                               High-Low Strip Steak        103.061                       Grilled Tri-Tip & Vegetables           103.805
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.530
+MAP: 0.383
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.525
+MAP: 0.321
+Recall: 0.250
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.766
+MAP: 0.265
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                                    Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464                                       Winter Salad           107.437
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           102.688
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375                              Marinated Flank Steak           101.968
+    4                           Balsamic Steak au Poivre        103.393 Rib-Eye Steaks with Pistachio Butter and Asparagus           101.755
+    5                               High-Low Strip Steak        103.061                                 Tangy Garlic Steak           101.107
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.997
+MAP: 0.839
+Recall: 0.850
+Accuracy: 0.850
+
+Top 5 Results Comparison:
+ Rank                                    Original Recipe Original Score                                 Transformed Recipe Transformed Score
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464  Grilled Leg of Lamb with Lime-Chive Creme Fraiche           109.123
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130 Rib-Eye Steaks with Pistachio Butter and Asparagus           105.081
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375           Grilled Beef Tenderloin with Fresh Herbs           104.137
+    4                           Balsamic Steak au Poivre        103.393                           Balsamic Steak au Poivre           102.131
+    5                               High-Low Strip Steak        103.061                              Marinated Flank Steak           101.135
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.339
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.577
+MAP: 0.198
+Recall: 0.200
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.723
+MAP: 0.132
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                                    Original Recipe Original Score                                Transformed Recipe Transformed Score
+    1  Grilled Leg of Lamb with Lime-Chive Creme Fraiche        111.464 Grilled Leg of Lamb with Lime-Chive Creme Fraiche            97.853
+    2 Rib-Eye Steaks with Pistachio Butter and Asparagus        106.130                                Tangy Garlic Steak            97.249
+    3           Grilled Beef Tenderloin with Fresh Herbs        104.375                                       Tri-Tip Rub            95.103
+    4                           Balsamic Steak au Poivre        103.393                                Tangy Grilled Beef            94.692
+    5                               High-Low Strip Steak        103.061                                    London Broil I            93.230

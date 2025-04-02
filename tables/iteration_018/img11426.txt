@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.797
+MAP: 0.688
+Recall: 0.350
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.956
+MAP: 0.548
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                Original Recipe Original Score                     Transformed Recipe Transformed Score
+    1            Creamy Cheese Grits        112.534                    Creamy Cheese Grits           108.731
+    2                White BBQ Sauce        106.342                        White BBQ Sauce           104.555
+    3 Roasted-Garlic Mashed Potatoes        104.013 Creamy Truffle-Scented White Bean Soup           104.441
+    4                   Corn Chowder        103.866                     Split Pea Soup Atu           103.183
+    5             Delmonico Potatoes        103.610         Roasted-Garlic Mashed Potatoes           103.098
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.640
+MAP: 0.453
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.664
+MAP: 0.406
+Recall: 0.300
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.837
+MAP: 0.278
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                Original Recipe Original Score                     Transformed Recipe Transformed Score
+    1            Creamy Cheese Grits        112.534                        White BBQ Sauce           101.288
+    2                White BBQ Sauce        106.342                          Vegetable Dip           100.576
+    3 Roasted-Garlic Mashed Potatoes        104.013 Creamy Truffle-Scented White Bean Soup            99.888
+    4                   Corn Chowder        103.866   Chipotle Chile and Blue Cheese Sauce            99.812
+    5             Delmonico Potatoes        103.610                    Creamy Cheese Grits            99.719
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.723
+MAP: 0.600
+Recall: 0.150
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.753
+MAP: 0.367
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.905
+MAP: 0.220
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                Original Recipe Original Score                       Transformed Recipe Transformed Score
+    1            Creamy Cheese Grits        112.534                      Creamy Cheese Grits           101.228
+    2                White BBQ Sauce        106.342   Creamy Truffle-Scented White Bean Soup            98.263
+    3 Roasted-Garlic Mashed Potatoes        104.013 Chilled Avocado Soup with Tortilla Chips            97.181
+    4                   Corn Chowder        103.866         Banana-Peach Buttermilk Smoothie            96.736
+    5             Delmonico Potatoes        103.610                            Vegetable Dip            96.419
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.684
+MAP: 0.520
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.652
+MAP: 0.442
+Recall: 0.300
+Accuracy: 0.400
+
+Metrics at k=20:
+NDCG: 0.877
+MAP: 0.340
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                Original Recipe Original Score                     Transformed Recipe Transformed Score
+    1            Creamy Cheese Grits        112.534                    Creamy Cheese Grits           103.767
+    2                White BBQ Sauce        106.342 Creamy Truffle-Scented White Bean Soup           103.005
+    3 Roasted-Garlic Mashed Potatoes        104.013                          Vegetable Dip           101.347
+    4                   Corn Chowder        103.866                Buttery Mashed Potatoes           100.937
+    5             Delmonico Potatoes        103.610                        White BBQ Sauce           100.770

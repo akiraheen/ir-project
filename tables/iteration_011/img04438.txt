@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.277
+MAP: 0.130
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.247
+MAP: 0.065
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.540
+MAP: 0.085
+Recall: 0.300
+Accuracy: 0.300
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score              Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462 Arugula Salad with Strawberries           105.303
+    2               Thai Noodle Salad         97.596 Arugula Salad with Strawberries           105.303
+    3 One Pot Thai Curry Shrimp Pasta         97.236                    Winter Salad           105.131
+    4              Southwestern Salad         95.516               Chipotle Coleslaw           104.130
+    5              Southwestern Salad         95.516                 Shrimp Pad Thai           103.533
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=20:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                                Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462       Provençal Vegetable Soup (Soupe au Pistou)           116.942
+    2               Thai Noodle Salad         97.596                                      Winter Salad           111.766
+    3 One Pot Thai Curry Shrimp Pasta         97.236                                   Antipasto Salsa           109.647
+    4              Southwestern Salad         95.516                    Caprese Egg and Pasta Frittata           106.779
+    5              Southwestern Salad         95.516 Herbed Hominy Stuffed Chicken Legs Cooked in Mole           106.779
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.509
+MAP: 0.333
+Recall: 0.100
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.548
+MAP: 0.329
+Recall: 0.250
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.824
+MAP: 0.296
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462                           Shrimp Pad Thai           102.036
+    2               Thai Noodle Salad         97.596                        Thai Chicken Salad            93.973
+    3 One Pot Thai Curry Shrimp Pasta         97.236                         Chipotle Coleslaw            93.963
+    4              Southwestern Salad         95.516 Mexican Lasagna Recipe (Freezer Cooking!)            93.057
+    5              Southwestern Salad         95.516                        Thai Chicken Salad            92.806
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.000
+MAP: 0.000
+Recall: 0.000
+Accuracy: 0.000
+
+Metrics at k=10:
+NDCG: 0.304
+MAP: 0.039
+Recall: 0.100
+Accuracy: 0.100
+
+Metrics at k=20:
+NDCG: 0.415
+MAP: 0.028
+Recall: 0.150
+Accuracy: 0.150
+
+Top 5 Results Comparison:
+ Rank                 Original Recipe Original Score                                         Transformed Recipe Transformed Score
+    1                 Shrimp Pad Thai        107.462 Thai Fried Rice Noodles with Chicken or Tofu (gluten-free)            97.759
+    2               Thai Noodle Salad         97.596                                  Quick and Easy Enchiladas            96.311
+    3 One Pot Thai Curry Shrimp Pasta         97.236                                  Country Chicken Casserole            95.344
+    4              Southwestern Salad         95.516                          Shrimp Fried Noodles - Thai-Style            94.851
+    5              Southwestern Salad         95.516                                      Chinese Cabbage Salad            94.001

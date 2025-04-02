@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.854
+MAP: 0.760
+Recall: 0.200
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.832
+MAP: 0.696
+Recall: 0.400
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.947
+MAP: 0.588
+Recall: 0.700
+Accuracy: 0.700
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score         Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302 Beef and Bean Chimichangas           113.269
+    2      Baja-Style Fish Tacos        105.445      Baja-Style Fish Tacos           108.305
+    3 Cheesy Mexi-Rice Casserole        103.088 Quick Chiles Rellenos Bake           106.931
+    4                Vegan Chili        102.965            Antipasto Salsa           106.834
+    5       Chicken Chimichangas        102.418       Chicken Chimichangas           106.652
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.699
+MAP: 0.550
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.668
+MAP: 0.471
+Recall: 0.300
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.896
+MAP: 0.395
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score         Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302 Beef and Bean Chimichangas           107.200
+    2      Baja-Style Fish Tacos        105.445      Baja-Style Fish Tacos           100.008
+    3 Cheesy Mexi-Rice Casserole        103.088               Winter Salad            99.856
+    4                Vegan Chili        102.965            Baja Fish Tacos            99.502
+    5       Chicken Chimichangas        102.418        Pork Steak Burritos            99.270
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.869
+MAP: 0.800
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.782
+MAP: 0.647
+Recall: 0.350
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.942
+MAP: 0.445
+Recall: 0.550
+Accuracy: 0.550
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score                Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302        Beef and Bean Chimichangas           105.351
+    2      Baja-Style Fish Tacos        105.445             Baja-Style Fish Tacos           101.356
+    3 Cheesy Mexi-Rice Casserole        103.088           Easy Chicken Enchiladas            99.314
+    4                Vegan Chili        102.965                   Baja Fish Tacos            99.239
+    5       Chicken Chimichangas        102.418 Thai Green Papaya Salad (Som Tam)            99.180
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.830
+MAP: 0.710
+Recall: 0.200
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.720
+MAP: 0.484
+Recall: 0.300
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.894
+MAP: 0.318
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank            Original Recipe Original Score           Transformed Recipe Transformed Score
+    1 Beef and Bean Chimichangas        116.302   Beef and Bean Chimichangas           109.809
+    2      Baja-Style Fish Tacos        105.445        Baja-Style Fish Tacos           104.749
+    3 Cheesy Mexi-Rice Casserole        103.088          Pork Steak Burritos           103.180
+    4                Vegan Chili        102.965 Arugula and Watermelon Salad           103.103
+    5       Chicken Chimichangas        102.418       Red Pepper Vinaigrette           102.042

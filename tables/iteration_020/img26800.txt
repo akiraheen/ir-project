@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.500
+Accuracy: 0.900
+
+Metrics at k=20:
+NDCG: 0.999
+MAP: 0.895
+Recall: 0.900
+Accuracy: 0.900
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                    Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                        Tomato Chutney           111.777
+    2                 Orange-Chipotle Sauce        107.843                 Orange-Chipotle Sauce           107.387
+    3                 Amber Ale Baked Beans        104.316  Tomato Chutney with Baked Pita Chips           103.875
+    4 Saffron Risotto with Butternut Squash        104.115 Saffron Risotto with Butternut Squash           103.654
+    5                       Antipasto Salsa        103.605                       Antipasto Salsa           103.393
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.339
+MAP: 0.200
+Recall: 0.050
+Accuracy: 0.200
+
+Metrics at k=10:
+NDCG: 0.455
+MAP: 0.206
+Recall: 0.200
+Accuracy: 0.300
+
+Metrics at k=20:
+NDCG: 0.746
+MAP: 0.212
+Recall: 0.450
+Accuracy: 0.450
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                             Antipasto Salsa           108.336
+    2                 Orange-Chipotle Sauce        107.843     Chopped Beet Salad with Feta and Pecans           105.988
+    3                 Amber Ale Baked Beans        104.316                                Winter Salad           105.742
+    4 Saffron Risotto with Butternut Squash        104.115 Provençal Vegetable Soup (Soupe au Pistou)           105.398
+    5                       Antipasto Salsa        103.605             Arugula Salad with Strawberries           104.780
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.786
+MAP: 0.656
+Recall: 0.350
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.955
+MAP: 0.550
+Recall: 0.650
+Accuracy: 0.650
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score                   Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477                       Tomato Chutney           106.727
+    2                 Orange-Chipotle Sauce        107.843                Orange-Chipotle Sauce           102.604
+    3                 Amber Ale Baked Beans        104.316                 Pear-Cranberry Sauce           100.283
+    4 Saffron Risotto with Butternut Squash        104.115            Cranberry-Apricot Chutney            98.722
+    5                       Antipasto Salsa        103.605 Tomato Chutney with Baked Pita Chips            97.843
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.927
+MAP: 0.866
+Recall: 0.450
+Accuracy: 0.500
+
+Metrics at k=20:
+NDCG: 0.981
+MAP: 0.746
+Recall: 0.800
+Accuracy: 0.800
+
+Top 5 Results Comparison:
+ Rank                       Original Recipe Original Score        Transformed Recipe Transformed Score
+    1                        Tomato Chutney        112.477            Tomato Chutney           111.430
+    2                 Orange-Chipotle Sauce        107.843           Antipasto Salsa           109.348
+    3                 Amber Ale Baked Beans        104.316     Orange-Chipotle Sauce           108.465
+    4 Saffron Risotto with Butternut Squash        104.115 Cranberry-Apricot Chutney           106.348
+    5                       Antipasto Salsa        103.605               Spicy Salsa           106.295

@@ -1,0 +1,116 @@
+
+Results for Camera Rotation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.852
+MAP: 0.743
+Recall: 0.400
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.954
+MAP: 0.506
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           120.398
+    2           Gingerbread Caramel Corn        112.171              Barbeque Potato Salad           106.731
+    3 Spicy Caramel Popcorn with Peanuts        111.113 Spicy Caramel Popcorn with Peanuts           106.111
+    4                Curry Chicken Salad        108.176           Gingerbread Caramel Corn           105.573
+    5         Curry Salmon with Broccoli        108.158         Curry Salmon with Broccoli           105.212
+
+Results for Low Light Variation:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.655
+MAP: 0.483
+Recall: 0.150
+Accuracy: 0.400
+
+Metrics at k=10:
+NDCG: 0.498
+MAP: 0.299
+Recall: 0.200
+Accuracy: 0.200
+
+Metrics at k=20:
+NDCG: 0.832
+MAP: 0.298
+Recall: 0.500
+Accuracy: 0.500
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                          Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                          Nutty Caramel Corn           111.276
+    2           Gingerbread Caramel Corn        112.171 Provençal Vegetable Soup (Soupe au Pistou)           107.646
+    3 Spicy Caramel Popcorn with Peanuts        111.113                    Gingerbread Caramel Corn           105.900
+    4                Curry Chicken Salad        108.176                   Wholesome Morning Granola           104.035
+    5         Curry Salmon with Broccoli        108.158          Vanilla and Cinnamon-Sugar Popcorn           104.023
+
+Results for Gaussian Noise:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 1.000
+MAP: 1.000
+Recall: 0.250
+Accuracy: 0.600
+
+Metrics at k=10:
+NDCG: 0.852
+MAP: 0.743
+Recall: 0.400
+Accuracy: 0.600
+
+Metrics at k=20:
+NDCG: 0.962
+MAP: 0.651
+Recall: 0.750
+Accuracy: 0.750
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                        Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                        Nutty Caramel Corn           117.224
+    2           Gingerbread Caramel Corn        112.171                  Gingerbread Caramel Corn           115.003
+    3 Spicy Caramel Popcorn with Peanuts        111.113        Spicy Caramel Popcorn with Peanuts           109.409
+    4                Curry Chicken Salad        108.176 No Bake Peanut Butter Marshmallow Squares           107.552
+    5         Curry Salmon with Broccoli        108.158                    Salted Caramel Popcorn           106.793
+
+Results for Motion Blur:
+--------------------------------------------------
+
+Metrics at k=5:
+NDCG: 0.786
+MAP: 0.643
+Recall: 0.200
+Accuracy: 0.800
+
+Metrics at k=10:
+NDCG: 0.725
+MAP: 0.561
+Recall: 0.350
+Accuracy: 0.700
+
+Metrics at k=20:
+NDCG: 0.895
+MAP: 0.450
+Recall: 0.600
+Accuracy: 0.600
+
+Top 5 Results Comparison:
+ Rank                    Original Recipe Original Score                 Transformed Recipe Transformed Score
+    1                 Nutty Caramel Corn        125.771                 Nutty Caramel Corn           120.807
+    2           Gingerbread Caramel Corn        112.171          Country Chicken Casserole           109.088
+    3 Spicy Caramel Popcorn with Peanuts        111.113         Curry Salmon with Broccoli           108.255
+    4                Curry Chicken Salad        108.176           Gingerbread Caramel Corn           108.049
+    5         Curry Salmon with Broccoli        108.158 Spicy Caramel Popcorn with Peanuts           106.940
