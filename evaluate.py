@@ -1,6 +1,7 @@
 from typing import List, Dict
 from PIL import Image
 
+from reranker import Reranker
 from retriever import CLIPRetrievalSystem
 
 import matplotlib.pyplot as plt
@@ -12,8 +13,11 @@ from transformations import (
 class RetrievalEvaluator:
     DATASET_SIZE = 27_638
 
-    def __init__(self, retriever: CLIPRetrievalSystem):
+    def __init__(self, retriever: CLIPRetrievalSystem,
+                 reranker: Reranker
+                 ):
         self.retriever = retriever
+        self.reranker = reranker
         self.max_k = 1000
 
     def evaluate_transformations(
@@ -74,7 +78,7 @@ class RetrievalEvaluator:
         return results
 
     def evaluate_transformation(
-        self, original_id: str, transformed_image: Image.Image
+        self, original_id: str, transformed_image: Image.Image, re_ranking: bool = True,
     ) -> Dict:
         """
         Evaluate retrieval performance between original and transformed images
@@ -82,15 +86,26 @@ class RetrievalEvaluator:
         Args:
             original_id: ID of the original image
             transformed_image: Transformed image as PIL Image object
+            re_ranking: reranking is performed if True
 
         Returns:
             Dictionary containing evaluation metrics
         """
+        print("From evaluate, original_id:", original_id)
+        file_id = self.retriever.get_number_by_id(original_id)
+        print("From evaluate, file_id:", file_id)
+
         transformed_results = self.retriever.query_with_image_data(
-            transformed_image, top_k=self.max_k
+            file_id, transformed_image, top_k=self.max_k
         )
 
-        transformed_ids = [result["metadata"]["id"] for result in transformed_results]
+        if re_ranking is True:
+
+            reranked_results = self.reranker.bm25_rerank(transformed_results)
+            transformed_ids = [result["metadata"]["id"] for result in reranked_results]
+
+        else:
+            transformed_ids = [result["metadata"]["id"] for result in transformed_results]
 
         # Calculate MRR for each k value
         metrics = {}

@@ -3,24 +3,16 @@ import json
 import glob
 from typing import Optional
 import numpy as np
-import pandas as pd
 import torch
 import faiss
 from PIL import Image
 from tqdm import tqdm
 from transformers import CLIPModel, CLIPProcessor
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import TfidfVectorizer
-from utils.ingredient_filter import extract_ingredients
-from sentence_transformers import SentenceTransformer
 # import optuna
-import lightgbm as lightgbm
 # import optuna.integration.lightgbm as optuna_lgb
 import time
-from sklearn.model_selection import train_test_split
 # from collections import OrderedDict
 # from sklearn.model_selection import ParameterGrid
-from rank_bm25 import BM25Okapi
 # from nltk.tokenize import word_tokenize
 
 class CLIPRetrievalSystem:
@@ -158,7 +150,7 @@ class CLIPRetrievalSystem:
                 with open(meta_file, "r") as f:
                     recipe = json.load(f)
 
-                recipe["qid"] = file_id
+                recipe["file_id"] = file_id
 
                 # Text processing
                 text = self._format_recipe_text(recipe)
@@ -200,7 +192,7 @@ class CLIPRetrievalSystem:
 
             self.index = faiss.IndexFlatIP(combined_embeddings.shape[1])
             self.index.add(combined_embeddings.astype('float32'))
-            self._generate_relevant_recipes()
+            # self._generate_relevant_recipes()
             print(f"Created index with {self.index.ntotal} embeddings")
 
         except Exception as e:
@@ -229,7 +221,7 @@ class CLIPRetrievalSystem:
             raise ValueError(f"Invalid image path: {str(e)}")
 
     def query_with_image_data(
-        self, image: Image.Image, top_k=5, exclude_path: Optional[str] = None
+        self, file_id, image: Image.Image, top_k=5, exclude_path: Optional[str] = None
     ):
         """Query the system with a PIL Image object"""
         inputs = self.processor(images=image, return_tensors="pt").to(self.device)  # type: ignore
@@ -248,7 +240,7 @@ class CLIPRetrievalSystem:
                 print(f"Skipping {exclude_path} because it's the query image")
                 continue
             results.append(
-                {"score": float(score), "metadata": self.metadata[original_idx]}
+                {"score": float(score), "metadata": self.metadata[original_idx], "query_id":file_id}
             )
 
             if len(results) >= top_k:
@@ -256,228 +248,121 @@ class CLIPRetrievalSystem:
 
         return results
 
-    def _generate_relevant_recipes(self, top_k=5):
-        """Generates relevant recipes per query with FAISS similarity, cosine similarity, and relevance labels."""
-        print("Generating relevant recipes per query...")
+    def get_number_by_id(self, id):
 
-        for i, query_recipe in enumerate(self.metadata):
-            # Retrieve FAISS embedding of query recipe
-            query_embed = self.index.reconstruct(i).reshape(1, -1)
+        for item in self.metadata:
+            if item.get('id') == id:
+                return item.get('file_id')
+        return None
 
-            # Perform FAISS similarity search
-            distances, indices = self.index.search(query_embed.astype('float32'), top_k + 1)
+    def get_ingredients_by_id(self, recipe_id):
 
-            relevant_recipes = []
+        for item in self.metadata:
+            if item.get('file_id') == recipe_id:
+                return item.get('ingredientLines')
+        return None
+    # def _generate_relevant_recipes(self, top_k=5):
+    #     """Generates relevant recipes per query with FAISS similarity"""
+    #     print("Generating relevant recipes per query...")
+    #
+    #     for i, query_recipe in enumerate(self.metadata):
+    #         # Retrieve FAISS embedding of query recipe
+    #         query_embed = self.index.reconstruct(i).reshape(1, -1)
+    #
+    #         # Perform FAISS similarity search
+    #         distances, indices = self.index.search(query_embed.astype('float32'), top_k + 1)
+    #
+    #         relevant_recipes = []
+    #
+    #         for idx, faiss_score in zip(indices[0], distances[0]):
+    #             # if idx == i:
+    #             #     continue  # Skip exact match
+    #
+    #             # Retrieve the embedding of the retrieved recipe
+    #             retrieved_embed = self.index.reconstruct(int(idx)).reshape(1, -1)
+    #
+    #             # Compute cosine similarity
+    #             # cosine_sim = cosine_similarity(query_embed, retrieved_embed)[0][0]
+    #
+    #             # Assign relevance labels (0-3 scale)
+    #             # label = pd.cut(
+    #             #     [cosine_sim], bins=[-1, 0.5, 0.7, 0.9, 1], labels=[0, 1, 2, 3], include_lowest=True
+    #             # ).astype(int)[0]  # Extract the single value from the series
+    #
+    #             # Store FAISS score, cosine similarity, and relevance label
+    #             relevant_recipes.append({
+    #                 "qid": self.metadata[idx]['qid'],
+    #                 "name": self.metadata[idx]['name'],
+    #                 "faiss_score": float(faiss_score),
+    #                 "ingredients": extract_ingredients(list(self.metadata[idx]['ingredientLines']))
+    #             })
+    #
+    #             if len(relevant_recipes) >= top_k:
+    #                 break
+    #
+    #         query_recipe["relevant_recipes"] = relevant_recipes
 
-            for idx, faiss_score in zip(indices[0], distances[0]):
-                if idx == i:
-                    continue  # Skip exact match
-
-                # Retrieve the embedding of the retrieved recipe
-                retrieved_embed = self.index.reconstruct(int(idx)).reshape(1, -1)
-
-                # Compute cosine similarity
-                # cosine_sim = cosine_similarity(query_embed, retrieved_embed)[0][0]
-
-                # Assign relevance labels (0-3 scale)
-                # label = pd.cut(
-                #     [cosine_sim], bins=[-1, 0.5, 0.7, 0.9, 1], labels=[0, 1, 2, 3], include_lowest=True
-                # ).astype(int)[0]  # Extract the single value from the series
-
-                # Store FAISS score, cosine similarity, and relevance label
-                relevant_recipes.append({
-                    "qid": self.metadata[idx]['qid'],
-                    "name": self.metadata[idx]['name'],
-                    "faiss_score": float(faiss_score),
-                    #"cosine_sim": float(cosine_sim),
-                    # "label": int(label),
-                    "ingredients": extract_ingredients(list(self.metadata[idx]['ingredientLines']))
-                })
-
-                if len(relevant_recipes) >= top_k:
-                    break
-
-            query_recipe["relevant_recipes"] = relevant_recipes
-
-def create_dataframe(metadata_path):
-
-    with open(metadata_path, 'r') as f:
-        metadata = json.load(f)
-
-    recipe_data = []
-    for recipe in metadata:
-        qid = recipe["qid"]
-        ingredients = " ".join(extract_ingredients(recipe["ingredientLines"]))
-        name = recipe["name"]
-
-        for r in recipe.get("relevant_recipes", []):
-            relevant_ingredients = " ".join(r.get("ingredients", []))
-            jaccard_score = jaccard_similarity(ingredients, relevant_ingredients)
-            tfidf_score = tfidf_sim(ingredients, relevant_ingredients)
-            # bert_score = bert_sim(ingredients, relevant_ingredients)
-
-            recipe_data.append({
-                "qid": int(qid),
-                "ingredients": ingredients,
-                "name": name,
-
-                "relevant_docId": int(r["qid"]),
-                "relevant_name": r["name"],
-                "relevant_ingredients": relevant_ingredients,
-                "jaccard_score": jaccard_score,
-                "tfidf_score": tfidf_score,
-                # "bert_score": bert_score,
-            })
-
-    return pd.DataFrame(recipe_data)
-
-
-def jaccard_similarity(text1, text2):
-
-    set1 = set(text1.lower().split())  # Convert to lowercase and split into words
-    set2 = set(text2.lower().split())
-
-    intersection = len(set1 & set2)
-    union = len(set1 | set2)
-
-    return intersection / union if union != 0 else 0
-
-def tfidf_sim(text1, text2):
-    vectorizer = TfidfVectorizer()
-
-    # Fit and transform both texts as whole documents
-    tfidf_matrix = vectorizer.fit_transform([text1, text2])
-
-    # Compute cosine similarity
-    cs = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])[0, 0]
-    return cs
-
-def bert_sim(text1, text2):
-
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-
-    emb1 = model.encode(text1)
-    emb2 = model.encode(text2)
-
-    # Compute cosine similarity
-    cs = cosine_similarity([emb1], [emb2])[0, 0]
-    return cs
-
-def bm25_group(df):
-
-    documents = {}
-
-    for index, row in df.iterrows():
-        if row['qid'] not in documents:
-            documents[row['qid']] = [row["relevant_ingredients"]]
-        else:
-            documents[row['qid']].append(row["relevant_ingredients"])
-
-    return documents
-
-def bm25_rerank(df):
-    documents = bm25_group(df)
-    for recipe_id in documents:
-        tokenized_docs = [doc.lower().split() for doc in documents[recipe_id]]
-        bm25 = BM25Okapi(tokenized_docs)
-
-        query = df.loc[df['qid'] == recipe_id, 'ingredients'].values[0]
-
-        tokenized_query = query.lower().split()
-
-        scores = bm25.get_scores(tokenized_query)
-
-        # df["bm25_score"] = scores
-        df.loc[df['qid'] == recipe_id, 'bm25_score'] = scores
-
-    return df
-
-
-def lambdaMart(dataframe):
-    unique_qids = dataframe["qid"].unique()
-
-    qid_train, qid_test = train_test_split(unique_qids, test_size=0.2, random_state=42)
-
-    # split based on qid
-    train = dataframe[dataframe["qid"].isin(qid_train)]
-    test = dataframe[dataframe["qid"].isin(qid_test)]
-
-    print(f"No of unique queries in train : {train['qid'].nunique()}")
-    print(f"No of unique queries in test : {test['qid'].nunique()}")
-
-    qids_train = train.groupby("qid")["qid"].count().to_numpy()
-    X_train = train.drop(["qid", "label", "relevant_docId", "ingredients", "name",
-                          "relevant_name", "relevant_ingredients", "jaccard_score"], axis=1)
-    y_train = train["label"]
-
-    qids_test = test.groupby("qid")["qid"].count().to_numpy()
-    X_test = test.drop(["qid", "label", "relevant_docId", "ingredients", "name",
-                        "relevant_name", "relevant_ingredients", "jaccard_score"], axis=1)
-    y_test = test["label"]
-
-    ranker = lightgbm.LGBMRanker(
-        objective="lambdarank",
-        boosting_type="gbdt",
-        n_estimators=5,
-        importance_type="gain",
-        metric="ndcg",
-        num_leaves=10,
-        learning_rate=0.05,
-        max_depth=-1,
-        label_gain=[i for i in range(max(y_train.max(), y_test.max()) + 1)],
-        min_gain_to_split=0.0)
-
-    evals_result = {}
-
-    ranker.fit(
-        X=X_train,
-        y=y_train,
-        group=qids_train,
-        eval_set=[ (X_test, y_test)],
-        eval_group=[qids_test],
-        eval_at=[3,5],
-        eval_metric="ndcg",
-        callbacks=[lightgbm.record_evaluation(evals_result)])
-
-    print("\nEvaluation Results:")
-    for eval_set, scores in evals_result.items():
-        print(f"\nMetrics for {eval_set}:")
-        for metric, values in scores.items():
-            print(f"{metric}: {values[-1]:.4f} (last iteration)")
-
-    lightgbm.plot_importance(ranker, figsize=(12, 8))
-
+# def create_dataframe(metadata_path):
+#
+#     with open(metadata_path, 'r') as f:
+#         metadata = json.load(f)
+#
+#     recipe_data = []
+#     for recipe in metadata:
+#         qid = recipe["qid"]
+#         ingredients = " ".join(extract_ingredients(recipe["ingredientLines"]))
+#         name = recipe["name"]
+#
+#         for r in recipe.get("relevant_recipes", []):
+#             relevant_ingredients = " ".join(r.get("ingredients", []))
+#             jaccard_score = jaccard_similarity(ingredients, relevant_ingredients)
+#             tfidf_score = tfidf_sim(ingredients, relevant_ingredients)
+#             # bert_score = bert_sim(ingredients, relevant_ingredients)
+#
+#             recipe_data.append({
+#                 "qid": int(qid),
+#                 "ingredients": ingredients,
+#                 "name": name,
+#
+#                 "relevant_docId": int(r["qid"]),
+#                 "relevant_name": r["name"],
+#                 "relevant_ingredients": relevant_ingredients,
+#                 "jaccard_score": jaccard_score,
+#                 "tfidf_score": tfidf_score,
+#                 # "bert_score": bert_score,
+#             })
+#
+#     return pd.DataFrame(recipe_data)
 
 if __name__ == "__main__":
     start_time = time.time()
-    retriever = CLIPRetrievalSystem()
+    # retriever = CLIPRetrievalSystem()
 
-    # Fixed path typo: Yumm28K → Yummly28K
     retriever = CLIPRetrievalSystem(
-        metadata_dir="data/Yummly28K/metadata27638",  # Corrected path
+        metadata_dir="data/Yummly28K/metadata27638",
         image_dir="data/Yummly28K/images27638",
     )
 
     # Uncomment if you want to reprocess the index
     # retriever.process_and_save_dataset(
-    #     force_reprocess=True,
+    #     force_reprocess=True
     # )
-
 
     # Test query
     results = retriever.query_with_image("data/Yummly28K/images27638/img00001.jpg")
     print("Top result:", results[0]['metadata']['name'])
 
-    df = create_dataframe("processed_data/metadata.json")
+    # df = create_dataframe("processed_data/metadata.json")
 
-    df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3, 4], duplicates="drop")
-    df["label"] = df["label"].astype(int)  # Convert to integer
-
-    df = bm25_rerank(df)
-
+    # df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3, 4], duplicates="drop")
+    # df["label"] = df["label"].astype(int)  # Convert to integer
+    # df['label'] = (df['name'] == df['relevant_name']).astype(int)
+    #
+    # df = bm25_rerank(df)
+    #
     # df.to_csv("df-output.csv", index=False)
-
-    lambdaMart(df)
+    #
+    # ranker = lambdaMart(df)
 
     end_time = time.time()
     elapsed_time = end_time - start_time

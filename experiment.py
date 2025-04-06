@@ -7,6 +7,7 @@ from tqdm import tqdm
 from typing import List
 from PIL import Image
 from evaluate import RetrievalEvaluator
+from reranker import Reranker
 from retriever import CLIPRetrievalSystem
 from transformations import (
     BrightnessVariation,
@@ -209,7 +210,11 @@ def main():
     images = random.sample(list(args.data_dir.glob("*.jpg")), args.num_images)
 
     retriever = CLIPRetrievalSystem()
-    evaluator = RetrievalEvaluator(retriever)
+    reranker = Reranker(retriever)
+    evaluator = RetrievalEvaluator(retriever, reranker)
+    # evaluator = RetrievalEvaluator(reranker)
+
+    #TODO: query on original images and rerank
 
     rows = []
     for i in tqdm(range(args.iterations), desc="Running experiments"):

@@ -9,7 +9,7 @@ nltk.download('all')
 # measurement units, common ingredients to remove
 UNITS = [
     "cup", "cups", "tablespoon", "tablespoons", "teaspoon", "teaspoons",
-    "ounce", "ounces", "oz", "pound", "pounds'", "gram", "grams", "can", "cans",
+    "ounce", "ounces", "oz", "pound", "pounds", "gram", "grams", "can", "cans",
     "stick", "sticks", "clove", "cloves", "stalk", "stalks", "slice", "slices",
     "dash", "pinch", "quart", "quarts", "pint", "pints", "liter", "liters",
     "gallon", "gallons", "ml", "milliliter", "milliliters", "tsp", "tbsp",
@@ -42,7 +42,7 @@ def clean_ingredient(ingredient):
     return " ".join(filtered_words)
 
 
-def extract_ingredients(ingredient_lines):
+def clean_ingredients(ingredient_lines):
 
     ingredients = [clean_ingredient(ing) for ing in ingredient_lines]
     ingredients = [ing for ing in ingredients if ing]
