@@ -65,7 +65,7 @@ class RetrievalEvaluator:
 
             # Evaluate transformation
             eval_results = self.evaluate_transformation(
-                original_id=original_id, transformed_image=transformed_image
+                original_id=original_id, transformed_image=transformed_image, re_ranking=2
             )
             results[transform.name] = eval_results
 
@@ -78,7 +78,7 @@ class RetrievalEvaluator:
         return results
 
     def evaluate_transformation(
-        self, original_id: str, transformed_image: Image.Image, re_ranking: bool = True,
+        self, original_id: str, transformed_image: Image.Image, re_ranking: int = 0,
     ) -> Dict:
         """
         Evaluate retrieval performance between original and transformed images
@@ -86,7 +86,7 @@ class RetrievalEvaluator:
         Args:
             original_id: ID of the original image
             transformed_image: Transformed image as PIL Image object
-            re_ranking: reranking is performed if True
+            re_ranking: 0 = nothing, 1 = bm25, 2 = jaccard_similarity
 
         Returns:
             Dictionary containing evaluation metrics
@@ -99,9 +99,13 @@ class RetrievalEvaluator:
             file_id, transformed_image, top_k=self.max_k
         )
 
-        if re_ranking is True:
+        if re_ranking == 1:
 
             reranked_results = self.reranker.bm25_rerank(transformed_results)
+            transformed_ids = [result["metadata"]["id"] for result in reranked_results]
+
+        elif re_ranking == 2:
+            reranked_results = self.reranker.jaccard_rerank(transformed_results)
             transformed_ids = [result["metadata"]["id"] for result in reranked_results]
 
         else:

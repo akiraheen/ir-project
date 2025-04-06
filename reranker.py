@@ -15,42 +15,63 @@ class Reranker:
         self.retriever = retriever
         self.max_k = 1000
 
-    def bm25_rerank(self, transformed_results):
+    def tokenize_ingredients(ingredient_lines):
+        lines = clean_ingredients(ingredient_lines)
+        tokens = [token for line in lines for token in line.lower().split()]
+        return tokens
 
-        # query_id should be the same for all results in transformed_results
-
+    def preprocess_for_reranking(self, transformed_results):
         query_id = transformed_results[0]["query_id"]
-
         query_ingredients = self.retriever.get_ingredients_by_id(query_id)
+        query_tokens = self.tokenize_ingredients(query_ingredients)
 
-        # here, docs is the union of all ingredients from the top_k recipes
-        docs = [result["metadata"]["ingredientLines"] for result in transformed_results]
+        doc_tokens_list = []
+        for result in transformed_results:
+            doc_ingredients = result["metadata"]["ingredientLines"]
+            tokens = self.tokenize_ingredients(doc_ingredients)
+            doc_tokens_list.append(tokens)
 
-        tokenized_docs = []
+        return query_tokens, doc_tokens_list
 
-        for doc in docs:
-            lines = clean_ingredients(doc)
-            tokens_per_doc = [line.lower().split() for line in lines]
-            flat_tokens = [token for line in tokens_per_doc for token in line]
-            tokenized_docs.append(flat_tokens)
+    def bm25_rerank(self, transformed_results):
+        query_tokens, doc_tokens_list = self.preprocess_for_reranking(transformed_results)
+        bm25 = BM25Okapi(doc_tokens_list)
 
-        bm25 = BM25Okapi(tokenized_docs)
-
-        tokenized_query = [
-            token for line in clean_ingredients(query_ingredients)
-            for token in line.lower().split()
-        ]
-
-        scores = bm25.get_scores(tokenized_query)
+        scores = bm25.get_scores(query_tokens)
         sorted_indices = scores.argsort()[::-1]
 
         reranked_results = []
         for idx in sorted_indices:
             result = transformed_results[idx]
             reranked_results.append({
-                # "id": result["metadata"].get("id"),
                 "score": result["score"],
                 "bm25_score": float(scores[idx]),
+                "query_id": result["query_id"],
+                "metadata": result["metadata"]
+            })
+
+        return reranked_results
+
+    def jaccard_rerank(self, transformed_results):
+        query_tokens, doc_tokens_list = self.preprocess_for_reranking(transformed_results)
+        query_set = set(query_tokens)
+
+        jaccard_scores = []
+        for doc_tokens in doc_tokens_list:
+            doc_set = set(doc_tokens)
+            intersection = query_set & doc_set
+            union = query_set | doc_set
+            score = len(intersection) / len(union) if union else 0.0
+            jaccard_scores.append(score)
+
+        sorted_indices = sorted(range(len(jaccard_scores)), key=lambda i: jaccard_scores[i], reverse=True)
+
+        reranked_results = []
+        for idx in sorted_indices:
+            result = transformed_results[idx]
+            reranked_results.append({
+                "score": result["score"],
+                "jaccard_score": float(jaccard_scores[idx]),
                 "query_id": result["query_id"],
                 "metadata": result["metadata"]
             })
