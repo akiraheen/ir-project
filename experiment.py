@@ -101,8 +101,8 @@ def main():
     parser.add_argument(
         "--iterations",
         type=int,
-        default=10,
-        help="Number of experiment iterations to run. Default is 10.",
+        default=5,
+        help="Number of experiment iterations to run. Default is 5.",
     )
     parser.add_argument(
         "--show-images",
@@ -123,8 +123,8 @@ def main():
     parser.add_argument(
         "--num-images",
         type=int,
-        default=10,
-        help="Number of images to evaluate. Default is 10.",
+        default=100,
+        help="Number of images to evaluate. Default is 100.",
     )
     parser.add_argument(
         "--data-dir",
