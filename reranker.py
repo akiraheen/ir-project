@@ -1,3 +1,4 @@
+from typing import Literal
 from retriever import CLIPRetrievalSystem
 from rank_bm25 import BM25Okapi
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -5,8 +6,10 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from utils.ingredient_filter import clean_ingredients
 
-class Reranker:
+RerankerName = Literal["jaccard", "bm25"]
 
+
+class Reranker:
     DEFAULT_METADATA_DIR = "data/Yummly28K/metadata27638"
     DEFAULT_IMAGE_DIR = "data/Yummly28K/images27638"
     DEFAULT_INDEX_DIR = "processed_data"
@@ -34,7 +37,9 @@ class Reranker:
         return query_tokens, doc_tokens_list
 
     def bm25_rerank(self, transformed_results):
-        query_tokens, doc_tokens_list = self.preprocess_for_reranking(transformed_results)
+        query_tokens, doc_tokens_list = self.preprocess_for_reranking(
+            transformed_results
+        )
         bm25 = BM25Okapi(doc_tokens_list)
 
         scores = bm25.get_scores(query_tokens)
@@ -43,17 +48,21 @@ class Reranker:
         reranked_results = []
         for idx in sorted_indices:
             result = transformed_results[idx]
-            reranked_results.append({
-                "score": result["score"],
-                "bm25_score": float(scores[idx]),
-                "query_id": result["query_id"],
-                "metadata": result["metadata"]
-            })
+            reranked_results.append(
+                {
+                    "score": result["score"],
+                    "bm25_score": float(scores[idx]),
+                    "query_id": result["query_id"],
+                    "metadata": result["metadata"],
+                }
+            )
 
         return reranked_results
 
     def jaccard_rerank(self, transformed_results):
-        query_tokens, doc_tokens_list = self.preprocess_for_reranking(transformed_results)
+        query_tokens, doc_tokens_list = self.preprocess_for_reranking(
+            transformed_results
+        )
         query_set = set(query_tokens)
 
         jaccard_scores = []
@@ -64,17 +73,21 @@ class Reranker:
             score = len(intersection) / len(union) if union else 0.0
             jaccard_scores.append(score)
 
-        sorted_indices = sorted(range(len(jaccard_scores)), key=lambda i: jaccard_scores[i], reverse=True)
+        sorted_indices = sorted(
+            range(len(jaccard_scores)), key=lambda i: jaccard_scores[i], reverse=True
+        )
 
         reranked_results = []
         for idx in sorted_indices:
             result = transformed_results[idx]
-            reranked_results.append({
-                "score": result["score"],
-                "jaccard_score": float(jaccard_scores[idx]),
-                "query_id": result["query_id"],
-                "metadata": result["metadata"]
-            })
+            reranked_results.append(
+                {
+                    "score": result["score"],
+                    "jaccard_score": float(jaccard_scores[idx]),
+                    "query_id": result["query_id"],
+                    "metadata": result["metadata"],
+                }
+            )
 
         return reranked_results
 

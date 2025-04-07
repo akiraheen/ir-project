@@ -1,7 +1,7 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 from PIL import Image
 
-from reranker import Reranker
+from reranker import Reranker, RerankerName
 from retriever import CLIPRetrievalSystem
 
 import matplotlib.pyplot as plt
@@ -13,9 +13,7 @@ from transformations import (
 class RetrievalEvaluator:
     DATASET_SIZE = 27_638
 
-    def __init__(self, retriever: CLIPRetrievalSystem,
-                 reranker: Reranker
-                 ):
+    def __init__(self, retriever: CLIPRetrievalSystem, reranker: Reranker):
         self.retriever = retriever
         self.reranker = reranker
         self.max_k = 1000
@@ -26,6 +24,7 @@ class RetrievalEvaluator:
         original_id: str,
         transformations: List[ImageTransformation],
         show_images: bool = True,
+        re_ranking: Optional[RerankerName] = None,
     ) -> Dict[str, Dict]:
         """
         Evaluate multiple transformations against the original image
@@ -65,7 +64,9 @@ class RetrievalEvaluator:
 
             # Evaluate transformation
             eval_results = self.evaluate_transformation(
-                original_id=original_id, transformed_image=transformed_image, re_ranking=2
+                original_id=original_id,
+                transformed_image=transformed_image,
+                re_ranking=re_ranking,
             )
             results[transform.name] = eval_results
 
@@ -78,7 +79,10 @@ class RetrievalEvaluator:
         return results
 
     def evaluate_transformation(
-        self, original_id: str, transformed_image: Image.Image, re_ranking: int = 0,
+        self,
+        original_id: str,
+        transformed_image: Image.Image,
+        re_ranking: Optional[RerankerName] = None,
     ) -> Dict:
         """
         Evaluate retrieval performance between original and transformed images
@@ -86,30 +90,31 @@ class RetrievalEvaluator:
         Args:
             original_id: ID of the original image
             transformed_image: Transformed image as PIL Image object
-            re_ranking: 0 = nothing, 1 = bm25, 2 = jaccard_similarity
+            re_ranking: None = nothing, "bm25" = bm25, "jaccard" = jaccard_similarity
 
         Returns:
             Dictionary containing evaluation metrics
         """
-        print("From evaluate, original_id:", original_id)
+        # print("From evaluate, original_id:", original_id)
         file_id = self.retriever.get_number_by_id(original_id)
-        print("From evaluate, file_id:", file_id)
+        # print("From evaluate, file_id:", file_id)
 
         transformed_results = self.retriever.query_with_image_data(
             file_id, transformed_image, top_k=self.max_k
         )
 
-        if re_ranking == 1:
-
+        if re_ranking == "bm25":
             reranked_results = self.reranker.bm25_rerank(transformed_results)
             transformed_ids = [result["metadata"]["id"] for result in reranked_results]
 
-        elif re_ranking == 2:
+        elif re_ranking == "jaccard":
             reranked_results = self.reranker.jaccard_rerank(transformed_results)
             transformed_ids = [result["metadata"]["id"] for result in reranked_results]
 
         else:
-            transformed_ids = [result["metadata"]["id"] for result in transformed_results]
+            transformed_ids = [
+                result["metadata"]["id"] for result in transformed_results
+            ]
 
         # Calculate MRR for each k value
         metrics = {}
