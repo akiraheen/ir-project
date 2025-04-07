@@ -4,9 +4,10 @@ from pathlib import Path
 import random
 import pandas as pd
 from tqdm import tqdm
-from typing import List
+from typing import List, Optional
 from PIL import Image
 from evaluate import RetrievalEvaluator
+from reranker import Reranker, RerankerName
 from retriever import CLIPRetrievalSystem
 from transformations import (
     BrightnessVariation,
@@ -30,6 +31,7 @@ def evaluate_images(
     transformations: List[ImageTransformation],
     show_images: bool,
     evaluator: RetrievalEvaluator,
+    reranking: Optional[RerankerName] = None,
     metadata_dir: Path = METADATA_DIR,
 ):
     results = {}
@@ -47,6 +49,7 @@ def evaluate_images(
             original_id=image_id,
             transformations=transformations,
             show_images=show_images,
+            re_ranking=reranking,
         )
         results[image_name] = result
 
@@ -198,6 +201,13 @@ def main():
         default=PLOTS_DIR,
         help="Path to the plots directory. Default is plots.",
     )
+    parser.add_argument(
+        "--reranking",
+        type=str,
+        default=None,
+        choices=["jaccard", "bm25"],
+        help="Reranking method to use. Default is None.",
+    )
 
     args = parser.parse_args()
 
@@ -209,7 +219,11 @@ def main():
     images = random.sample(list(args.data_dir.glob("*.jpg")), args.num_images)
 
     retriever = CLIPRetrievalSystem()
-    evaluator = RetrievalEvaluator(retriever)
+    reranker = Reranker(retriever)
+    evaluator = RetrievalEvaluator(retriever, reranker)
+    # evaluator = RetrievalEvaluator(reranker)
+
+    # TODO: query on original images and rerank
 
     rows = []
     for i in tqdm(range(args.iterations), desc="Running experiments"):
@@ -242,6 +256,7 @@ def main():
             transformations=transformations,
             show_images=args.show_images,
             evaluator=evaluator,
+            reranking=args.reranking,
         )
 
         if args.no_save:

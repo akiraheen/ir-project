@@ -9,6 +9,13 @@ from PIL import Image
 from tqdm import tqdm
 from transformers import CLIPModel, CLIPProcessor
 
+# import optuna
+# import optuna.integration.lightgbm as optuna_lgb
+import time
+# from collections import OrderedDict
+# from sklearn.model_selection import ParameterGrid
+# from nltk.tokenize import word_tokenize
+
 
 class CLIPRetrievalSystem:
     DEFAULT_METADATA_DIR = "data/Yummly28K/metadata27638"
@@ -92,7 +99,7 @@ class CLIPRetrievalSystem:
 
             # Save metadata
             with open(metadata_path, "w") as f:
-                json.dump(self.metadata, f)
+                json.dump(self.metadata, f, indent=4)
             print(f"Saved metadata for {len(self.metadata)} recipes")
 
             # Save config
@@ -145,6 +152,8 @@ class CLIPRetrievalSystem:
                 with open(meta_file, "r") as f:
                     recipe = json.load(f)
 
+                recipe["file_id"] = file_id
+
                 # Text processing
                 text = self._format_recipe_text(recipe)
                 text_inputs = self.processor(  # type: ignore
@@ -185,7 +194,8 @@ class CLIPRetrievalSystem:
             )
 
             self.index = faiss.IndexFlatIP(combined_embeddings.shape[1])
-            self.index.add(combined_embeddings.astype("float32"))  # type: ignore
+            self.index.add(combined_embeddings.astype("float32"))
+            # self._generate_relevant_recipes()
             print(f"Created index with {self.index.ntotal} embeddings")
 
         except Exception as e:
@@ -214,7 +224,7 @@ class CLIPRetrievalSystem:
             raise ValueError(f"Invalid image path: {str(e)}")
 
     def query_with_image_data(
-        self, image: Image.Image, top_k=5, exclude_path: Optional[str] = None
+        self, file_id, image: Image.Image, top_k=5, exclude_path: Optional[str] = None
     ):
         """Query the system with a PIL Image object"""
         inputs = self.processor(images=image, return_tensors="pt").to(self.device)  # type: ignore
@@ -233,7 +243,11 @@ class CLIPRetrievalSystem:
                 print(f"Skipping {exclude_path} because it's the query image")
                 continue
             results.append(
-                {"score": float(score), "metadata": self.metadata[original_idx]}
+                {
+                    "score": float(score),
+                    "metadata": self.metadata[original_idx],
+                    "query_id": file_id,
+                }
             )
 
             if len(results) >= top_k:
@@ -241,20 +255,122 @@ class CLIPRetrievalSystem:
 
         return results
 
+    def get_number_by_id(self, id):
+        for item in self.metadata:
+            if item.get("id") == id:
+                return item.get("file_id")
+        return None
+
+    def get_ingredients_by_id(self, recipe_id):
+        for item in self.metadata:
+            if item.get("file_id") == recipe_id:
+                return item.get("ingredientLines")
+        return None
+
+    # def _generate_relevant_recipes(self, top_k=5):
+    #     """Generates relevant recipes per query with FAISS similarity"""
+    #     print("Generating relevant recipes per query...")
+    #
+    #     for i, query_recipe in enumerate(self.metadata):
+    #         # Retrieve FAISS embedding of query recipe
+    #         query_embed = self.index.reconstruct(i).reshape(1, -1)
+    #
+    #         # Perform FAISS similarity search
+    #         distances, indices = self.index.search(query_embed.astype('float32'), top_k + 1)
+    #
+    #         relevant_recipes = []
+    #
+    #         for idx, faiss_score in zip(indices[0], distances[0]):
+    #             # if idx == i:
+    #             #     continue  # Skip exact match
+    #
+    #             # Retrieve the embedding of the retrieved recipe
+    #             retrieved_embed = self.index.reconstruct(int(idx)).reshape(1, -1)
+    #
+    #             # Compute cosine similarity
+    #             # cosine_sim = cosine_similarity(query_embed, retrieved_embed)[0][0]
+    #
+    #             # Assign relevance labels (0-3 scale)
+    #             # label = pd.cut(
+    #             #     [cosine_sim], bins=[-1, 0.5, 0.7, 0.9, 1], labels=[0, 1, 2, 3], include_lowest=True
+    #             # ).astype(int)[0]  # Extract the single value from the series
+    #
+    #             # Store FAISS score, cosine similarity, and relevance label
+    #             relevant_recipes.append({
+    #                 "qid": self.metadata[idx]['qid'],
+    #                 "name": self.metadata[idx]['name'],
+    #                 "faiss_score": float(faiss_score),
+    #                 "ingredients": extract_ingredients(list(self.metadata[idx]['ingredientLines']))
+    #             })
+    #
+    #             if len(relevant_recipes) >= top_k:
+    #                 break
+    #
+    #         query_recipe["relevant_recipes"] = relevant_recipes
+
+
+# def create_dataframe(metadata_path):
+#
+#     with open(metadata_path, 'r') as f:
+#         metadata = json.load(f)
+#
+#     recipe_data = []
+#     for recipe in metadata:
+#         qid = recipe["qid"]
+#         ingredients = " ".join(extract_ingredients(recipe["ingredientLines"]))
+#         name = recipe["name"]
+#
+#         for r in recipe.get("relevant_recipes", []):
+#             relevant_ingredients = " ".join(r.get("ingredients", []))
+#             jaccard_score = jaccard_similarity(ingredients, relevant_ingredients)
+#             tfidf_score = tfidf_sim(ingredients, relevant_ingredients)
+#             # bert_score = bert_sim(ingredients, relevant_ingredients)
+#
+#             recipe_data.append({
+#                 "qid": int(qid),
+#                 "ingredients": ingredients,
+#                 "name": name,
+#
+#                 "relevant_docId": int(r["qid"]),
+#                 "relevant_name": r["name"],
+#                 "relevant_ingredients": relevant_ingredients,
+#                 "jaccard_score": jaccard_score,
+#                 "tfidf_score": tfidf_score,
+#                 # "bert_score": bert_score,
+#             })
+#
+#     return pd.DataFrame(recipe_data)
 
 if __name__ == "__main__":
+    start_time = time.time()
+    # retriever = CLIPRetrievalSystem()
+
     retriever = CLIPRetrievalSystem(
-        metadata_dir="data/Yummly28K/metadata27638",  # Corrected path
+        metadata_dir="data/Yummly28K/metadata27638",
         image_dir="data/Yummly28K/images27638",
     )
 
     # Uncomment if you want to reprocess the index
     # retriever.process_and_save_dataset(
-    #     force_reprocess=True,
+    #     force_reprocess=True
     # )
 
     # Test query
-    results = retriever.query_with_image(
-        "data/Yummly28K/images27638/img00001.jpg", exclude_self=True
-    )
+    results = retriever.query_with_image("data/Yummly28K/images27638/img00001.jpg")
     print("Top result:", results[0]["metadata"]["name"])
+
+    # df = create_dataframe("processed_data/metadata.json")
+
+    # df["label"] = pd.qcut(df["jaccard_score"], q=5, labels=[0, 1, 2, 3, 4], duplicates="drop")
+    # df["label"] = df["label"].astype(int)  # Convert to integer
+    # df['label'] = (df['name'] == df['relevant_name']).astype(int)
+    #
+    # df = bm25_rerank(df)
+    #
+    # df.to_csv("df-output.csv", index=False)
+    #
+    # ranker = lambdaMart(df)
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed Time: {elapsed_time} seconds")
