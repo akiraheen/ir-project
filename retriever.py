@@ -8,12 +8,14 @@ import faiss
 from PIL import Image
 from tqdm import tqdm
 from transformers import CLIPModel, CLIPProcessor
+
 # import optuna
 # import optuna.integration.lightgbm as optuna_lgb
 import time
 # from collections import OrderedDict
 # from sklearn.model_selection import ParameterGrid
 # from nltk.tokenize import word_tokenize
+
 
 class CLIPRetrievalSystem:
     DEFAULT_METADATA_DIR = "data/Yummly28K/metadata27638"
@@ -96,7 +98,7 @@ class CLIPRetrievalSystem:
             print(f"Saved index with {self.index.ntotal} embeddings")
 
             # Save metadata
-            with open(metadata_path, 'w') as f:
+            with open(metadata_path, "w") as f:
                 json.dump(self.metadata, f, indent=4)
             print(f"Saved metadata for {len(self.metadata)} recipes")
 
@@ -182,16 +184,17 @@ class CLIPRetrievalSystem:
 
         # Validate embeddings
         if not text_embeddings or not image_embeddings:
-            raise ValueError("No valid embeddings generated. Check your data paths and files.")
+            raise ValueError(
+                "No valid embeddings generated. Check your data paths and files."
+            )
 
         try:
-            combined_embeddings = np.concatenate([
-                np.vstack(text_embeddings),
-                np.vstack(image_embeddings)
-            ], axis=0)
+            combined_embeddings = np.concatenate(
+                [np.vstack(text_embeddings), np.vstack(image_embeddings)], axis=0
+            )
 
             self.index = faiss.IndexFlatIP(combined_embeddings.shape[1])
-            self.index.add(combined_embeddings.astype('float32'))
+            self.index.add(combined_embeddings.astype("float32"))
             # self._generate_relevant_recipes()
             print(f"Created index with {self.index.ntotal} embeddings")
 
@@ -240,7 +243,11 @@ class CLIPRetrievalSystem:
                 print(f"Skipping {exclude_path} because it's the query image")
                 continue
             results.append(
-                {"score": float(score), "metadata": self.metadata[original_idx], "query_id":file_id}
+                {
+                    "score": float(score),
+                    "metadata": self.metadata[original_idx],
+                    "query_id": file_id,
+                }
             )
 
             if len(results) >= top_k:
@@ -249,18 +256,17 @@ class CLIPRetrievalSystem:
         return results
 
     def get_number_by_id(self, id):
-
         for item in self.metadata:
-            if item.get('id') == id:
-                return item.get('file_id')
+            if item.get("id") == id:
+                return item.get("file_id")
         return None
 
     def get_ingredients_by_id(self, recipe_id):
-
         for item in self.metadata:
-            if item.get('file_id') == recipe_id:
-                return item.get('ingredientLines')
+            if item.get("file_id") == recipe_id:
+                return item.get("ingredientLines")
         return None
+
     # def _generate_relevant_recipes(self, top_k=5):
     #     """Generates relevant recipes per query with FAISS similarity"""
     #     print("Generating relevant recipes per query...")
@@ -301,6 +307,7 @@ class CLIPRetrievalSystem:
     #                 break
     #
     #         query_recipe["relevant_recipes"] = relevant_recipes
+
 
 # def create_dataframe(metadata_path):
 #
@@ -350,7 +357,7 @@ if __name__ == "__main__":
 
     # Test query
     results = retriever.query_with_image("data/Yummly28K/images27638/img00001.jpg")
-    print("Top result:", results[0]['metadata']['name'])
+    print("Top result:", results[0]["metadata"]["name"])
 
     # df = create_dataframe("processed_data/metadata.json")
 

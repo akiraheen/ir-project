@@ -1,9 +1,6 @@
 from typing import Literal
 from retriever import CLIPRetrievalSystem
 from rank_bm25 import BM25Okapi
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
 from utils.ingredient_filter import clean_ingredients
 
 RerankerName = Literal["jaccard", "bm25"]
@@ -18,7 +15,7 @@ class Reranker:
         self.retriever = retriever
         self.max_k = 1000
 
-    def tokenize_ingredients(ingredient_lines):
+    def tokenize_ingredients(self, ingredient_lines):
         lines = clean_ingredients(ingredient_lines)
         tokens = [token for line in lines for token in line.lower().split()]
         return tokens
