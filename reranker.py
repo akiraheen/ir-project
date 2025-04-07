@@ -15,7 +15,7 @@ class Reranker:
         self.retriever = retriever
         self.max_k = 1000
 
-    def tokenize_ingredients(ingredient_lines):
+    def tokenize_ingredients(self, ingredient_lines):
         lines = clean_ingredients(ingredient_lines)
         tokens = [token for line in lines for token in line.lower().split()]
         return tokens
