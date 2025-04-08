@@ -13,7 +13,8 @@ class Reranker:
 
     def __init__(self, retriever: CLIPRetrievalSystem):
         self.retriever = retriever
-        self.max_k = 1000
+        # self.max_k = 1000
+        self.max_m = 100
 
     def tokenize_ingredients(self, ingredient_lines):
         lines = clean_ingredients(ingredient_lines)
@@ -34,6 +35,7 @@ class Reranker:
         return query_tokens, doc_tokens_list
 
     def bm25_rerank(self, transformed_results):
+        transformed_results = transformed_results[:self.max_m]
         query_tokens, doc_tokens_list = self.preprocess_for_reranking(
             transformed_results
         )
@@ -57,6 +59,7 @@ class Reranker:
         return reranked_results
 
     def jaccard_rerank(self, transformed_results):
+        transformed_results = transformed_results[:self.max_m]
         query_tokens, doc_tokens_list = self.preprocess_for_reranking(
             transformed_results
         )
