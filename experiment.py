@@ -102,10 +102,22 @@ def visualize_results(df: pd.DataFrame, plots_dir: Path = PLOTS_DIR):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--seed",
+        type=int,
+        default=63,
+        help="Random seed for reproducibility",
+    )
+    parser.add_argument(
         "--iterations",
         type=int,
-        default=5,
-        help="Number of experiment iterations to run. Default is 5.",
+        default=3,
+        help="Number of experiment iterations to run. Default is 3.",
+    )
+    parser.add_argument(
+        "--num-images",
+        type=int,
+        default=100,
+        help="Number of images to evaluate. Default is 100.",
     )
     parser.add_argument(
         "--show-images",
@@ -116,18 +128,6 @@ def main():
         "--no-save",
         action="store_true",
         help="Do not save the results to a file",
-    )
-    parser.add_argument(
-        "--seed",
-        type=int,
-        default=42,
-        help="Random seed for reproducibility",
-    )
-    parser.add_argument(
-        "--num-images",
-        type=int,
-        default=100,
-        help="Number of images to evaluate. Default is 100.",
     )
     parser.add_argument(
         "--data-dir",
@@ -144,50 +144,50 @@ def main():
     parser.add_argument(
         "--min-camera-rotation",
         type=float,
-        default=-30,
-        help="Minimum camera rotation angle. Default is -30.",
+        default=-123,
+        help="Minimum camera rotation angle. Default is -123.",
     )
     parser.add_argument(
         "--max-camera-rotation",
         type=float,
-        default=30,
-        help="Maximum camera rotation angle. Default is 30.",
+        default=123,
+        help="Maximum camera rotation angle. Default is 123.",
     )
     parser.add_argument(
         "--min-brightness-variation",
         type=float,
-        default=0.4,
-        help="Minimum brightness variation factor. Default is 0.4.",
+        default=0.2,
+        help="Minimum brightness variation factor. Default is 0.2.",
     )
     parser.add_argument(
         "--max-brightness-variation",
         type=float,
-        default=0.8,
-        help="Maximum brightness variation factor. Default is 0.8.",
+        default=0.4,
+        help="Maximum brightness variation factor. Default is 0.4.",
     )
     parser.add_argument(
         "--min-gaussian-noise",
         type=float,
-        default=0.01,
-        help="Minimum Gaussian noise standard deviation. Default is 0.01.",
+        default=0.03,
+        help="Minimum Gaussian noise standard deviation. Default is 0.03.",
     )
     parser.add_argument(
         "--max-gaussian-noise",
         type=float,
-        default=0.03,
-        help="Maximum Gaussian noise standard deviation. Default is 0.03.",
+        default=0.07,
+        help="Maximum Gaussian noise standard deviation. Default is 0.07.",
     )
     parser.add_argument(
         "--min-motion-blur",
         type=int,
-        default=3,
-        help="Minimum motion blur kernel size. Default is 3.",
+        default=5,
+        help="Minimum motion blur kernel size. Default is 5.",
     )
     parser.add_argument(
         "--max-motion-blur",
         type=int,
-        default=5,
-        help="Maximum motion blur kernel size. Default is 5.",
+        default=9,
+        help="Maximum motion blur kernel size. Default is 9.",
     )
     parser.add_argument(
         "--tables-dir",
@@ -208,6 +208,9 @@ def main():
         choices=["jaccard", "bm25"],
         help="Reranking method to use. Default is None.",
     )
+    parser.add_argument(
+        "--reprocess-index", action="store_true", help="Reprocess the dataset index."
+    )
 
     args = parser.parse_args()
 
@@ -218,7 +221,9 @@ def main():
     random.seed(args.seed)  # reset the seed for each iteration
     images = random.sample(list(args.data_dir.glob("*.jpg")), args.num_images)
 
-    retriever = CLIPRetrievalSystem()
+    retriever = CLIPRetrievalSystem(
+        image_dir=args.data_dir, force_reprocess=args.reprocess_index
+    )
     reranker = Reranker(retriever)
     evaluator = RetrievalEvaluator(retriever, reranker)
     # evaluator = RetrievalEvaluator(reranker)
