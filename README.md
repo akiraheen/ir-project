@@ -23,5 +23,6 @@ python experiment.py \
     --tables-dir tables \
     --num-images 10 \
     --iterations 10 \
+    --reranking bm25 \
     --seed 42
 ```

@@ -18,6 +18,7 @@ from transformations import (
     MotionBlur,
 )
 import matplotlib.pyplot as plt
+import nltk
 
 RESULTS_DIR = Path("results")
 DATA_DIR = Path("data/Yummly28K/images27638")
@@ -213,7 +214,7 @@ def main():
     )
 
     args = parser.parse_args()
-
+    nltk.download("all")
     Path(args.results_dir).mkdir(parents=True, exist_ok=True)
     Path(args.tables_dir).mkdir(parents=True, exist_ok=True)
     Path(args.plots_dir).mkdir(parents=True, exist_ok=True)
